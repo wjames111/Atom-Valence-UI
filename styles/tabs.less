@@ -7,8 +7,12 @@
 
 .tab-bar {
   background-color: @tab-bar-background-color;
-  border-bottom: 1px solid @base-border-color;
 
+
+
+  &.inset-panel{
+    border-radius: 0px;
+  }
   .tab {
     color: @text-color;
     height: @tab-height;
@@ -16,9 +20,13 @@
     font-size: @font-size;
     border-right: 1px solid @tab-border-color;
     background-color: @tab-background-color;
+    &:hover {
+      color:@text-hover;
+    }
     &.active {
-      color: @text-color-selected;
-      background-color: @tab-background-color-active;
+      color: @text-hover;
+      border-bottom:2px solid @background-color-selected;
+      // background-color: @tab-background-color-active;
     }
 
 
@@ -36,17 +44,17 @@
 
     // Close Icon (the X) -------------------
     .close-icon:hover {
-      color: @text-color-selected;
+      color: @text-hover;
     }
     &.active .close-icon:hover {
-      color: @text-color;
+      color: #ccdad1;
     }
 
 
     // Dragging -------------------
     // Styles get applied while dragging a tab
     &.is-dragging {
-      background: darken(@tab-background-color, 10%);
+      background: #191c23;
       border-color: transparent;
       opacity: .5;
       & .close-icon {
