@@ -1,3 +1,4 @@
+
 h1,
 h2,
 h3 {
@@ -37,7 +38,6 @@ label {
 pre {
     box-shadow: none;
     color: @text-color;
-    // background: @inset-panel-background-color;
     border-radius: 3px;
     border: none;
     margin: 0;
@@ -75,24 +75,18 @@ code {
 
 .text-info {
 
-
     &:hover {
         color: @text-color-info;
-
     }
 }
 
 .text-warning {
-
-
     &:hover {
         color: @text-color-warning;
     }
 }
 
 .text-success {
-
-
     &:hover {
         color: @text-color-success;
     }
@@ -134,4 +128,14 @@ code {
   border: 1px solid;
 padding: 10px;
 box-shadow: 5px 10px @text-color-highlight;
+}
+
+
+.status-modified, .edited {
+  color:@text-edited !important;
+}
+
+.badge {
+  background-color:@text-edited;
+  color:black;
 }

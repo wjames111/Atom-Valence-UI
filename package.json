@@ -1,99 +1,34 @@
 {
   "configSchema": {
-    "colors": {
-      "order": 1,
-      "type": "object",
-      "title": "Colors",
-      "properties": {
-        "abaseColor": {
-          "title": "Primary color",
-          "description": "Changes the main theme color.",
-          "type": "color",
-          "default": "#009688"
-        },
-        "accentColor": {
-          "title": "Secondary color",
-          "description": "This color is used as an accent to the Primary Color.",
-          "type": "color",
-          "default": "#FFFFFF"
-        },
-        "genAccent": {
-          "title": "Generate complementary secondary color",
-          "description": "Generates a complementary color based on your selected Primary Color.",
-          "type": "boolean",
-          "default": false
-        },
-        "predefinedColor": {
-          "title": "Predefined colors",
-          "description": "Pick a predefined color from the Material Design palette. If you change the Primary Color it will override this settings.",
-          "type": "string",
-          "enum": [
-            "Amber",
-            "Blue",
-            "Blue Grey",
-            "Brown",
-            "Cyan",
-            "Green",
-            "Grey",
-            "Indigo",
-            "Lime",
-            "Orange",
-            "Pink",
-            "Purple",
-            "Red",
-            "Teal"
-          ],
-          "default": "Teal"
-        },
-        "paintCursor": {
-          "title": "Paint text editor's cursor",
-          "description": "Overrides the syntax theme's cursor color with the selected Primary Color.",
-          "type": "boolean",
-          "default": false
-        }
-      }
-    },
-    "ui": {
-      "order": 2,
-      "type": "object",
-      "title": "User Interface",
-      "properties": {
-        "useAnimations": {
-          "title": "Use animations",
-          "description": "Enables animations for clicked tabs and other UI elements.",
-          "type": "boolean",
-          "default": true
-        },
-        "hideTabBar": {
-          "title": "hide tab bar",
-          "description": "Hides the top tab bar, revealed on hover.",
-          "type": "boolean",
-          "default": false
-        },
-        "panelShadows": {
-          "title": "Panels cast shadows",
-          "description": "Adds depth to the user interface by using shadows.",
-          "type": "boolean",
-          "default": false
-        }
-      }
-    },
-    "fonts": {
-      "order": 5,
-      "type": "object",
-      "title": "Fonts",
-      "properties": {
-        "fontSize": {
-          "title": "User interface font size",
-          "description": "Scales the entire UI based on this value.",
-          "type": "number",
-          "default": 42,
-          "minimum": 40,
-          "maximum": 42
-        }
+  "colors": {
+    "order": 1,
+    "type": "object",
+    "title": "Colors",
+    "properties": {
+      "abaseColor": {
+        "title": "Primary color",
+        "description": "Changes the main theme color.",
+        "type": "color",
+        "default": "#009688"
+      },
+      "accentColor": {
+        "title": "Secondary color",
+        "description": "This color is used as an accent to the Primary Color.",
+        "type": "color",
+        "default": "#FFFFFF"
+      },
+
+      "toggleTabBar": {
+        "title": "toggle tab bar",
+        "description": "toggles tab-bar on hover ",
+        "type": "boolean",
+        "default": true
       }
     }
-  },
+  }
+},
+
+
   "devDependencies": {
     "babel-eslint": "^7.1.1",
     "eslint": "^3.17.1",

@@ -12,9 +12,12 @@
 
 .tree-view {
   color: @text-color;
-  background-color: #191c23 ;
+  background-color: @tree-view-background-color ;
 
   .list-item.selected {
     color: @text-color-selected;
+  }
+  .list-item:hover {
+    color:@text-hover;
   }
 }

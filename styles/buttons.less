@@ -3,6 +3,28 @@
 // -------------------
 
 // Overrides: atom/atom/static/buttons.less
+.welcome-card {
+  transition:all 0.2s;
+      border:0.5px solid transparent;
+  &:hover {
+    border:0.5px solid rgba(255,255,255,0.05);
+    -webkit-box-shadow:  -1px 5px 9px -3px rgba(0,0,0,0.2);
+    -moz-box-shadow:  -1px 5px 9px -3px rgba(0,0,0,0.2);
+    box-shadow:  -1px 5px 9px -3px rgba(0,0,0,0.2);
+  }
+
+  &:active {
+    border:0.5px solid rgba(255,255,255,0.12);
+    -webkit-box-shadow: inset  -1px 5px 9px -3px rgba(0,0,0,0.2);
+    -moz-box-shadow: inset  -1px 5px 9px -3px rgba(0,0,0,0.2);
+    box-shadow: inset  -1px 5px 9px -3px rgba(0,0,0,0.2);
+  }
+}
+
+
+.welcome-highlight {
+  color:#98C1D9;
+}
 
 
 .btn {
@@ -29,13 +51,11 @@
 
 
 // Colored buttons -----------------------
-
 .btn.btn-primary { .btn-color(@background-color-info); }
 .btn.btn-info    { .btn-color(@background-color-info); }
 .btn.btn-success { .btn-color(@background-color-success); }
 .btn.btn-warning { .btn-color(@background-color-warning); }
 .btn.btn-error   { .btn-color(@background-color-error); }
-
 .btn-color(@bg) {
   color: @text-color-selected;
   background-color: @bg;
@@ -43,12 +63,15 @@
   &:focus {
     background-color: lighten(@bg, 4%);
   }
+
   &:active {
     background-color: darken(@bg, 4%);
   }
+
   &.selected {
     background-color: lighten(@bg, 4%);
   }
+
   &.selected:focus,
   &.selected:hover {
     background-color: lighten(@bg, 8%);
@@ -57,7 +80,6 @@
 
 
 // Button Group -----------------------
-
 .btn-group > .btn {
   border-color: hsla(0,0%,0%,.2);
 }

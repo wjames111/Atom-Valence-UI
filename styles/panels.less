@@ -3,7 +3,6 @@
 // -------------------
 
 // Overrides: atom/static/panels.less
-
 .panel-heading {
   border-bottom: 1px solid @panel-heading-border-color;
   background-color: @panel-heading-background-color;
@@ -19,7 +18,6 @@
 
 // Modal -------------------
 // Used on top of the editor, like the Command Palette.
-
 atom-panel.modal {
   border: 2px solid @overlay-border-color;
   border-top: none;
@@ -32,10 +30,85 @@ atom-panel.modal {
   width: 0px;
 }
 
+
+atom-text-editor {
+  background-color: #282f3a;
+}
+
+
 .config-menu {
   background-color: @tab-bar-background-color !important;
 }
 
-atom-text-editor {
-  background-color: #282f3a !important;
+
+.settings-view .config-menu {
+  transition:all 0.2s;
+  padding-top:0;
+  opacity:1;
+
+  ul.panels-menu.nav.nav-pills.nav-stacked a {
+    &:hover{
+    color:@text-hover;
+      background-color: #191c23;
+    }
+    &:active {
+      background-color:transparent;
+      color:@text-color;
+    }
+  }
+
+  ul.panels-menu.nav.nav-pills.nav-stacked li.active a:hover {
+    background-color: #46473a;
+  }
+}
+
+
+//nested folders
+ol.entries.list-tree{
+  li {
+    &.expanded{
+      background-color:  lighten(@tree-view-background-color, 1.5%);
+
+      & .expanded{
+        background-color:  lighten(@tree-view-background-color, 3%);
+        li {
+          color: #8c9d9d;
+        }
+
+        & .expanded {
+          background-color:  lighten(@tree-view-background-color, 4%);
+          li {
+            color: #bdd3d3;
+            }
+
+          & .expanded{
+            background-color:  lighten(@tree-view-background-color, 5.5%);
+            li {
+              color: #e4ffff;
+            }
+
+            & .expanded{
+              background-color:  lighten(@tree-view-background-color, 7%);
+              li {
+                color: #ffffff;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+.expanded {
+  color:@folder-open-text;
+}
+
+
+.list-item.selected, .list-nested-item.selected {
+  color:black !important;
+  &.edited, .edited, &.modified, .modified, &.status-modified, .status-modified{
+    color: @text-edited !important;
+  }
 }
