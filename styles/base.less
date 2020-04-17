@@ -6,18 +6,39 @@
 // Or to override certain Atom core styles
 
 // -------------------
-
+html {
+  background-color:white;
+}
 
 body {
   font-size: @font-size;
   color: @text-color;
-  background-color: @app-background-color;
+  // background-color: @app-background-color;
 }
 
 
 atom-pane {
+
   border-right: none;
   &:last-child {
     border-right: none;
   }
+}
+atom-pane-container atom-pane .item-views {
+  border:1px solid darken( @app-background-color, 2%) !important;
+
+}
+select {
+  &:focus {
+    border: 1px solid @text-color !important;
+    color:@text-hover !important;
+  }
+  color: @background-color-selected !important;
+  & * {
+      color: @background-color-selected !important;
+  }
+  & option {
+    color: @background-color-selected !important;
+  }
+
 }

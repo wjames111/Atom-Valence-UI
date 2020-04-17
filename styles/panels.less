@@ -15,14 +15,47 @@
   }
 }
 
+.select-list.fuzzy-finder .editor.mini, .select-list.command-palette .editor.mini{
+  max-height:none;
+  height:2.5rem;
+margin:0.5rem;
+padding:0;
 
+
+border:8px;
+background-color:rgba(204, 218, 209, 0.02);
+border-radius:4px;
+color:@text-color-info;
+div:nth-child(-n+3){
+  height:2.5rem;
+}
+
+.lines{
+    padding-left:0.75rem;
+    caret-height:0.5rem;
+}
+span {
+  font-size:1.2rem;
+  line-height:2.5rem;
+  // padding-left:0.5rem;
+}
+
+}
 // Modal -------------------
 // Used on top of the editor, like the Command Palette.
 atom-panel.modal {
-  border: 2px solid @overlay-border-color;
-  border-top: none;
-  box-shadow: 0 2px 8px 1px hsla(0,0%,0%,.3);
-  background-color: #222831;
+border-radius:8px;
+
+  // box-shadow: 0 2px 8px 1px hsla(0,0%,0%,.3);
+  border:1px solid darken( @app-background-color, 2%) !important;
+  height:auto;
+top:0;
+margin-top:5.3vh;
+  position:absolute;
+  z-index:100;
+padding:0;
+   background-color: rgba(25, 28, 35, .55);
+   backdrop-filter: blur(5px);
 }
 
 
@@ -31,12 +64,12 @@ atom-panel.modal {
 }
 
 
-atom-text-editor {
+ .match-syntaxTheme__active atom-text-editor {
   background-color: #282f3a;
 }
 
 
-.config-menu {
+ .config-menu {
   background-color: @tab-bar-background-color !important;
 }
 
@@ -67,31 +100,35 @@ atom-text-editor {
 ol.entries.list-tree{
   li {
     &.expanded{
+      color:@folder-open-text;
+      border-radius:8px;
+    }
+  }
+}
+
+.directory-highlight__active ol.entries.list-tree{
+  li {
+    &.expanded{
+      color:@folder-open-text;
+
+      border-radius:8px;
       background-color:  lighten(@tree-view-background-color, 1.5%);
 
       & .expanded{
         background-color:  lighten(@tree-view-background-color, 3%);
-        li {
-          color: #8c9d9d;
-        }
+
 
         & .expanded {
           background-color:  lighten(@tree-view-background-color, 4%);
-          li {
-            color: #bdd3d3;
-            }
+
 
           & .expanded{
             background-color:  lighten(@tree-view-background-color, 5.5%);
-            li {
-              color: #e4ffff;
-            }
+
 
             & .expanded{
               background-color:  lighten(@tree-view-background-color, 7%);
-              li {
-                color: #ffffff;
-              }
+
             }
           }
         }
@@ -103,12 +140,33 @@ ol.entries.list-tree{
 
 .expanded {
   color:@folder-open-text;
+
 }
 
 
+
 .list-item.selected, .list-nested-item.selected {
-  color:black !important;
+  color: #212630 !important;
   &.edited, .edited, &.modified, .modified, &.status-modified, .status-modified{
-    color: @text-edited !important;
+    color: @background-color-selected !important;
   }
+}
+
+.gutter.line-numbers {
+  background-color: rgba(25,28,35,0.25);
+  color:@text-hover;
+  // border-right:2px solid rgba(25,28,35,0.4);
+}
+
+li.directory.entry.list-nested-item {
+  .selected {
+    color:#191c22;
+  }
+}
+
+
+.settings-view.pane-item .panels {
+    overflow-x: scroll;
+    padding:3rem;
+
 }

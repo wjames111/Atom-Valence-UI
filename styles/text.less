@@ -125,17 +125,73 @@ code {
 }
 
 .welcome-logo {
-  border: 1px solid;
-padding: 10px;
-box-shadow: 5px 10px @text-color-highlight;
+color:@background-color-selected;
+g:nth-child(2){
+  color:rgba(195,197,158, 0.5);
+}
 }
 
 
 .status-modified, .edited {
-  color:@text-edited !important;
+      color: @background-color-selected;
 }
 
 .badge {
   background-color:@text-edited;
   color:black;
+}
+
+
+.settings-view .sub-section .sub-section-heading {
+  color: @text-hover;
+}
+
+
+.welcome-logo g:nth-child(2) path:nth-child(1) { animation: e7bwtwskp4xm10_to__to 1100ms linear infinite normal forwards }
+@keyframes e7bwtwskp4xm10_to__to {
+  0% { transform: translate(0px, 0px);color:white; }
+  9.090909% { transform: translate(-1.818804px, -16.893591px);}
+  18.181818% { transform: translate(-17.733341px, -6.900506px);color:rgba(195,197,158, 0.5); }
+  32.727273% { transform: translate(11.179299px, 26.094713px); }
+  45.454545% { transform: translate(21.541633px, 12.680402px);color:white;}
+  52.727273% { transform: translate(0px, 0px) }
+  63.636364% { transform: translate(-18.770384px, -12.097644px);color:rgba(195,197,158, 0.5);  }
+  72.727273% { transform: translate(-2.691159px, 14.341415px) ; }
+  81.818182% { transform: translate(19.441472px, 4.675027px);color:white; }
+  90.909091% { transform: translate(17.167967px, -17.126732px) }
+  100% { transform: translate(0px, 0px);color:rgba(195,197,158, 0.5);  }
+}
+
+.setting-title {
+  color: lighten(@text-color, 20%);
+}
+.controls {
+  padding-top:0.5rem;
+  .editor.mini {
+    & div:nth-child(-n+3) {
+    font-size:1rem;
+    line-height:2.5rem;
+    height:2.5rem !important;
+  }
+  }
+
+}
+.line, .lines {
+  font-size:1rem;
+  line-height:2.5rem;
+}
+//settings unchecked checkbox
+// .settings-view input[type="checkbox"] {
+// &:not(:checked) {
+//   background-color:@text-color;
+// }
+// }
+
+.settings-view .package-card {
+.stats{
+  color:@text-suggestion;
+}
+.package-name {
+  color: lighten(@text-suggestion, 10%);
+}
 }

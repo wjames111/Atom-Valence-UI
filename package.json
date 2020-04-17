@@ -19,10 +19,28 @@
       },
 
       "toggleTabBar": {
-        "title": "toggle tab bar",
+        "title": "Toggle Tab-Bar",
         "description": "toggles tab-bar on hover ",
         "type": "boolean",
         "default": true
+      },
+      "directoryIndicator": {
+        "title": "Directory Indicator",
+        "description": "highlight directory hierarchy",
+        "type": "boolean",
+        "default": true
+      },
+      "matchSyntaxTheme": {
+        "title": "Match Syntax Theme",
+        "description": "override syntax theme's background color to match current theme",
+        "type": "boolean",
+        "default": true
+      },
+      "fontSize": {
+        "title": "Change Font-size",
+        "description": "adjust font-size for all UI components. For editor panel adjustments go to editor settings",
+        "type": "integer",
+        "default": "12"
       }
     }
   }

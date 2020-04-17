@@ -48,10 +48,40 @@
   border-radius: @component-border-radius;
   background-color: @overlay-background-color;
   box-shadow: 0 2px 8px 1px hsla(0,0%,0%,.3);
+
   .list-group {
     margin-top: @popover-list-padding;
     li {
       padding-left: @popover-list-padding;
     }
   }
+}
+
+
+
+
+
+.native-key-bindings {
+
+  & thead{
+tr:hover {
+    color:@text-hover;
+  background-color:transparent;
+}
+    & th {
+    color:@text-hover;
+    font-size:1.2rem;
+
+  }
+}
+
+tr {
+  color:@text-suggestion;
+
+  &:hover {
+      color:@text-hover;
+      background-color:@project-panel-background;
+  }
+}
+
 }

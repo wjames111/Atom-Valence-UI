@@ -28,12 +28,13 @@
 
 
 .btn {
-  color: lighten(@text-color, 6%);
+  height:auto;
+  color: @text-hover;
   background-color: @button-background-color;
   &:hover,
   &:focus {
     color: @text-color-highlight;
-    background-color: @button-background-color-hover;
+    background-color: @background-color-selected;
   }
   &:active {
     color: fade(@text-color-selected, 66%);
@@ -59,6 +60,7 @@
 .btn-color(@bg) {
   color: @text-color-selected;
   background-color: @bg;
+  font-size:1.2rem;
   &:hover,
   &:focus {
     background-color: lighten(@bg, 4%);
@@ -82,4 +84,26 @@
 // Button Group -----------------------
 .btn-group > .btn {
   border-color: hsla(0,0%,0%,.2);
+}
+
+.atom-dock-toggle-button-inner.left, .atom-dock-toggle-button-inner.right {
+  color:@text-suggestion;
+  &:hover {
+    color: @text-edited;
+  }
+}
+.atom-dock-toggle-button .atom-dock-toggle-button-inner {
+  border: 1px solid @text-color;
+  transition:all 0.25s;
+  &:hover {
+    border: 1px solid @white;
+
+  }
+}
+.alert.alert-info.icon.icon-heart {
+color:@background-color-success;
+}
+button.btn.btn-default.selected {
+background-color: @background-color-selected;
+color:@project-panel-background;
 }

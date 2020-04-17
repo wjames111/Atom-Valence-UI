@@ -7,6 +7,26 @@
 .status          { color: @text-color; }
 .status-added    { color: @text-color-success; } // green
 .status-ignored  { color: @text-color-subtle; }  // faded
-.status-modified { color: @text-edited; } // orange
+.status-modified { color: @background-color-selected; } // orange
 .status-removed  { color: @text-color-error; }   // red
 .status-renamed  { color: @text-color-info; }    // blue
+
+
+.github-StubItem-github.github-GitHub-root {
+  background-color:;
+}
+
+.github-StubItem-github, .github-GitHub-root, .github-StubItem-git.github-Git-root {
+    flex: 1;
+    display: flex;
+    font-size: 1.25em;
+    line-height: 1.4;
+    color: #667272;
+    background-color: #212630;
+    overflow-x: auto;
+
+}
+
+.github-Blank-LargeIcon.icon.icon-mark-github:before, .icon.icon-repo:before {
+  color: @project-panel-background;
+}
