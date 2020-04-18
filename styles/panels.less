@@ -16,12 +16,10 @@
 }
 
 .select-list.fuzzy-finder .editor.mini, .select-list.command-palette .editor.mini{
-  max-height:none;
-  height:2.5rem;
+max-height:none;
+height:2.5rem;
 margin:0.5rem;
 padding:0;
-
-
 border:8px;
 background-color:rgba(204, 218, 209, 0.02);
 border-radius:4px;
@@ -50,7 +48,7 @@ border-radius:8px;
   border:1px solid darken( @app-background-color, 2%) !important;
   height:auto;
 top:0;
-margin-top:5.3vh;
+margin-top:52px;
   position:absolute;
   z-index:100;
 padding:0;
@@ -96,10 +94,29 @@ padding:0;
 }
 
 
+// .header.list-item.project-root-header{
+//   &:nth-child(0){
+//     margin-top:5rem;
+//   }
+// }
+li.directory.entry.list-nested-item.project-root.expanded > ol.entries.list-tree{
+  &:first-of-type {
+    margin-top:2rem;
+  }
+}
 //nested folders
 ol.entries.list-tree{
+
   li {
+
+
+      padding-top:0.65rem;
+      padding-bottom:0.65rem;
+      .directory.entry.list-nested-item.expanded {
+        padding-bottom:0rem;
+      }
     &.expanded{
+      // padding-top:1.3rem;
       color:@folder-open-text;
       border-radius:8px;
     }
@@ -108,25 +125,36 @@ ol.entries.list-tree{
 
 .directory-highlight__active ol.entries.list-tree{
   li {
-    &.expanded{
-      color:@folder-open-text;
 
+    &.expanded{
+
+      color:@folder-open-text;
+margin-right:-0.65rem;
+padding-right:0.65rem;
       border-radius:8px;
       background-color:  lighten(@tree-view-background-color, 1.5%);
 
       & .expanded{
+margin-right:0.15rem;
+padding-right:0.65rem;
         background-color:  lighten(@tree-view-background-color, 3%);
 
 
         & .expanded {
+margin-right:0.15rem;
+padding-right:0.65rem;
           background-color:  lighten(@tree-view-background-color, 4%);
 
 
           & .expanded{
+margin-right:0.15rem;
+padding-right:0.65rem;
             background-color:  lighten(@tree-view-background-color, 5.5%);
 
 
             & .expanded{
+margin-right:0.15rem;
+padding-right:0.65rem;
               background-color:  lighten(@tree-view-background-color, 7%);
 
             }
@@ -140,7 +168,7 @@ ol.entries.list-tree{
 
 .expanded {
   color:@folder-open-text;
-
+  border-radius:4px;
 }
 
 
@@ -148,7 +176,7 @@ ol.entries.list-tree{
 .list-item.selected, .list-nested-item.selected {
   color: #212630 !important;
   &.edited, .edited, &.modified, .modified, &.status-modified, .status-modified{
-    color: @background-color-selected !important;
+    color: @test2 !important;
   }
 }
 
@@ -169,4 +197,80 @@ li.directory.entry.list-nested-item {
     overflow-x: scroll;
     padding:3rem;
 
+}
+.directory-highlight__active ol.entries.list-tree li.expanded {
+  & ~ .expanded, &:nth-child(1){
+margin-top:0.65rem;
+}
+}
+
+.tool-panel.tree-view ol:nth-child(1){
+  padding-top:1rem;
+  .header.list-item.project-root-header {
+
+  color:@test2;
+  // border: 1px solid darken(@text-color, 40%);
+  position:fixed;
+padding:0 0 1rem 0;
+  background-color:@project-panel-background;
+  z-index:100;
+  top:4.2rem;
+  width:292px;
+
+
+
+  &:hover {
+    color:@text-hover;
+
+  }
+
+}
+}
+
+li.file.entry.list-item.selected {
+    margin-right:0.65rem;
+  & span {
+    font-size:1.1rem;
+
+transition:background-color 0.2s;
+    background-color:@test2;
+
+  padding:0.5rem 0.5rem;
+    border-radius:4px;
+    &:hover {
+      transition:none;
+      // transition:background-color 0.15s;
+      color:@text-hover;
+      background-color: rgba(197,196,124,30%);
+    }
+  }
+
+  &:before {
+    content: '';
+    display:none;
+  }
+}
+li.directory.entry.list-nested-item.selected {
+  margin-right:0.65rem;
+  & > div {
+    font-size:1.1rem;
+
+transition:background-color 0.2s;
+  background-color:@test2;
+
+  width:100%;
+  border-radius:4px;
+  padding-left:0.5rem;
+  &:hover {
+        transition:none;
+    color:@text-hover;
+    background-color: rgba(197,196,124,30%);
+  }
+
+}
+  &:before {
+    content: '';
+    display:none;
+
+  }
 }
