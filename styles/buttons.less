@@ -3,6 +3,71 @@
 // -------------------
 
 // Overrides: atom/atom/static/buttons.less
+.btn {
+  & ~ .btn{
+
+    border-left:0.5rem solid darken(@button-background-color, 7%) !important;
+    border-radius:6px;
+    &:hover {
+        border-left:0.5rem solid darken(@button-background-color, 7%) !important;
+    }
+  }
+  color:darken(@text-color, 5%);
+  background-color: @button-background-color;
+    border:none;
+      border-radius:6px;
+  &:hover,
+  &:focus {
+    color: @text-color-highlight;
+    background-color: @test2;
+  }
+  &:active {
+    color: fade(@text-color-selected, 66%);
+    background-color: darken(@button-background-color, 2%);
+  }
+  &.selected {
+    color: @text-color-selected;
+    background-color: @test2;
+  }
+  &:focus,
+  &:focus:active {
+    outline: none;
+  }
+}
+
+.section.packages .btn {
+  background-color: darken(@button-background-color, 2%);
+}
+
+
+.select-container button.btn.icon.icon-gear {
+   background-color:transparent ;
+}
+
+
+.package-card.col-lg-8 {
+  border-radius:6px;
+    transition:border 0.25s;
+  margin:0.5rem auto 2rem auto;
+    border:0.5px solid transparent;
+
+  color: lighten(@text-color, 5%);
+  background-color: darken(@button-background-color, 7%);
+
+  &:hover {
+    background-color: darken(@button-background-color, 7%);
+        border:0.5px solid rgba(255,255,255,0.05);
+        -webkit-box-shadow:  -1px 5px 9px -3px rgba(0,0,0,0.2);
+        -moz-box-shadow:  -1px 5px 9px -3px rgba(0,0,0,0.2);
+        box-shadow:  -1px 5px 9px -3px rgba(0,0,0,0.2);
+  }
+}
+
+section.sub-section {
+  margin-top:2.5rem;
+}
+
+
 .welcome-card {
   transition:all 0.2s;
       border:0.5px solid transparent;
@@ -27,28 +92,7 @@
 }
 
 
-.btn {
-  height:auto;
-  color: @text-hover;
-  background-color: @button-background-color;
-  &:hover,
-  &:focus {
-    color: @text-color-highlight;
-    background-color: @test2;
-  }
-  &:active {
-    color: fade(@text-color-selected, 66%);
-    background-color: darken(@button-background-color, 2%);
-  }
-  &.selected {
-    color: @text-color-selected;
-    background-color: @test2;
-  }
-  &:focus,
-  &:focus:active {
-    outline: none;
-  }
-}
+
 
 
 // Colored buttons -----------------------

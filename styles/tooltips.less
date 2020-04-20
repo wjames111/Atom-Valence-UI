@@ -7,15 +7,15 @@
 
   .tooltip-inner {
     line-height: 1;
-    padding: .75em;
+    padding: 0.75em;
     white-space: nowrap;
     max-width: none;
   }
 
   .keystroke {
-    padding: .15em .4em;
-    margin: 0 -.3em 0 .25em;
-    border-radius: max(2px, @component-border-radius / 2);
+    padding: 0.15rem 0.4rem;
+    margin: 0 -0.3rem 0 0.25rem;
+    border-radius: 4px;
     color: @text-edited;
     background: @test2;
   }
@@ -44,28 +44,8 @@
 .highlight-error { .highlight-mixin(@background-color-error); }
 .highlight-success { .highlight-mixin(@background-color-success); }
 .highlight-mixin(@color) {
-  padding: 1px 4px;
+  padding: 0.1rem 0.333rem;
   color: @text-color-highlight;
   border-radius: @component-border-radius;
   background-color: @color;
-}
-
-
-// Background Message ---------------
-// Shown when no tabs are open.
-.background-message {
-  font-weight: bold;
-  color: @text-color-subtle;
-}
-
-
-.status-modified {
-  color: @text-edited;
-}
-
-
-.settings-view section .section-heading, .settings-view .section .section-heading{
-  color: @text-hover;
-  font-size:2rem;
-  font-weight: lighter;
 }

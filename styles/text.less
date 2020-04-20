@@ -3,7 +3,7 @@ h1,
 h2,
 h3 {
     line-height: 1em;
-    margin-bottom: 15px;
+    margin-bottom: 1.25rem;
 }
 
 h1 {
@@ -21,7 +21,7 @@ h3 {
 
 p {
     line-height: 1.6;
-    margin-bottom: 15px;
+    margin-bottom: 1.25rem;
 }
 a {
     transition:color 0.5s;
@@ -58,7 +58,7 @@ code {
 }
 
 .text-smaller {
-    font-size: 0.9em;
+    font-size: 0.9rem;
 }
 
 .text-subtle {
@@ -91,6 +91,27 @@ code {
         color: @text-color-success;
     }
 }
+
+
+// Background Message ---------------
+// Shown when no tabs are open.
+.background-message {
+  font-weight: bold;
+  color: @text-color-subtle;
+}
+
+
+.status-modified {
+  color: @background-color-selected;
+}
+
+
+.settings-view section .section-heading, .settings-view .section .section-heading{
+  color: @text-hover;
+  font-size:2rem;
+  font-weight: lighter;
+}
+
 
 .highlight {
     color: @text-color-highlight;
@@ -133,7 +154,7 @@ g:nth-child(2){
 
 
 .status-modified, .edited {
-      color:s;
+      color:;
 }
 
 .badge {
@@ -142,8 +163,8 @@ g:nth-child(2){
 }
 
 
-.settings-view .sub-section .sub-section-heading {
-  color: @text-hover;
+.settings-view .sub-section .sub-section-heading, .setting-title.themes-label.text{
+      color:lighten(@text-color, 15%);
 }
 
 
@@ -187,6 +208,8 @@ g:nth-child(2){
 // }
 // }
 
+
+//styles list of installed packages in settings
 .settings-view .package-card {
 .stats{
   color:@text-suggestion;
@@ -194,4 +217,32 @@ g:nth-child(2){
 .package-name {
   color: lighten(@text-suggestion, 10%);
 }
+}
+.icon-gear:before, .icon-trashcan:before {
+    line-height: inherit;
+    display:block;
+    margin:0rem !important;
+
+}
+
+
+
+
+//style theme inputs and settings
+select.form-control {
+  font-size:1.25rem;
+  color:@text-color !important;
+  margin-top:1rem;
+  letter-spacing: 1px;
+  height:auto;
+background-color:transparent !important;
+border-bottom:2px solid @background-color-selected !important;
+box-shadow:none !important;
+
+
+// border-right:2px solid @background-color-selected !important;
+&:focus {
+  border:1px solid @background-color-selected !important;
+}
+
 }

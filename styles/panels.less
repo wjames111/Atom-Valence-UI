@@ -42,13 +42,16 @@ span {
 // Modal -------------------
 // Used on top of the editor, like the Command Palette.
 atom-panel.modal {
+  &:focus, &:hover {
+    border:none;
+  }
 border-radius:8px;
 
   // box-shadow: 0 2px 8px 1px hsla(0,0%,0%,.3);
   border:1px solid darken( @app-background-color, 2%) !important;
   height:auto;
 top:0;
-margin-top:52px;
+margin-top:@tab-height+0.8rem;
   position:absolute;
   z-index:100;
 padding:0;
@@ -68,7 +71,11 @@ padding:0;
 
 
  .config-menu {
+   font-size:1rem;
   background-color: @tab-bar-background-color !important;
+  li {
+
+  }
 }
 
 
@@ -77,7 +84,9 @@ padding:0;
   padding-top:0;
   opacity:1;
 
-  ul.panels-menu.nav.nav-pills.nav-stacked a {
+  ul.panels-menu.nav.nav-pills.nav-stacked > li a {
+    padding-top:1.5rem;
+    padding-bottom:1.5rem;
     &:hover{
     color:@text-hover;
       background-color: #191c23;
@@ -153,7 +162,7 @@ padding-right:0.65rem;
 
 
             & .expanded{
-margin-right:0.15rem;
+margin-right: 0.15rem;
 padding-right:0.65rem;
               background-color:  lighten(@tree-view-background-color, 7%);
 
@@ -179,6 +188,11 @@ padding-right:0.65rem;
     color: @test2 !important;
   }
 }
+
+li.directory.entry.list-nested-item.status-modified.selected {
+  color:@project-panel-background !important;
+}
+
 
 .gutter.line-numbers {
   background-color: rgba(25,28,35,0.25);
@@ -214,9 +228,9 @@ margin-top:0.65rem;
 padding:0 0 1rem 0;
   background-color:@project-panel-background;
   z-index:100;
-  top:4.2rem;
+  top:4.1rem;
   width:292px;
-
+    // box-shadow: 0 2px 8px 1px hsla(0,0%,0%,.3);}
 
 
   &:hover {
