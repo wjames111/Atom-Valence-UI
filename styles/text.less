@@ -1,7 +1,17 @@
 
-h1,
-h2,
-h3 {
+////// text /////
+/* --general text styles and text mixins--
+---------contents----------
+1.) base-text-styles
+2.) misc-text
+3.) mixins
+4.) settings-pages
+-------contents-end-------*/
+
+
+
+/*-------base-text-styles------*/
+h1, h2, h3 {
     line-height: 1em;
     margin-bottom: 1.25rem;
 }
@@ -23,95 +33,28 @@ p {
     line-height: 1.6;
     margin-bottom: 1.25rem;
 }
+
 a {
-    transition:color 0.5s;
-}
-a:hover {
-  text-decoration:none;
-  color:@text-hover;
+  transition:color 0.5s;
+  &:hover {
+    text-decoration:none;
+    color:@text-hover;
+    }
 }
 
+//----editor label settings--//
 label {
-    font-weight: normal;
+    font-weight: normal; //font-family/font-size editor setting
 }
-
-pre {
-    box-shadow: none;
-    color: @text-color;
-    border-radius: 3px;
-    border: none;
-    margin: 0;
-}
-
-code {
-
-    background: @background-color-highlight;
-    border-radius: @component-border-radius;
-}
-
-.markdown-preview code {
-    text-shadow: none;
-}
-
-.selected {
-
-}
-
-.text-smaller {
-    font-size: 0.9rem;
-}
-
-.text-subtle {
-
-}
-
-.text-highlight {
-
-}
-
-.text-error {
-
-}
-
-.text-info {
-
-    &:hover {
-        color: @text-color-info;
-    }
-}
-
-.text-warning {
-    &:hover {
-        color: @text-color-warning;
-    }
-}
-
-.text-success {
-    &:hover {
-        color: @text-color-success;
-    }
-}
+/*-------base-text-styles-end-----*/
 
 
-// Background Message ---------------
-// Shown when no tabs are open.
+
+/*-----misc-text--------*/
 .background-message {
   font-weight: bold;
   color: @text-color-subtle;
 }
-
-
-.status-modified {
-  color: @background-color-selected;
-}
-
-
-.settings-view section .section-heading, .settings-view .section .section-heading{
-  color: @text-hover;
-  font-size:2rem;
-  font-weight: lighter;
-}
-
 
 .highlight {
     color: @text-color-highlight;
@@ -122,52 +65,14 @@ code {
     padding: 1px 3px;
 }
 
-.highlight-color(@name, @color, @text-color) {
-    .highlight-@{name} {
-        color: lighten(saturate(@text-color, 0%), 60%);
-        font-weight: bold;
-        text-shadow: none;
-        background-color: fadeout(@color, 30%);
-        border-radius: @component-border-radius;
-        padding: 1px 3px;
-    }
-}
-.highlight-color(info, @background-color-info, @text-color-info);
-.highlight-color(warning, @background-color-warning, @text-color-warning);
-.highlight-color(error, @background-color-error, @text-color-error);
-.highlight-color(success, @background-color-success, @text-color-success);
-
-.results-view .path-details.list-item {
-    color: darken(@text-color-highlight, 18%);
-}
-
-.text .icon::before, .text.icon::before {
-    margin: 0 4px;
-}
-
 .welcome-logo {
-color:@test2;
-g:nth-child(2){
-  color:rgba(195,197,158, 0.5);
-}
-}
-
-
-.status-modified, .edited {
-      color:;
+  color: @test2;
+  g:nth-child(2){
+    color:rgba(195,197,158, 0.5);
+  }
 }
 
-.badge {
-  background-color:@text-edited;
-  color:black;
-}
-
-
-.settings-view .sub-section .sub-section-heading, .setting-title.themes-label.text{
-      color:lighten(@text-color, 15%);
-}
-
-
+//--welcome logo animation --//
 .welcome-logo g:nth-child(2) path:nth-child(1) { animation: e7bwtwskp4xm10_to__to 1100ms linear infinite normal forwards }
 @keyframes e7bwtwskp4xm10_to__to {
   0% { transform: translate(0px, 0px);color:white; }
@@ -183,66 +88,68 @@ g:nth-child(2){
   100% { transform: translate(0px, 0px);color:rgba(195,197,158, 0.5);  }
 }
 
+//---unsure where this goes--//
+.results-view .path-details.list-item {
+    color: darken(@text-color-highlight, 18%);
+}
+/*----misc-text-end---*/
+
+
+
+/*----------mixins---------*/
+.highlight-color(@name, @color, @text-color) {
+    .highlight-@{name} {
+        color: lighten(saturate(@text-color, 0%), 60%);
+        font-weight: bold;
+        text-shadow: none;
+        background-color: fadeout(@color, 30%);
+        border-radius: @component-border-radius;
+        padding: 1px 3px;
+    }
+}
+
+.highlight-color(info, @background-color-info, @text-color-info);
+.highlight-color(warning, @background-color-warning, @text-color-warning);
+.highlight-color(error, @background-color-error, @text-color-error);
+.highlight-color(success, @background-color-success, @text-color-success);
+/*-----mixins-end---*/
+
+
+
+/*----settings-pages---*/
+.settings-view section .section-heading, .settings-view .section .section-heading{
+  color: @text-hover;
+  font-size:2rem;
+  font-weight: lighter;
+}
+
+.settings-view .sub-section .sub-section-heading, .setting-title.themes-label.text{
+  color:lighten(@text-color, 15%);
+}
+
 .setting-title {
   color: lighten(@text-color, 20%);
 }
-.controls {
-  padding-top:0.5rem;
-  .editor.mini {
-    & div:nth-child(-n+3) {
-    font-size:1rem;
-    line-height:2.5rem;
-    height:2.5rem !important;
-  }
-  }
 
+//--adds padding at start+end of settings pages--//
+.settings-view.pane-item .panels .section{
+  padding-top:5rem ;
+  padding-bottom:5rem ;
 }
-.line, .lines {
-  font-size:1rem;
-  line-height:2.5rem;
-}
-//settings unchecked checkbox
-// .settings-view input[type="checkbox"] {
-// &:not(:checked) {
-//   background-color:@text-color;
-// }
-// }
 
-
-//styles list of installed packages in settings
+//--styles list of installed packages in settings--//
 .settings-view .package-card {
-.stats{
-  color:@text-suggestion;
-}
-.package-name {
-  color: lighten(@text-suggestion, 10%);
-}
-}
-.icon-gear:before, .icon-trashcan:before {
-    line-height: inherit;
-    display:block;
-    margin:0rem !important;
-
+  .stats{
+    color:@text-suggestion;
+  }
+  .package-name {
+    color: lighten(@text-suggestion, 10%);
+  }
 }
 
-
-
-
-//style theme inputs and settings
-select.form-control {
-  font-size:1.25rem;
-  color:@text-color !important;
-  margin-top:1rem;
-  letter-spacing: 1px;
-  height:auto;
-background-color:transparent !important;
-border-bottom:2px solid @background-color-selected !important;
-box-shadow:none !important;
-
-
-// border-right:2px solid @background-color-selected !important;
-&:focus {
-  border:1px solid @background-color-selected !important;
+//----settings panel padding---//
+.settings-view.pane-item .panels {
+    overflow-x: scroll;
+    padding: 0 3rem;
 }
-
-}
+/*----setting-page-headers-end--*/

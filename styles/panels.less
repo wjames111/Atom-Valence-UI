@@ -1,8 +1,17 @@
 
-// Panels
-// -------------------
-
+////// panels /////
+/* --atom-panels--
 // Overrides: atom/static/panels.less
+---------contents----------
+1.) unsure-where-applies
+2.) THEME_SETTING: syntax-theme-overide
+3.) settings-menu-panel
+4.)
+-------contents-end-------*/
+
+
+
+/*-----unsure-where-applies---*/
 .panel-heading {
   border-bottom: 1px solid @panel-heading-border-color;
   background-color: @panel-heading-background-color;
@@ -14,277 +23,46 @@
     background-color: lighten(@inset-panel-background-color, 4%);
   }
 }
+/*-----unsure-where-applies-end---*/
 
-.select-list.fuzzy-finder .editor.mini, .select-list.command-palette .editor.mini{
-max-height:none;
-height:2.5rem;
-margin:0.5rem;
-padding:0;
-border:8px;
-background-color:rgba(204, 218, 209, 0.02);
-border-radius:4px;
-color:@text-color-info;
-div:nth-child(-n+3){
-  height:2.5rem;
+
+
+/*-----THEME_SETTING: syntax-theme-overide (default=ON)-----*/
+.match-syntaxTheme__active atom-text-editor {
+  background-color: @similar-background;
 }
-
-.lines{
-    padding-left:0.75rem;
-    caret-height:0.5rem;
+.match-syntaxTheme__active .gutter.line-numbers {
+  background-color: rgba(25,28,35,0.25);
+  color:@text-hover;
 }
-span {
-  font-size:1.2rem;
-  line-height:2.5rem;
-  // padding-left:0.5rem;
-}
-
-}
-// Modal -------------------
-// Used on top of the editor, like the Command Palette.
-atom-panel.modal {
-  &:focus, &:hover {
-    border:none;
-  }
-border-radius:8px;
-
-  // box-shadow: 0 2px 8px 1px hsla(0,0%,0%,.3);
-  border:1px solid darken( @app-background-color, 2%) !important;
-  height:auto;
-top:0;
-margin-top:@tab-height+0.8rem;
-  position:absolute;
-  z-index:100;
-padding:0;
-   background-color: rgba(25, 28, 35, .55);
-   backdrop-filter: blur(5px);
-}
+/*-----THEME_SETTING: syntax-theme-overide-end-----*/
 
 
-.atom-dock-resize-handle.left, .atom-dock-resize-handle.right {
-  width: 0px;
-}
-
-
- .match-syntaxTheme__active atom-text-editor {
-  background-color: #282f3a;
-}
-
-
+/*----settings-menu-panel----*/
  .config-menu {
-   font-size:1rem;
+  font-size:1rem;
   background-color: @tab-bar-background-color !important;
-  li {
-
-  }
 }
-
 
 .settings-view .config-menu {
   transition:all 0.2s;
   padding-top:0;
   opacity:1;
-
   ul.panels-menu.nav.nav-pills.nav-stacked > li a {
-    padding-top:1.5rem;
-    padding-bottom:1.5rem;
+    padding-top:1.5rem; //increases setting tabs height
+    padding-bottom:1.5rem; //increases setting tabs height
     &:hover{
-    color:@text-hover;
-      background-color: #191c23;
+      color:@text-hover;
+      background-color: @project-panel-background;
     }
     &:active {
       background-color:transparent;
-      color:@text-color;
+      color:@project-panel-background;
     }
   }
-
+  //--adds different hover affect for active tabs--//
   ul.panels-menu.nav.nav-pills.nav-stacked li.active a:hover {
-    background-color: #46473a;
+    background-color: @dark-yellow;
   }
 }
-
-
-// .header.list-item.project-root-header{
-//   &:nth-child(0){
-//     margin-top:5rem;
-//   }
-// }
-li.directory.entry.list-nested-item.project-root.expanded > ol.entries.list-tree{
-  &:first-of-type {
-    margin-top:2rem;
-  }
-}
-//nested folders
-ol.entries.list-tree{
-
-  li {
-
-
-      padding-top:0.65rem;
-      padding-bottom:0.65rem;
-      .directory.entry.list-nested-item.expanded {
-        padding-bottom:0rem;
-      }
-    &.expanded{
-      // padding-top:1.3rem;
-      color:@folder-open-text;
-      border-radius:8px;
-    }
-  }
-}
-
-.directory-highlight__active ol.entries.list-tree{
-  li {
-
-    &.expanded{
-
-      color:@folder-open-text;
-margin-right:-0.65rem;
-padding-right:0.65rem;
-      border-radius:8px;
-      background-color:  lighten(@tree-view-background-color, 1.5%);
-
-      & .expanded{
-margin-right:0.15rem;
-padding-right:0.65rem;
-        background-color:  lighten(@tree-view-background-color, 3%);
-
-
-        & .expanded {
-margin-right:0.15rem;
-padding-right:0.65rem;
-          background-color:  lighten(@tree-view-background-color, 4%);
-
-
-          & .expanded{
-margin-right:0.15rem;
-padding-right:0.65rem;
-            background-color:  lighten(@tree-view-background-color, 5.5%);
-
-
-            & .expanded{
-margin-right: 0.15rem;
-padding-right:0.65rem;
-              background-color:  lighten(@tree-view-background-color, 7%);
-
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-
-.expanded {
-  color:@folder-open-text;
-  border-radius:4px;
-}
-
-
-
-.list-item.selected, .list-nested-item.selected {
-  color: #212630 !important;
-  &.edited, .edited, &.modified, .modified, &.status-modified, .status-modified{
-    color: @test2 !important;
-  }
-}
-
-li.directory.entry.list-nested-item.status-modified.selected {
-  color:@project-panel-background !important;
-}
-
-
-.gutter.line-numbers {
-  background-color: rgba(25,28,35,0.25);
-  color:@text-hover;
-  // border-right:2px solid rgba(25,28,35,0.4);
-}
-
-li.directory.entry.list-nested-item {
-  .selected {
-    color:#191c22;
-  }
-}
-
-
-.settings-view.pane-item .panels {
-    overflow-x: scroll;
-    padding:3rem;
-
-}
-.directory-highlight__active ol.entries.list-tree li.expanded {
-  & ~ .expanded, &:nth-child(1){
-margin-top:0.65rem;
-}
-}
-
-.tool-panel.tree-view ol:nth-child(1){
-  padding-top:1rem;
-  .header.list-item.project-root-header {
-
-  color:@test2;
-  // border: 1px solid darken(@text-color, 40%);
-  position:fixed;
-padding:0 0 1rem 0;
-  background-color:@project-panel-background;
-  z-index:100;
-  top:4.1rem;
-  width:292px;
-    // box-shadow: 0 2px 8px 1px hsla(0,0%,0%,.3);}
-
-
-  &:hover {
-    color:@text-hover;
-
-  }
-
-}
-}
-
-li.file.entry.list-item.selected {
-    margin-right:0.65rem;
-  & span {
-    font-size:1.1rem;
-
-transition:background-color 0.2s;
-    background-color:@test2;
-
-  padding:0.5rem 0.5rem;
-    border-radius:4px;
-    &:hover {
-      transition:none;
-      // transition:background-color 0.15s;
-      color:@text-hover;
-      background-color: rgba(197,196,124,30%);
-    }
-  }
-
-  &:before {
-    content: '';
-    display:none;
-  }
-}
-li.directory.entry.list-nested-item.selected {
-  margin-right:0.65rem;
-  & > div {
-    font-size:1.1rem;
-
-transition:background-color 0.2s;
-  background-color:@test2;
-
-  width:100%;
-  border-radius:4px;
-  padding-left:0.5rem;
-  &:hover {
-        transition:none;
-    color:@text-hover;
-    background-color: rgba(197,196,124,30%);
-  }
-
-}
-  &:before {
-    content: '';
-    display:none;
-
-  }
-}
+/*----settings-menu-panel-end----*/

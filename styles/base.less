@@ -1,44 +1,66 @@
 
-// Base
-// -------------------
+////// Base /////
+/* --Used for global styles
+Or to override certain Atom core styles--
+---------contents----------
+1.) base-text-styles
+2.) misc-text
+3.) mixins
+4.) settings-pages
+-------contents-end-------*/
 
-// Used for global styles
-// Or to override certain Atom core styles
 
-// -------------------
+
 html {
-  background-color:white;
+  background-color: white;
 }
 
 body {
   font-size: @font-size;
   color: @text-color;
-  // background-color: @app-background-color;
 }
 
-
 atom-pane {
-
   border-right: none;
   &:last-child {
     border-right: none;
   }
 }
+
 atom-pane-container atom-pane .item-views {
-  border:1px solid darken( @app-background-color, 2%) !important;
-
+  border: 1px solid darken( @app-background-color, 2%) !important; //--adds border around all panes--//
 }
-select {
-  &:focus {
-    border: 1px solid @text-color !important;
-    color:@text-hover !important;
-  }
-  color: @test2 !important;
-  & * {
-      color: @test2 !important;
-  }
-  & option {
-    color: @test2 !important;
-  }
 
+
+/*----cursor and text selection---*/
+//--blinking caret--//
+//make setting
+.cursors, .cursor {
+  div {
+    // border-left: 2px solid @background-color-selected;
+    border-left: 2px solid @text-edited;
+  }
 }
+
+.scroll-view div, .scroll-view span {
+  // background-color: @background-color-selected;
+}
+
+.highlights .highlight.selection .region.selection{
+  background-color: @text-suggestion;
+  border-radius:2px;
+  border-right:@highlight-border;
+  border-left:@highlight-border;
+  opacity:0.15;
+  &:first-child {
+    border-top:@highlight-border;
+    border-right:@highlight-border;
+    border-left:@highlight-border;
+  }
+  &:last-child {
+    border-bottom:@highlight-border;
+    border-right:@highlight-border;
+    border-left:@highlight-border;
+  }
+}
+/*----cursor and text selection---*/

@@ -1,0 +1,53 @@
+
+////// icons /////
+/* --Styles all icons, badges, spinners --
+---------contents----------
+1.) Settings/list-of-key-bindings
+-------contents-end-------*/
+
+
+
+//--icon with clipboard + arrow, used throughout key bindings page--//
+.text .icon::before, .text.icon::before {
+    margin: 0 4px;
+}
+
+//--installed themes, packages, updates badge--//
+.badge {
+  background-color: @text-edited;
+  color: black;
+}
+
+.icon-gear:before, .icon-trashcan:before, .icon.icon-playback-pause.enablement:before, .icon.enablement.icon-playback-play:before{
+    line-height: inherit;
+    display: block;
+    margin: 0rem !important;
+}
+
+//--large Github icon located in left Github drawer--//
+.github-Blank-LargeIcon.icon.icon-mark-github:before, .github-Git-LargeIcon.icon.icon-repo:before {
+  color: @project-panel-background;
+}
+
+
+
+/*-------Spinner --------*/
+// The `progress` element is unstyled and defined by the OS.
+// See https://css-tricks.com/html5-progress-element/ in case you want to customize it.
+.loading-spinner-large  { .loading-spinner(64px); }
+.loading-spinner-medium { .loading-spinner(48px); }
+.loading-spinner-small  { .loading-spinner(32px); }
+.loading-spinner-tiny   { .loading-spinner(16px); }
+
+.loading-spinner(@size) {
+  display: block;
+  width: @size;
+  height: @size;
+  background-image: url(images/octocat-spinner-128.gif);
+  background-repeat: no-repeat;
+  background-size: @size @size;
+  &.inline-block {
+    display: inline-block;
+  }
+}
+/*-------Spinner---------*/

@@ -1,0 +1,57 @@
+
+////// cards /////
+/* --Styles cards throughout atom
+includes welcome/package/theme cards --
+---------contents----------
+1.) package/theme cards
+2.) welcome-card
+-------contents-end-------*/
+
+
+/*--package/theme cards--*/
+.package-card.col-lg-8 {
+  border-radius: 6px;
+  transition: border 0.25s;
+  margin: 0.5rem auto 2rem auto;
+  border: 0.5px solid transparent;
+  color: lighten(@text-color, 5%);
+  background-color: darken(@button-background-color, 7%);
+  &:hover {
+    background-color: darken(@button-background-color, 7%) !important;
+    border: 0.5px solid rgba(255,255,255,0.05);
+    -webkit-box-shadow:  -1px 5px 9px -3px rgba(0,0,0,0.2);
+    -moz-box-shadow:  -1px 5px 9px -3px rgba(0,0,0,0.2);
+    box-shadow:  -1px 5px 9px -3px rgba(0,0,0,0.2);
+  }
+}
+
+//--adds margin between theme/package card--//
+section.sub-section {
+  margin-top: 2.5rem;
+}
+/*---package/theme-cards-end---*/
+
+
+
+/*---welcome-card----*/
+.welcome-card {
+  transition: all 0.2s;
+  border: 0.5px solid transparent;
+  &:hover {
+    border: 0.5px solid rgba(255,255,255,0.05);
+    -webkit-box-shadow:  -1px 5px 9px -3px rgba(0,0,0,0.2);
+    -moz-box-shadow:  -1px 5px 9px -3px rgba(0,0,0,0.2);
+    box-shadow:  -1px 5px 9px -3px rgba(0,0,0,0.2);
+  }
+  &:active {
+    border: 0.5px solid rgba(255,255,255,0.12);
+    -webkit-box-shadow: inset  -1px 5px 9px -3px rgba(0,0,0,0.2);
+    -moz-box-shadow: inset  -1px 5px 9px -3px rgba(0,0,0,0.2);
+    box-shadow: inset  -1px 5px 9px -3px rgba(0,0,0,0.2);
+  }
+}
+
+.welcome-highlight {
+  color: @text-suggestion;
+}
+/*---welcome-card-end---*/

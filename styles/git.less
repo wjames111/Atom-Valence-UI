@@ -1,40 +1,40 @@
 
-// Git
-// -------------------
+////// Git/Github /////
+/* --styles git related components and text--
+---------contents----------
+1.) git-text-states
+2.) git-popout-drawer-left
+-------contents-end-------*/
 
-// Used to color git status
 
+
+/*------git-text-states------*/
+//--Used to color git status--//
 .status          { color: @text-color; }
 .status-added    { color: @text-color-success; } // green
 .status-ignored  { color: @text-color-subtle; }  // faded
 .status-modified { color: @test2; } // orange
 .status-removed  { color: @text-color-error; }   // red
 .status-renamed  { color: @text-color-info; }    // blue
+/*-----git-text-states-end-----*/
 
 
-.github-StubItem-github.github-GitHub-root {
 
-}
-
-.status-bar-right, .status-bar-left  {
-  display:flex;
-  align-items:center;
-  height:inherit;
-  flex-direction:row;
-}
-
+/*-----git-popout-drawer-left-----*/
 .github-StubItem-github, .github-GitHub-root, .github-StubItem-git.github-Git-root {
     flex: 1;
     display: flex;
     font-size: 1.25em;
     line-height: 1.4;
     color: #667272;
-    background-color: #212630;
+    background-color: @tab-bar-background-color;
     overflow-x: auto;
-
-
 }
+/*-----git-popout-drawer-left-end----*/
 
-.github-Blank-LargeIcon.icon.icon-mark-github:before, .icon.icon-repo:before {
-  color: @project-panel-background;
+
+
+.initialize-repo-description strong {
+  font-weight: normal;
+  color: @text-hover;
 }

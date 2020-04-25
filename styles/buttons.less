@@ -1,26 +1,28 @@
 
-// Buttons
-// -------------------
+////// Buttons /////
+/* --Styles all buttons, inputs, select elements
+//Overrides: atom/atom/static/buttons.less --
+---------contents----------
+1.) general-buttons
+2.) colored-buttons
+3.) drawer-handle-button
+4.) settings-input/select
+-------contents-end-------*/
 
-// Overrides: atom/atom/static/buttons.less
+
+
+/*----general-buttons---*/
 .btn {
   & ~ .btn{
-
-    border-left:0.5rem solid darken(@button-background-color, 7%) !important;
-    border-radius:6px;
-    &:hover {
-        border-left:0.5rem solid darken(@button-background-color, 7%) !important;
-    }
   }
-  color:darken(@text-color, 5%);
+  color: darken(@text-color, 5%);
   background-color: @button-background-color;
-    border:none;
-      border-radius:6px;
-  &:hover,
-  &:focus {
-    color: @text-color-highlight;
-    background-color: @test2;
-  }
+  border: none;
+    &:hover,
+    &:focus {
+      color: @text-color-highlight;
+      background-color: @test2;
+    }
   &:active {
     color: fade(@text-color-selected, 66%);
     background-color: darken(@button-background-color, 2%);
@@ -35,79 +37,39 @@
   }
 }
 
-.section.packages .btn {
-  background-color: darken(@button-background-color, 2%);
-}
-
-
-.select-container button.btn.icon.icon-gear {
-   background-color:transparent ;
-}
-
-
-.package-card.col-lg-8 {
-  border-radius:6px;
-    transition:border 0.25s;
-  margin:0.5rem auto 2rem auto;
-    border:0.5px solid transparent;
-
-  color: lighten(@text-color, 5%);
-  background-color: darken(@button-background-color, 7%);
-
-  &:hover {
-    background-color: darken(@button-background-color, 7%);
-        border:0.5px solid rgba(255,255,255,0.05);
-        -webkit-box-shadow:  -1px 5px 9px -3px rgba(0,0,0,0.2);
-        -moz-box-shadow:  -1px 5px 9px -3px rgba(0,0,0,0.2);
-        box-shadow:  -1px 5px 9px -3px rgba(0,0,0,0.2);
-  }
-}
-
-section.sub-section {
-  margin-top:2.5rem;
-}
-
-
-.welcome-card {
-  transition:all 0.2s;
-      border:0.5px solid transparent;
-  &:hover {
-    border:0.5px solid rgba(255,255,255,0.05);
-    -webkit-box-shadow:  -1px 5px 9px -3px rgba(0,0,0,0.2);
-    -moz-box-shadow:  -1px 5px 9px -3px rgba(0,0,0,0.2);
-    box-shadow:  -1px 5px 9px -3px rgba(0,0,0,0.2);
+.btn-group {
+  border-radius:4px !important;
+  overflow:hidden;
+  & .btn{
+    border-radius:0px;
+    &:before {
+      height:1.7rem;
+    }
   }
 
-  &:active {
-    border:0.5px solid rgba(255,255,255,0.12);
-    -webkit-box-shadow: inset  -1px 5px 9px -3px rgba(0,0,0,0.2);
-    -moz-box-shadow: inset  -1px 5px 9px -3px rgba(0,0,0,0.2);
-    box-shadow: inset  -1px 5px 9px -3px rgba(0,0,0,0.2);
-  }
 }
 
-
-.welcome-highlight {
-  color:#98C1D9;
+//--only applies to setting pages--//
+.meta-controls .btn-group .btn:first-child {
+margin-right: 0.2rem;
 }
+/*----general-buttons---*/
 
 
 
-
-
-// Colored buttons -----------------------
-.btn.btn-primary { .btn-color(@background-color-info); }
-.btn.btn-info    { .btn-color(@background-color-info); }
+/*---colored-buttons----*/
+.btn.btn-primary { .btn-color(@button-background-color); color: @text-color; }
 .btn.btn-success { .btn-color(@background-color-success); }
 .btn.btn-warning { .btn-color(@background-color-warning); }
 .btn.btn-error   { .btn-color(@background-color-error); }
 .btn-color(@bg) {
   color: @text-color-selected;
   background-color: @bg;
-  font-size:1.2rem;
+  font-size: 1.2rem;
   &:hover,
   &:focus {
-    background-color: lighten(@bg, 4%);
+    background-color: @background-color-selected;
+    color: @project-panel-background;
   }
 
   &:active {
@@ -123,13 +85,32 @@ section.sub-section {
     background-color: lighten(@bg, 8%);
   }
 }
+/*---colored-buttons-end---*/
 
 
-// Button Group -----------------------
+
+//---dual-buttons---//
 .btn-group > .btn {
   border-color: hsla(0,0%,0%,.2);
 }
 
+//--check for updates button--//
+.section.packages .btn {
+  background-color: darken(@button-background-color, 2%);
+  &:hover {
+    color: @text-color-highlight;
+    background-color: @test2;
+  }
+}
+
+//--settings button--//
+.select-container button.btn.icon.icon-gear {
+   background-color: transparent ;
+}
+
+
+
+/*---drawer-handle-button---*/
 .atom-dock-toggle-button-inner.left, .atom-dock-toggle-button-inner.right {
   color:@text-suggestion;
   &:hover {
@@ -144,10 +125,80 @@ section.sub-section {
 
   }
 }
+/*---drawer-handle-button---*/
+
+
+//--displays when all packages updated--//
 .alert.alert-info.icon.icon-heart {
-color:@background-color-success;
+color: @background-color-success;
+background-color: @similar-background;
 }
+
 button.btn.btn-default.selected {
 background-color: @test2;
-color:@project-panel-background;
+color: @project-panel-background;
 }
+
+.select-container button.btn.icon.icon-gear{
+  &:before {
+  font-size:2rem !important;
+  padding-top:1.5rem;
+}
+  &:hover {
+    color: @background-color-selected !important;
+  }
+}
+
+
+
+/*--settings-input/select--*/
+
+select.form-control {
+  color: @text-color !important;
+  margin-top: 1rem;
+  padding: 1rem;
+  font-size: 1.2rem;
+  height: 3rem;
+  background-color: transparent !important;
+  border-bottom: 2px solid @background-color-selected !important;
+  box-shadow: none !important;
+  &:focus {
+    background-color: lighten(@similar-background, 1%) !important;
+  }
+}
+
+select.github-Project-path.input-select {
+  &:extend(select.form-control);
+  margin-top: 0px;
+}
+
+.controls {
+  padding-top: 1.5rem;
+}
+
+atom-text-editor.editor.mini{
+  padding: 1rem 1rem 1rem 1.5rem;
+  border: 1px solid darken( @app-background-color, 2%);
+  font-size: 1.2rem;
+  &.is-focused {
+    background-color: lighten(@project-panel-background, 1%);
+  }
+}
+
+atom-text-editor[mini],  {
+  padding-left: @component-padding/2;
+  color: @text-color;
+  border-radius: @component-border-radius;
+  background-color: @input-background-color;
+
+  &.is-focused {
+    background-color: darken(@input-background-color, 5%);
+  }
+
+  .placeholder-text {
+    color: @text-color-subtle;
+  }
+  .selection .region {
+  }
+}
+/*--settings-input/select-end--*/

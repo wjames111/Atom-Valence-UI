@@ -1,9 +1,20 @@
 
-// Tabs
-// -------------------
+////// tabs /////
+/* --Overrides: atom/tabs--
+Displays selectable tabs above the editor. includes
+overrides for general styles specific to selectable file
+tabs.--
+---------contents----------
+1.) Project-tab-(opens project-drawer) :line 19
+2.) THEME_SETTING:Active-light-Bar-(default=ON) :line 32
+3.) Tab-contents :line 58
+4.) tab-bar :line 79
+5.) THEME_SETTING:Toggleable-tab-bar-(default=OFF) :line 131
+-------contents-end-------*/
 
-// Displays selectable tabs above the editor.
-// Overrides: atom/tabs
+
+
+/*------Project-tab-(opens project-drawer)-------*/
 .atom-dock-content-wrapper.left {
   .panes li.tab.sortable.active {
   background-color: @project-panel-background;
@@ -13,113 +24,81 @@
     }
   }
 }
+/*------Project-tab-end-------*/
 
 
-.tab-bar__active .tab-bar {
-  transition: height 0.25s;
-  height:0.9rem;
-  &:hover {
-    height:4rem;
+
+/*------THEME_SETTING:Active-light-Bar-(default=ON)----*/
+.tab {
+    display:block;
+  &::after {
+    content: "";
+    transform: scaleX(0);
+    background-color:@test2;
+    height:2px;
+  }
+  &.active::after {
+    content: "";
+    display:block;
+    transition: transform 0.25s;
+    background-color:@test2;
+    transform: scaleX(1);
+    height:2px;
   }
 }
+/*------light-Bar-end------*/
 
 
-.tab::after {
-  content: "";
-  display:block;
-  width:100%;
-  transform: rotate(0deg);
-  transform: scaleX(0);
-  background-color:@test2;
-  height:2px;
-}
 
-
-.tab.active::after {
-  content: "";
-  display:block;
-  transition: transform 0.25s;
-  background-color:@test2;
-  transform: rotate(360deg);
-  transform: scaleX(1);
-  height:2px;
-}
-
-
-.tab-bar .title {
-  margin-top: auto;
-  margin-bottom: auto;
-  margin-left:1.25rem;
-  padding-right:1.667rem;
-}
-
-
-.close-icon {
-  display:block;
-  margin:auto;
-  padding:auto;
-  display:flex;
-  justify-content: center;
-  align-items: center;
-  height:@tab-height;
-  &::before {
-  }
-}
-
-
+/*--------tab-bar-------*/
 .tab-bar {
   background-color: @tab-bar-background-color;
-  &.inset-panel{
-    border-radius: 0px;
+  border-radius: 0px;
+  & .title { //individual tab name
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left:1.25rem;
+    padding-right:1.667rem;
   }
   .tab {
+    font-size: @font-size;
     margin-top:0.833rem;
-    border-radius: 0px 0px 8px 8px;
-    padding-left:0rem;
+    padding-left: 0rem;
     padding-right:0rem;
-    color: @text-color;
     height: @tab-height;
     display:flex;
     flex-direction:column;
-    font-size: @font-size;
-    border-right: 1px solid @tab-border-color;
-    background-color: @tab-background-color;
-    &:hover {
+    &:hover, &.active {
       color:@text-hover;
     }
-
     &.active {
-      transition:background-color 0.45s;
-      transition-delay: 0.20s;
+      transition:background-color 0.45s 0.2s;
       border-radius:8px 8px 0 0;
-      color: @text-hover;
       background-color: lighten(@tab-bar-background-color, 5.2%);
     }
-
-    // Modified Icon (the circle) -------------------
-    &.modified:not(:hover) .close-icon {
-      color:@text-edited;
+    .close-icon {
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      height:@tab-height;
+    }
+    //---Modified Icon in tab (x || o) ----//
+    &.modified {
+      .close-icon {
+        color:@text-edited;
+      }
+    &:not(:hover) .close-icon {
       top: 50%;
       right: @component-padding + 0.333rem; // 4px -> half of icon size
       margin-top: -0.25rem;
       border-color: @text-color-info;
     }
-
-    &.modified:hover .close-icon {
-    color:@text-edited;
-    }
-
-    // Close Icon (the X) -------------------
+  }
+    //---Close Icon not modified (the X) ---//
     .close-icon:hover {
     color:@text-edited;
     }
-
-    &.active .close-icon:hover {
-      color:@text-edited;
-    }
-
-    // Dragging -------------------
-    // Styles get applied while dragging a tab
+    //---Dragging--Styles get applied while dragging a tab---//
     &.is-dragging {
       background: #191c23;
       border-color: transparent;
@@ -130,51 +109,16 @@
     }
   }
 }
+/*--------tab-bar-end------*/
 
 
 
-// atom-text-editor .lines {
-//   // background-color:green;
-//   -webkit-box-shadow: inset -1px 5px 9px -3px rgba(0,0,0,0.75);
-//   -moz-box-shadow: inset -1px 5px 9px -3px rgba(0,0,0,0.75);
-//   box-shadow: inset -1px 5px 9px -3px rgba(0,0,0,0.75);
-// }
-//
-// .tab-bar .tab.active {
-//         -webkit-box-shadow: inset -1px 0.7px 3.5px 2px rgba(0,0,0,0.38);
-//   box-shadow: inset -1px 0.7px 3.5px 2px rgba(0,0,0,0.38);
-// }
-//
-// .welcome-card {
-//   transition:all 0.2s;
-//   -webkit-box-shadow:  -1px 5px 5px -3px rgba(0,0,0,0.25);
-//   -moz-box-shadow:  -1px 5px 5px -3px rgba(0,0,0,0.25);
-//   box-shadow:  -1px 5px 5px -3px rgba(0,0,0,0.25);
-//   border:0.5px solid rgba(255,255,255,0);
-//   &:hover {
-//     border:0.5px solid transparent;
-//     -webkit-box-shadow:  -1px 5px 9px -3px rgba(0,0,0,0);
-//     -moz-box-shadow:  -1px 5px 9px -3px rgba(0,0,0,0);
-//     box-shadow:  -1px 5px 9px -3px rgba(0,0,0,0);
-//   }
-//   &:active {
-//     border:0.5px solid rgba(255,255,255,0.05);
-//     -webkit-box-shadow:inset  -1px 5px 9px -3px rgba(0,0,0,0.25);
-//     -moz-box-shadow:inset  -1px 5px 9px -3px rgba(0,0,0,0.25);
-//     box-shadow:inset  -1px 5px 9px -3px rgba(0,0,0,0.25);
-//   }
-// }
-//
-// atom-pane-container atom-pane .item-views {
-//   -webkit-box-shadow: -7px -2px 15px -5px rgba(0,0,0,0.75);
-// -moz-box-shadow: -7px -2px 15px -5px rgba(0,0,0,0.75);
-// box-shadow: -7px -2px 15px -5px rgba(0,0,0,0.75);
-// }
-// .left, .vertical, .right {
-//   -webkit-box-shadow: -7px -2px 15px -5px rgba(0,0,0,0.75);
-// -moz-box-shadow: -7px -2px 15px -5px rgba(0,0,0,0.75);
-// box-shadow: -7px -2px 15px -5px rgba(0,0,0,0.75);}
-
-//
-// atom-panel.modal {
-  // box-shadow: 0 2px 8px 1px hsla(0,0%,0%,.3);}
+/*------THEME_SETTING:Toggleable-tab-bar-(default=OFF)----*/
+.tab-bar__active .tab-bar {
+  transition: height 0.25s;
+  height:0.9rem;
+  &:hover {
+    height:4rem;
+  }
+}
+/*------Toggleable-tab-bar-end----*/

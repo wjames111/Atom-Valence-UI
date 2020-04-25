@@ -1,28 +1,39 @@
 
-// UI Variables
-// -------------------
+////// UI Variables /////
+/*--These are the official UI variables that every UI theme should define.
+// It allows other packages to match your theme.--
+---------contents----------
+1.) added-variables
+2.) Text-Colors
+3.) Background-colors
+4.) Base-colors
+4.) Component-colors
+4.) Site-colors
+4.) Sizes
+4.) Misc
+-------contents-end-------*/
 
-// These are the official UI variables that every UI theme should define.
-// It allows other packages to match your theme.
 
-// Overrides: atom/static/variables/ui-variables.less
-
-// Try to edit some of the values below to see your theme change.
-// A good start is to change the color of the `@base-background-color` variable.
-
-//added variables
+/*---added-variables---*/
 @white: white;
 @text-hover: #ccdad1;
 @text-suggestion: #98C1D9;
 @text-edited: #d56f3e;
-@text-warning: #d56f3e;
 @project-panel-background: #191c22;
 @welcome-page-color: #22262f;
 @folder-open-text:darken(#98C1D9, 5%);
 @find-replace-button-text: #191c22;
+@similar-background: #282f3a;
+@dark-yellow: #46473a;
+@highlight-border: 1px solid black;
+
+//--added-fonts--//
+@font-family-default: '.SFNSText-Regular', 'SF UI Text', 'Lucida Grande', 'Segoe UI', Ubuntu, Cantarell, sans-serif;
+@font-family-light: Roboto, "Lucida Grande", "Segoe UI", Ubuntu, Cantarell, sans-serif;
+/*---added-variables-end--*/
 
 
-// Text Colors
+/*---Text-Colors----*/
 @text-color:           #8a948e;
 @text-color-subtle:    #667272;
 @text-color-highlight: #13161b;
@@ -31,9 +42,10 @@
 @text-color-success: hsl(140,  44%, 62%);
 @text-color-warning: hsl( 36,  60%, 72%);
 @text-color-error:   hsl(  9, 100%, 64%);
+/*---Text-Colors-end---*/
 
 
-// Background colors
+/*--Background-colors--*/
 @background-color-info:   #98C1D9;
 @background-color-success:  darken(#82dacb , 10%);
 @background-color-warning: hsl(32,   60%, 50%);
@@ -42,14 +54,16 @@
 @background-color-selected:  #c5c47c;
 @test2:  @background-color-selected;
 @app-background-color:       darken(@base-background-color, 2%);
+/*--Background-colors--*/
 
 
-// Base colors
+/*----Base-colors----*/
 @base-background-color: #212630;
 @base-border-color:     transparent;
+/*--Base-colors-end--*/
 
 
-// Component colors
+/*---Component-colors---*/
 @pane-item-background-color: @base-background-color;
 @pane-item-border-color: @white;
 @input-background-color: @app-background-color;
@@ -73,17 +87,19 @@
 @tab-border-color: @base-border-color;
 @tree-view-background-color: @project-panel-background;
 @tree-view-border-color: @base-border-color;
+/*---Component-colors-end--*/
 
 
-// Site colors
+/*----Site-colors---*/
 @ui-site-color-1: hsl(208, 100%, 50%); // blue
 @ui-site-color-2: hsl(160,  70%, 42%); // green
 @ui-site-color-3: hsl(32,   60%, 50%); // orange
 @ui-site-color-4: #D831B0;             // pink
 @ui-site-color-5: #EBDD5B;             // yellow
+/*----Site-colors---*/
 
 
-// Sizes
+/*--Sizes--*/
 @font-size: 1rem;
 @input-font-size: 1.1rem;
 @disclosure-arrow-size: 1rem;
@@ -92,8 +108,10 @@
 @component-icon-size: 1.2rem;
 @component-line-height: 2rem;
 @tab-height: 3.2rem;
+/*--Sizes-end--*/
 
 
-// Misc
+/*---Misc--*/
 @component-border-radius: 0.25rem;
-@font-family: '.SFNSText-Regular', 'SF UI Text', 'Lucida Grande', 'Segoe UI', Ubuntu, Cantarell, sans-serif;
+@font-family: @font-family-light;
+/*---Misc-end--*/

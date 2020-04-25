@@ -1,36 +1,45 @@
 
-// Lists
-// -------------------
+////// lists /////
+/* --Used in different places, like the Tree View, Commmand Palette etc.
+// Overrides: atom/static/lists.less--
+---------contents----------
+1.) List-Group
+2.) List-Project-Folder-contents
+3.) Select-Lists
+4.) Popover-List
+-------contents-end-------*/
 
-// Used in different places, like the Tree View, Commmand Palette etc.
-// Overrides: atom/static/lists.less
 
-// List Group -------------------
+
+/*------List-Group--------------*/
 .list-group {
   li {
     padding-left: @component-padding/2;
-
-    // We want to highlight the background of the list items because we dont know their size.
     &.selected {
-
       color: @text-color-selected;
       background-color: @test2;
-      &:before{ display: none; }
+      &:before {
+        display: none;
+       }
     }
   }
 }
+/*------List-Group-end-------------*/
 
 
-// List Tree -------------------
+
+/*-----List-Project-Folder-contents-------------*/
 .list-tree {
   color: @text-color;
   .selected {
     color: @text-color-selected;
   }
 }
+/*-----List-Project-Folder-contents-------------*/
 
 
-// Select List -------------------
+
+/*-----Select-Lists-------------*/
 .select-list {
   li {
     padding: @component-padding/2 @component-padding;
@@ -39,9 +48,11 @@
     float: right;
   }
 }
+/*-----Select-Lists-end------------*/
 
 
-// Popover List -------------------
+
+/*----Popover-List------------------*/
 // Used as a popover for something like autocomplete.
 .select-list.popover-list {
   @popover-list-padding: @component-padding/2;
@@ -49,7 +60,6 @@
   border-radius: @component-border-radius;
   background-color: @overlay-background-color;
   box-shadow: 0 2px 8px 1px hsla(0,0%,0%,.3);
-
   .list-group {
     margin-top: @popover-list-padding;
     li {
@@ -57,32 +67,4 @@
     }
   }
 }
-
-
-
-
-
-.native-key-bindings {
-
-  & thead{
-tr:hover {
-    color:@text-hover;
-  background-color:transparent;
-}
-    & th {
-    color:@text-hover;
-    font-size:1.2rem;
-
-  }
-}
-
-tr {
-  color:@text-suggestion;
-
-  &:hover {
-      color:@text-hover;
-      background-color:@project-panel-background;
-  }
-}
-
-}
+/*----Popover-List-end-----------------*/

@@ -1,0 +1,130 @@
+
+////// Popups /////
+/* --Command Pallete, Project Find, Find and replace in
+the current buffer or across the entire project.
+// Overrides: atom/find-and-replace--
+---------contents----------
+1.) find+replace
+2.) pop-up-finder-window+command-pallete
+-------contents-end-------*/
+
+
+
+/*---find+replace--adds foggy glass affect---*/
+.find-and-replace, .project-find.padded {
+  &:focus{
+    border: none;
+    text-decoration:  none;
+  }
+  width: 100%;
+  bottom: 0;
+  position: absolute;
+  z-index:  100;
+  margin: 0;
+  padding:  0 0 1.7rem 0;
+  background-color: rgba(25, 28, 35, .55);
+  backdrop-filter: blur(5px);
+//adds top border to find-replace
+// &:before{
+//   content:" ";
+//   z-index:10;
+//   position:absolute;
+//   top:0;
+//   width:100%;
+//   height:2px;
+//   background-color:rgba(25, 28, 35, 1);
+// }
+  .icon-x:hover {
+    color: @text-edited;
+  }
+  input:focus {
+    border: none;
+    text-decoration: none;
+  }
+  .input-block,{
+    padding: 0 1rem;
+  }
+  .header-item{
+    padding: 0 1rem;
+  }
+  .editor.mini > div {
+    background-color: transparent !important;
+  }
+  .scroll-view {
+    background-color: transparent !important;
+  }
+  .input-block-item.input-block-item--flex.editor-container .editor.mini, atom-text-editor.editor.mini {
+    background-color: rgba(204, 218, 209, 0.06);
+    border-radius: 4px;
+    color: @text-color-info;
+    padding: 0.9rem 1rem 0.7rem 1.5rem;
+    border: 1px solid darken( @app-background-color, 2%);
+    font-size: 1.2rem;
+    height:3.5rem;
+    &.is-focused {
+      background-color: rgba(73, 86, 106, 0.3);
+    }
+  }
+  .header{
+    padding-top: 1.7rem;
+    padding-bottom:1rem;
+   }
+}
+
+atom-panel.tool-panel.panel-bottom.bottom {
+  .btn-group-options {
+    height:2rem;
+    .btn {
+      height:inherit;
+    }
+  }
+  .btn {
+  height:3.4rem;
+  }
+}
+/*---find+replace-end---*/
+
+
+
+/*------pop-up-finder-window+command-pallete----*/
+//---text search area--//
+.select-list.fuzzy-finder .editor.mini, .select-list.command-palette .editor.mini{
+  max-height: none;
+  margin:0.5rem;
+  padding:0;
+  background-color: rgba(73, 86, 106, 0.3);
+  border-radius: 4px;
+  color: @text-color-info;
+    div:nth-child(-n+3) {
+      background-color: transparent;
+    }
+  .lines {
+    padding-left: 0.75rem;
+  }
+  span {
+    font-size: 1.2rem;
+    line-height: 3.2rem;
+  }
+  div {
+    background-color: transparent !important;
+
+  }
+}
+
+//--creates foggy glass affect--//
+atom-panel.modal {
+  &:focus, &:hover {
+    border: none;
+  }
+  border-radius: 8px;
+  border: 1px solid darken( @app-background-color, 2%) !important;
+  height: auto;
+  top: 0;
+  margin-top: @tab-height+0.8rem;
+  position: absolute;
+  z-index: 100;
+  padding: 0;
+  background-color: rgba(25, 28, 35, .55);
+  backdrop-filter: blur(5px);
+}
+/*------pop-up-finder-window-end----*/

@@ -1,13 +1,39 @@
 
-// Status Bar
-// -------------------
+//////  Status Bar /////
+/* --Located at the bottom.--
+  //Displays information about the current editor.
+  // Overrides: atom/status-bar--
+---------contents----------
+1.) status-bar-container
+2.) bottom-status-bar-icon-placement
+-------contents-end-------*/
 
-// Located at the bottom.
-// Displays information about the current editor.
-// Overrides: atom/status-bar
 
+
+//--status-bar-container--//
 .status-bar {
   font-size: @font-size;
-  color: @text-color;
   background-color: @tab-bar-background-color;
+}
+//--status-bar-container-end--//
+
+
+
+//----bottom-status-bar-icon-placement--//
+.status-bar-right, .status-bar-left  {
+  display:flex;
+  align-items:center;
+  height:inherit;
+  flex-direction:row;
+}
+//----bottom-status-bar-icon-placement-end--//
+
+
+
+button.github-StatusBarTile.inline-block, button.github-ChangedFilesCount.inline-block,
+status-bar-file.file-info.inline-block a {
+  &:hover {
+    text-decoration: none;
+    color: @text-hover;
+  }
 }

@@ -1,13 +1,17 @@
 
-// Key Binding
-// -------------------
+////// Key Binding /////
+/* --Styles key-bindings used in a Select List
+// Overrides: Bootstrap's `kbd`.--
+---------contents----------
+1.) Settings/list-of-key-bindings
+-------contents-end-------*/
 
-// Styles key-bindings used in a Select List
-// Overrides: Bootstrap's `kbd`.
 
 
+/*---Settings/list-of-key-bindings---------------*/
 .key-binding {
   display: inline-block;
+  color:@text-color;
   margin-left: 1px;
   padding: 0 @component-padding/2;
   line-height: 2;
@@ -17,3 +21,25 @@
   border-radius: @component-border-radius;
   background-color: @app-background-color;
 }
+
+//---key-bindings-text--//
+.native-key-bindings {
+  & thead{
+    tr:hover {
+      color: @text-hover;
+      background-color: transparent;
+    }
+    & th {
+      color: @text-hover;
+      font-size: 1.2rem;
+      }
+    }
+  tr {
+      color: @text-suggestion;
+      &:hover {
+        color: @text-hover;
+        background-color: @project-panel-background;
+      }
+    }
+}
+/*---Settings/list-of-key-bindings-end---------*/

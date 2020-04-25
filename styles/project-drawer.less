@@ -1,0 +1,230 @@
+
+////// project-drawer /////
+/* --overides atom-tree-view --
+all content associated with the project-tab drawer
+includes overrides for general styles specific to
+project drawer.--
+---------contents----------
+1.) general
+-------contents-end-------*/
+
+
+
+/*--------general----------*/
+.tree-view-resizer {
+  border-right: 1px solid @base-border-color;
+}
+
+.tree-view {
+  background-color: @tree-view-background-color ;
+  .list-item{
+    &:hover {
+      color: @text-hover;
+    }
+    &.selected {
+      color: @text-color-selected;
+    }
+  }
+}
+/*------general-end--------*/
+
+
+
+/*------project-drawer-partition-----*/
+.atom-dock-resize-handle.left, .atom-dock-resize-handle.right { //allows resizing of drawer
+  width: 1px;
+  background-color: darken( @app-background-color, 2%) ;
+}
+/*------project-drawer-partition-end--*/
+
+
+
+/*------project-directory-structure---*/
+//---fixed to top master directory--//
+.tool-panel.tree-view ol:nth-child(1){
+  .header.list-item.project-root-header {
+    //********* add foggy glass affect *********/
+    //**************************************/
+    color: @test2;
+    position: sticky;
+    width: 100%;
+    border-top: 0.5rem solid rgba(25, 28, 35, 1);
+    background-color: rgba(25, 28, 35, 0.55);
+    // backdrop-filter: blur(1px);
+    z-index: 100;
+    top: -1px;
+
+    // padding: 0.5rem 0 1rem 0;
+    margin: 0;
+    .name.icon {
+      margin-left:0.5rem;
+    }
+    &:hover {
+      color: @text-hover;
+    }
+    &:after {
+      content: "";
+      margin-top:0;
+      display: block;
+      position: absolute;
+      box-sizing:content-box;
+    border-top:1rem solid rgba(25, 28, 35, 0.5);
+    border-left:1rem solid rgba(25, 28, 35, 0.5);
+    border-right:1.3rem solid rgba(25, 28, 35, 0.5);
+      width: 98%;
+      margin-left:-15px;
+       background: transparent;
+      height: 2rem;
+      pointer-events:none;
+      border-radius: 24px 24px 0 0;
+
+
+    }
+    &:before {
+      content: "";
+
+      display: block;
+      position: absolute;
+backdrop-filter: blur(1px);
+      width: 100%;
+      z-index:-10;
+
+      height: 100%;
+
+
+
+    }
+  }
+}
+
+li.directory.entry.list-nested-item.project-root.expanded > ol.entries.list-tree{
+  &:first-of-type {
+    margin-top:0rem; //increases spacing below master directory
+  }
+}
+
+//--nested folders/files--//
+ol.entries.list-tree{
+  li {
+    padding-top:0.65rem;
+    padding-bottom:0.65rem;
+    .directory.entry.list-nested-item.expanded {
+      padding-bottom:0rem;
+    }
+    &.expanded{
+      color:@folder-open-text;
+      border-radius:8px;
+    }
+  }
+}
+
+//-----adds spacing between 2 open directories---//
+.directory-highlight__active ol.entries.list-tree li.expanded {
+  & ~ .expanded, &:nth-child(1){
+    margin-top:0.65rem;
+  }
+}
+/*------project-directory-structure-end---*/
+
+
+
+/*-----THEME_SETTING: highlight-directory-scope(default=ON)----*/
+.directory-highlight__active ol.entries.list-tree{
+  li {
+    &.expanded{
+      width:100%;
+      overflow-x:hidden;
+      color:@folder-open-text;
+      margin-right:-0.65rem;
+      padding-right:0.65rem;
+      border-radius:8px;
+      background-color:  lighten(@tree-view-background-color, 1.5%);
+      & .expanded{
+        margin-right:0.15rem;
+        padding-right:0.65rem;
+        background-color:  lighten(@tree-view-background-color, 3%);
+        & .expanded {
+          margin-right:0.15rem;
+          padding-right:0.65rem;
+          background-color:  lighten(@tree-view-background-color, 4%);
+          & .expanded{
+            margin-right:0.15rem;
+            padding-right:0.65rem;
+            background-color:  lighten(@tree-view-background-color, 5.5%);
+            & .expanded{
+              margin-right: 0.15rem;
+              padding-right:0.65rem;
+              background-color:  lighten(@tree-view-background-color, 7%);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+/*-----THEME_SETTING: highlight-directory-scope-end----*/
+
+
+
+/*------folder/file-state-styles-----*/
+//--selected-items--//
+.list-item.selected, .list-nested-item.selected {
+  color: #212630 !important;
+  &.edited, .edited, &.modified, .modified, &.status-modified, .status-modified{
+    color: @test2 !important;
+  }
+}
+
+//--selected and modified directories--//
+li.directory.entry.list-nested-item.status-modified.selected, li.file.entry.list-item.status-modified.selected {
+  color:@project-panel-background !important;
+  &:hover {
+    transition:none;
+    color:@text-edited;
+    background-color: rgba(197,196,124,30%);
+  }
+}
+
+//--files selected and hover--//
+li.file.entry.list-item.selected {
+    margin-right:0.65rem;
+  & span {
+    font-size:1.1rem;
+    transition:background-color 0.2s;
+    background-color:@test2;
+    padding:0.5rem 0.5rem;
+    border-radius:4px;
+    &:hover {
+      transition:none;
+      color:@text-hover;
+      background-color: rgba(197,196,124,30%);
+    }
+  }
+  &:before {
+    content: '';
+    display:none;
+  }
+}
+
+//--directories selected and hover--//
+li.directory.entry.list-nested-item.selected, li.file.entry.list-item.selected {
+  margin-right:0.65rem;
+  & > div {
+    font-size:1.1rem;
+    transition:background-color 0.2s;
+    background-color:@test2;
+    width:100%;
+    border-radius:4px;
+    padding-left:0.5rem;
+    &:hover {
+      transition:none;
+      color:@text-hover;
+      background-color: rgba(197,196,124,30%);
+    }
+  }
+  &:before {
+    content: '';
+    display:none;
+  }
+}
+/*------folder/file-state-styles-end-----*/
