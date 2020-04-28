@@ -36,6 +36,7 @@ p {
 
 a {
   transition:color 0.5s;
+  color: @text-suggestion;
   &:hover {
     text-decoration:none;
     color:@text-hover;
@@ -123,6 +124,21 @@ label {
   font-weight: lighter;
 }
 
+.section-heading:first-child {
+  font-size: 2.7rem !important;
+  &.icon:before {
+    margin-right: 2.7rem;
+    font-size: 2.7rem;
+    .icon-paintcan& {
+      margin-right: 2rem;
+    }
+  }
+  & .badge {
+    margin-left: 1.5rem;
+    font-size: 2rem;
+  }
+}
+
 .settings-view .sub-section .sub-section-heading, .setting-title.themes-label.text{
   color:lighten(@text-color, 15%);
 }
@@ -139,8 +155,8 @@ label {
 
 //--styles list of installed packages in settings--//
 .settings-view .package-card {
-  .stats{
-    color:@text-suggestion;
+  .stats, .stats .icon:before {
+    color: @text-suggestion;
   }
   .package-name {
     color: lighten(@text-suggestion, 10%);

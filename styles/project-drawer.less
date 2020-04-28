@@ -17,6 +17,9 @@ project drawer.--
 
 .tree-view {
   background-color: @tree-view-background-color ;
+  //--options--//
+  // background-color: @text-hover ;
+  //background-color: @cyan ;
   .list-item{
     &:hover {
       color: @text-hover;
@@ -49,12 +52,11 @@ project drawer.--
     position: sticky;
     width: 100%;
     border-top: 0.5rem solid rgba(25, 28, 35, 1);
-    background-color: rgba(25, 28, 35, 0.55);
+    background-color: rgba(25, 28, 35, 0.68);
+    padding-top: 0.5rem;
     // backdrop-filter: blur(1px);
     z-index: 100;
     top: -1px;
-
-    // padding: 0.5rem 0 1rem 0;
     margin: 0;
     .name.icon {
       margin-left:0.5rem;
@@ -64,35 +66,28 @@ project drawer.--
     }
     &:after {
       content: "";
-      margin-top:0;
+      margin-top:-1px;
       display: block;
       position: absolute;
       box-sizing:content-box;
-    border-top:1rem solid rgba(25, 28, 35, 0.5);
-    border-left:1rem solid rgba(25, 28, 35, 0.5);
-    border-right:1.3rem solid rgba(25, 28, 35, 0.5);
-      width: 98%;
-      margin-left:-15px;
+      border-top:1.1rem solid rgba(25, 28, 35, 0.68);
+      border-left:1rem solid rgba(25, 28, 35, 0.68);
+      border-right:1rem solid rgba(25, 28, 35, 0.68);
+      width: 100%;
+      margin-left:-12px;
        background: transparent;
       height: 2rem;
       pointer-events:none;
       border-radius: 24px 24px 0 0;
-
-
     }
     &:before {
       content: "";
-
       display: block;
       position: absolute;
-backdrop-filter: blur(1px);
+      backdrop-filter: blur(1px);
       width: 100%;
       z-index:-10;
-
       height: 100%;
-
-
-
     }
   }
 }
@@ -175,56 +170,75 @@ ol.entries.list-tree{
   }
 }
 
-//--selected and modified directories--//
-li.directory.entry.list-nested-item.status-modified.selected, li.file.entry.list-item.status-modified.selected {
-  color:@project-panel-background !important;
-  &:hover {
-    transition:none;
-    color:@text-edited;
-    background-color: rgba(197,196,124,30%);
+//--selected, hover + modified files--//
+ li.file.entry.list-item.status-modified.selected {
+  color: @project-panel-background !important;
+  & span {
+    background-color: @test2;
+    &:hover {
+      transition: none;
+      color: @text-hover;
+      background-color: rgba(197,196,124,30%);
+    }
+  }
+}
+
+//--selected, hover + modified, expanded directories--//
+li.directory.entry.list-nested-item.status-modified {
+  &.expanded {
+    color: @test2;
+  }
+  &.selected {
+    color: @project-panel-background !important;
+    & > div {
+      background-color: @test2;
+      &:hover {
+        background-color: rgba(197,196,124,30%);
+      }
+    }
   }
 }
 
 //--files selected and hover--//
 li.file.entry.list-item.selected {
-    margin-right:0.65rem;
+  margin-right: 0.65rem;
   & span {
-    font-size:1.1rem;
-    transition:background-color 0.2s;
-    background-color:@test2;
-    padding:0.5rem 0.5rem;
-    border-radius:4px;
+    padding: 0.5rem 0.5rem;
+    font-size: 1.1rem;
+    transition: background-color 0.2s;
+    background-color: @text-suggestion;
+    border-radius: 4px;
     &:hover {
-      transition:none;
-      color:@text-hover;
-      background-color: rgba(197,196,124,30%);
+      transition: none;
+      color: @text-hover;
+      background-color: rgba(152,193,217,30%);
     }
   }
   &:before {
     content: '';
-    display:none;
+    display: none;
   }
 }
 
 //--directories selected and hover--//
-li.directory.entry.list-nested-item.selected, li.file.entry.list-item.selected {
-  margin-right:0.65rem;
+li.directory.entry.list-nested-item.selected {
+  margin-right: 0.65rem;
   & > div {
-    font-size:1.1rem;
-    transition:background-color 0.2s;
-    background-color:@test2;
-    width:100%;
-    border-radius:4px;
-    padding-left:0.5rem;
+    padding-left: 0.5rem;
+    width: 100%;
+    font-size: 1.1rem;
+    transition: background-color 0.2s;
+    background-color: @text-suggestion;
+    border-radius: 4px;
     &:hover {
-      transition:none;
-      color:@text-hover;
-      background-color: rgba(197,196,124,30%);
+      transition: none;
+      color: @text-hover;
+      background-color: rgba(152,193,217,30%);
     }
   }
   &:before {
     content: '';
-    display:none;
+    display: none;
   }
 }
 /*------folder/file-state-styles-end-----*/

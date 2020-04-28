@@ -14,14 +14,22 @@
 
 //--installed themes, packages, updates badge--//
 .badge {
-  background-color: @text-edited;
+  background-color: @cyan;
+  //---old-color---//
+  // background-color: @text-edited;
   color: black;
+  padding: 0.35em 0.5em 0.25em !important;
 }
 
 .icon-gear:before, .icon-trashcan:before, .icon.icon-playback-pause.enablement:before, .icon.enablement.icon-playback-play:before{
-    line-height: inherit;
-    display: block;
-    margin: 0rem !important;
+  line-height: inherit;
+  display: block;
+  margin: 0rem !important;
+  .section-heading& {
+    display: inline-block;
+    margin-right: 2rem !important;
+    font-size: 1.7rem;
+  }
 }
 
 //--large Github icon located in left Github drawer--//

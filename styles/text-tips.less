@@ -9,6 +9,7 @@ please check text.less--
 4.) text-events :line 65
 5.) text-code :line 87
 6.) theme-name-breadcrumb
+7.) atom-author-style
 -------contents-end-------*/
 
 
@@ -20,6 +21,7 @@ please check text.less--
     padding: 0.75em;
     white-space: nowrap;
     max-width: none;
+    color: @similar-background;
   }
 
   .keystroke {
@@ -117,3 +119,16 @@ ol.native-key-bindings.breadcrumb .active {
   }
 }
 /*-----read-me-text-end---*/
+
+
+
+/*-----atom-author-style----*/
+a.author {
+  color: @background-color-success !important;
+  text-decoration: none !important;
+  &:hover {
+    text-decoration: none !important;
+    color: @background-color-selected !important;
+  }
+}
+/*-----atom-author-style----*/

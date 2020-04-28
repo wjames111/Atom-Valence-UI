@@ -42,6 +42,10 @@
  .config-menu {
   font-size:1rem;
   background-color: @tab-bar-background-color !important;
+    //--options--//
+  background: rgb(119,57,249);
+  background: linear-gradient(117deg, rgba(119,57,249,0.3) 0%, rgba(210,17,255,0.3) 29%, rgba(106,248,250,0.3) 78%, rgba(73,176,177,0.3) 96%) !important;
+  // background-color: @cyan !important;
 }
 
 .settings-view .config-menu {
@@ -49,6 +53,7 @@
   padding-top:0;
   opacity:1;
   ul.panels-menu.nav.nav-pills.nav-stacked > li a {
+    // color: @text-hover !important; //--optional--//
     padding-top:1.5rem; //increases setting tabs height
     padding-bottom:1.5rem; //increases setting tabs height
     &:hover{

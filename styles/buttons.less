@@ -96,7 +96,7 @@ margin-right: 0.2rem;
 
 //--check for updates button--//
 .section.packages .btn {
-  background-color: darken(@button-background-color, 2%);
+  background-color: darken(@button-background-color, 20%);
   &:hover {
     color: @text-color-highlight;
     background-color: @test2;
@@ -111,7 +111,7 @@ margin-right: 0.2rem;
 
 
 /*---drawer-handle-button---*/
-.atom-dock-toggle-button-inner.left, .atom-dock-toggle-button-inner.right {
+.atom-dock-toggle-button-inner {
   color:@text-suggestion;
   &:hover {
     color: @text-edited;
@@ -152,7 +152,6 @@ color: @project-panel-background;
 
 
 /*--settings-input/select--*/
-
 select.form-control {
   color: @text-color !important;
   margin-top: 1rem;
@@ -179,6 +178,7 @@ select.github-Project-path.input-select {
 atom-text-editor.editor.mini{
   padding: 1rem 1rem 1rem 1.5rem;
   border: 1px solid darken( @app-background-color, 2%);
+  overflow: visible;
   font-size: 1.2rem;
   &.is-focused {
     background-color: lighten(@project-panel-background, 1%);
@@ -188,7 +188,7 @@ atom-text-editor.editor.mini{
 atom-text-editor[mini],  {
   padding-left: @component-padding/2;
   color: @text-color;
-  border-radius: @component-border-radius;
+  border-radius: 5px;
   background-color: @input-background-color;
 
   &.is-focused {
