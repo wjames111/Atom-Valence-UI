@@ -1,52 +1,73 @@
 {
   "configSchema": {
-  "colors": {
-    "order": 1,
-    "type": "object",
-    "title": "Colors",
-    "properties": {
-      "abaseColor": {
-        "title": "Primary color",
-        "description": "Changes the main theme color.",
-        "type": "color",
-        "default": "#009688"
-      },
-      "accentColor": {
-        "title": "Secondary color",
-        "description": "This color is used as an accent to the Primary Color.",
-        "type": "color",
-        "default": "#FFFFFF"
-      },
-
-      "toggleTabBar": {
-        "title": "Toggle Tab-Bar",
-        "description": "toggles tab-bar on hover ",
-        "type": "boolean",
-        "default": true
-      },
-      "directoryIndicator": {
-        "title": "Directory Indicator",
-        "description": "highlight directory hierarchy",
-        "type": "boolean",
-        "default": true
-      },
-      "matchSyntaxTheme": {
-        "title": "Match Syntax Theme",
-        "description": "override syntax theme's background color to match current theme",
-        "type": "boolean",
-        "default": true
-      },
-      "fontSize": {
-        "title": "Change Font-size",
-        "description": "adjust font-size for all UI components. For editor panel adjustments go to editor settings",
-        "type": "integer",
-        "default": "12"
+    "colors": {
+      "order": 1,
+      "type": "object",
+      "title": "Colors",
+      "properties": {
+        "abaseColor": {
+          "title": "Primary color",
+          "description": "Changes the main theme color.",
+          "type": "color",
+          "default": "#009688"
+        },
+        "customAccent": {
+          "title": "Default Accent Color",
+          "description": "Keeps theme's default accent color. Uncheck to allow chosen accent color to take affect. Toggling will cause Atom to reload.",
+          "type": "boolean",
+          "default": false
+        },
+        "accentColor": {
+          "title": "Accent Color",
+          "description": "Customize theme's accent color. Toggling will cause Atom to reload.",
+          "type": "color",
+          "default": "#c5c47c"
+        },
+        "toggleTabBar": {
+          "title": "Toggle Tab-Bar",
+          "description": "toggles tab-bar on hover ",
+          "type": "boolean",
+          "default": true
+        },
+        "directoryIndicator": {
+          "title": "Directory Indicator",
+          "description": "highlight directory hierarchy",
+          "type": "boolean",
+          "default": true
+        },
+        "matchSyntaxTheme": {
+          "title": "Match Syntax Theme",
+          "description": "override syntax theme's background color to match current theme",
+          "type": "boolean",
+          "default": true
+        },
+        "extColor": {
+          "title": "file-type color",
+          "description": "change file-type icon color to default colors",
+          "type": "boolean",
+          "default": true
+        },
+        "fontSize": {
+          "title": "Change Font-size",
+          "description": "adjust font-size for all UI components. For editor panel adjustments go to editor settings",
+          "type": "integer",
+          "default": "12"
+        },
+        "settingsPanel": {
+          "title": "Settings Panel color",
+          "description": "changes background color of the settings panel to dark blue.",
+          "type": "boolean",
+          "default": false
+        },
+        "animationEnabled": {
+          "title": "enable animations",
+          "description": "toggle theme animations, if you find them distracting or need the extra CPU",
+          "type": "boolean",
+          "default": true
+        }
       }
     }
-  }
-},
-
-
+  },
   "devDependencies": {
     "babel-eslint": "^7.1.1",
     "eslint": "^3.17.1",
@@ -70,6 +91,7 @@
     "atom": ">=1.0.0 <2.0.0"
   },
   "dependencies": {
+    "file-system": "^2.2.2",
     "fs": "0.0.1-security"
   }
 }

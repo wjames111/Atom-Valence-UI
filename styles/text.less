@@ -35,7 +35,9 @@ p {
 }
 
 a {
-  transition:color 0.5s;
+  .animations-enabled__active & {
+  transition: color 0.5s;
+}
   color: @text-suggestion;
   &:hover {
     text-decoration:none;
@@ -74,7 +76,7 @@ label {
 }
 
 //--welcome logo animation --//
-.welcome-logo g:nth-child(2) path:nth-child(1) { animation: e7bwtwskp4xm10_to__to 1100ms linear infinite normal forwards }
+.animations-enabled__active .welcome-logo g:nth-child(2) path:nth-child(1) { animation: e7bwtwskp4xm10_to__to 1100ms linear infinite normal forwards }
 @keyframes e7bwtwskp4xm10_to__to {
   0% { transform: translate(0px, 0px);color:white; }
   9.090909% { transform: translate(-1.818804px, -16.893591px);}

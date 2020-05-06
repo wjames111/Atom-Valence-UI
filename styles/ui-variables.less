@@ -1,4 +1,4 @@
-
+@import "colorSetting";
 ////// UI Variables /////
 /*--These are the official UI variables that every UI theme should define.
 // It allows other packages to match your theme.--
@@ -36,7 +36,9 @@
 
 
 /*---Text-Colors----*/
-@text-color:           #8a948e;
+// @text-color:           #8a948e;
+@text-color: darken(@saturate, 5%);
+@saturate: saturate(@color-setting, -37%);
 @text-color-subtle:    #667272;
 @text-color-highlight: #13161b;
 @text-color-selected:  #1e222b;
@@ -52,8 +54,10 @@
 @background-color-success:  @cyan;
 @background-color-warning: hsl(32,   60%, 50%);
 @background-color-error:   hsl(0,    70%, 50%);
-@background-color-highlight: #c5c47c;
-@background-color-selected:  #c5c47c;
+@background-color-highlight: @color-setting;
+@background-color-selected:  @color-setting;
+// @background-color-highlight: #c5c47c;
+// @background-color-selected:  #c5c47c;
 @test2:  @background-color-selected;
 @app-background-color:       darken(@base-background-color, 2%);
 /*--Background-colors--*/

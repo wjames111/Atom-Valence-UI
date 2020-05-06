@@ -59,3 +59,55 @@
   }
 }
 /*-------Spinner---------*/
+
+
+
+/*------file-extention-color----*/
+  .file-ext-color__active .icon:before {
+      color: inherit;
+      opacity: 1;
+  }
+
+  .medium-red:before {
+    color: @text-edited;
+    opacity: 0.3;
+    .selected > & {
+      opacity: 1;
+      color: @text-color-selected;
+    }
+  }
+  .medium-blue:before {
+  color: @text-suggestion;
+  opacity: 0.3;
+  .selected > & {
+    opacity: 1;
+    color: @text-color-selected;
+  }
+  }
+  .medium-green:before, .medium-cyan:before, .dark-cyan:before {
+    color: @cyan;
+    opacity: 0.3;
+    .selected > & {
+      opacity: 1;
+      color: @text-color-selected;
+    }
+  }
+
+  .medium-yellow:before {
+    color: @background-color-selected;
+    opacity: 0.3;
+    .selected > & {
+      opacity: 1;
+      color: @text-color-selected;
+    }
+  }
+
+  .dark-blue:before {
+    color: darken(@text-suggestion, 40%);
+    opacity: 0.3;
+    .selected > & {
+      opacity: 1;
+      color: @text-color-selected;
+    }
+}
+/*------file-extention-color----*/

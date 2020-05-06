@@ -96,7 +96,7 @@ margin-right: 0.2rem;
 
 //--check for updates button--//
 .section.packages .btn {
-  background-color: darken(@button-background-color, 20%);
+  background-color: darken(@button-background-color, 2%);
   &:hover {
     color: @text-color-highlight;
     background-color: @test2;
@@ -119,7 +119,9 @@ margin-right: 0.2rem;
 }
 .atom-dock-toggle-button .atom-dock-toggle-button-inner {
   border: 1px solid @text-color;
-  transition:all 0.25s;
+  .animations-enabled__active & {
+    transition:all 0.25s;
+  }
   &:hover {
     border: 1px solid @white;
 

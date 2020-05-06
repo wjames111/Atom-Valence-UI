@@ -11,7 +11,9 @@ includes welcome/package/theme cards --
 /*--package/theme cards--*/
 .package-card.col-lg-8 {
   border-radius: 6px;
+  .animations-enabled__active & {
   transition: border 0.25s;
+  }
   margin: 0.5rem auto 2rem auto;
   border: 0.5px solid transparent;
   color: lighten(@text-color, 5%);
@@ -35,7 +37,9 @@ section.sub-section {
 
 /*---welcome-card----*/
 .welcome-card {
+  animations-enabled__active & {
   transition: all 0.2s;
+}
   border: 0.5px solid transparent;
   &:hover {
     border: 0.5px solid rgba(255,255,255,0.05);

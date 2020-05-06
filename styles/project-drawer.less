@@ -34,10 +34,16 @@ project drawer.--
 
 
 /*------project-drawer-partition-----*/
-.atom-dock-resize-handle.left, .atom-dock-resize-handle.right { //allows resizing of drawer
+.atom-dock-resize-handle.left { //allows resizing of drawer
   width: 1px;
   background-color: darken( @app-background-color, 2%) ;
 }
+
+.atom-dock-resize-handle.right { //allows resizing of drawer
+  width: 3px;
+  background-color: #1f232b ;
+}
+
 /*------project-drawer-partition-end--*/
 
 
@@ -205,7 +211,9 @@ li.file.entry.list-item.selected {
   & span {
     padding: 0.5rem 0.5rem;
     font-size: 1.1rem;
+    .animations-enabled__active & {
     transition: background-color 0.2s;
+  }
     background-color: @text-suggestion;
     border-radius: 4px;
     &:hover {
@@ -227,7 +235,9 @@ li.directory.entry.list-nested-item.selected {
     padding-left: 0.5rem;
     width: 100%;
     font-size: 1.1rem;
+    .animations-enabled__active & {
     transition: background-color 0.2s;
+  }
     background-color: @text-suggestion;
     border-radius: 4px;
     &:hover {
