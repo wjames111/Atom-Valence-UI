@@ -1,4 +1,5 @@
 @import "colorSetting";
+
 ////// UI Variables /////
 /*--These are the official UI variables that every UI theme should define.
 // It allows other packages to match your theme.--
@@ -14,7 +15,33 @@
 -------contents-end-------*/
 
 
+/*------adjusts-accent-color----*/
+//when too dark
+@bg-light: lightness(@color-setting);
+.mmm();
+.mmm() when (@bg-light < 31%) {
+    @adjustBrightness: lighten(@color-setting, 30% - @bg-light);
+    @adjust-welcome-color:lighten(@color-setting, 15% - @bg-light);
+    @adjust-text-color: lighten(@color-setting, 10%);
+}
+.mmm() when (@bg-light > 30%) {
+    @adjustBrightness: @color-setting;
+      @adjust-welcome-color: darken(@color-setting, 10%);
+      @adjust-text-color: @color-setting;
+}
+
+.mmm() when (@bg-light > 70%) {
+      @adjust-text-color: darken(@color-setting, 20%);
+}
+
+@sideOpposite:         @adjustBrightness;
+@Welcome-color:    @adjust-welcome-color;
+@adjusted-text-color: @adjust-text-color;
+/*------adjusts-accent-color-end---*/
+
+
 /*---added-variables---*/
+@darken-accent-color: darken(desaturate(@sideOpposite, 75%), 60%);
 @white: white;
 @text-hover: #ccdad1;
 @text-suggestion: #98C1D9;
@@ -28,6 +55,9 @@
 @highlight-border: 1px solid black;
 @atom-text: darkcyan;
 @cyan: darkcyan;
+@secondAccent: rgba(197, 196, 124, 1);
+@complimentary: spin(@sideOpposite, 250);
+@complimentary2: spin(@sideOpposite, 285);
 
 //--added-fonts--//
 @font-family-default: '.SFNSText-Regular', 'SF UI Text', 'Lucida Grande', 'Segoe UI', Ubuntu, Cantarell, sans-serif;
@@ -35,11 +65,18 @@
 /*---added-variables-end--*/
 
 
+
+
 /*---Text-Colors----*/
 // @text-color:           #8a948e;
-@text-color: darken(@saturate, 5%);
-@saturate: saturate(@color-setting, -37%);
+@new-text-color: boolean(@sat > 50%);
+@sat: saturation(@background-color-selected);
+@text-color1: desaturate(@adjusted-text-color, @sat/1.2);
+@text-color: lighten(@text-color1, 5%);
+@111text-color: darken(@saturate, 5%);
+@saturate: saturate(@sideOpposite, -37%);
 @text-color-subtle:    #667272;
+@text-color-subtle:   darken(desaturate(@adjusted-text-color, 90%), 20%);
 @text-color-highlight: #13161b;
 @text-color-selected:  #1e222b;
 @text-color-info:    @text-suggestion;
@@ -54,8 +91,9 @@
 @background-color-success:  @cyan;
 @background-color-warning: hsl(32,   60%, 50%);
 @background-color-error:   hsl(0,    70%, 50%);
-@background-color-highlight: @color-setting;
-@background-color-selected:  @color-setting;
+@background-color-highlight: @sideOpposite;
+@background-color-selected:  @sideOpposite;
+
 // @background-color-highlight: #c5c47c;
 // @background-color-selected:  #c5c47c;
 @test2:  @background-color-selected;
