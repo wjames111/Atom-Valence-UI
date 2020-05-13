@@ -64,20 +64,23 @@ tabs.--
   }
   .tab {
     font-size: @font-size;
-    margin-top:0.833rem;
+    margin-top: 0.833rem;
     padding-left: 0rem;
-    padding-right:0rem;
+    padding-right: 0rem;
     height: @tab-height;
-    display:flex;
-    flex-direction:column;
+    display: flex;
+    flex-direction: column;
     &:hover, &.active {
-      color:@text-hover;
+      color: @text-hover;
     }
     &.active {
       .animations-enabled__active & {
       transition: background-color 0.45s 0.2s;
     }
       border-radius:8px 8px 0 0;
+      border-left: 1px solid @project-panel-background;
+      border-top: 1px solid @project-panel-background;
+      border-right: 1px solid @project-panel-background;
       background-color: lighten(@tab-bar-background-color, 5.2%);
     }
     .close-icon {
@@ -118,13 +121,31 @@ tabs.--
 
 
 /*------THEME_SETTING:Toggleable-tab-bar-(default=OFF)----*/
-.tab-bar__active .tab-bar {
-  .animations-enabled__active & {
-  transition: height 0.25s;
+.animations-enabled__active.tab-bar__active .tab-bar {
+  transition: height 0.25s ;
+  &:after {
+    background-color: @project-panel-background;
+    transition: height 0.25s;
+  }
 }
-  height:0.9rem;
+
+.tab-bar__active .tab-bar {
+  height: 0.6rem;
+  &:after {
+    content: "";
+    position: absolute;
+    display: block;
+    z-index: 1000;
+    top: 0%;
+    height: 1rem;
+    width: 100%;
+  }
   &:hover {
-    height:4rem;
+    height: 4rem;
+    &:after{
+      content: "";
+      height: 0.1rem;
+    }
   }
 }
 /*------Toggleable-tab-bar-end----*/

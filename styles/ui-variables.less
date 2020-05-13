@@ -56,8 +56,8 @@
 @atom-text: darkcyan;
 @cyan: darkcyan;
 @secondAccent: rgba(197, 196, 124, 1);
-@complimentary: spin(@sideOpposite, 250);
-@complimentary2: spin(@sideOpposite, 285);
+@complimentary: spin(@sideOpposite, -(360 / 3));
+@complimentary2: spin(@complimentary, (360 / 3));
 
 //--added-fonts--//
 @font-family-default: '.SFNSText-Regular', 'SF UI Text', 'Lucida Grande', 'Segoe UI', Ubuntu, Cantarell, sans-serif;
@@ -151,7 +151,7 @@
 @component-icon-padding: 0.4rem;
 @component-icon-size: 1.2rem;
 @component-line-height: 2rem;
-@tab-height: 3.2rem;
+@tab-height: 3.3rem;
 /*--Sizes-end--*/
 
 

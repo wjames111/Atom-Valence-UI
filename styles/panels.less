@@ -54,23 +54,35 @@
 //      background: linear-gradient(117deg, rgba(119,57,249,0.3) 0%, rgba(210,17,255,0.3) 29%, rgba(106,248,250,0.3) 78%, rgba(73,176,177,0.3) 96%) !important;
 //    }
 
-   .config-menu {
-      font-size:1rem;
-        //--options--//
-        li a {
-          color: lighten(@text-color, 10%);
-        }
-        button.btn.btn-default {
-          background: rgb(119,57,249);
-          background: linear-gradient(117deg, fade(@sideOpposite, 30%) 0%, rgba(210,17,255,0.3) 45%, fade(@complimentary, 30%) 78%, fade(@complimentary2, 45%) 96%) !important;
-          color: lighten(@text-color, 10%);
-        }
-        background: rgb(119,57,249);
-        background: linear-gradient(117deg, fade(@sideOpposite, 30%) 0%, rgba(210,17,255,0.3) 45%, fade(@complimentary, 30%) 78%, fade(@complimentary2, 45%) 96%) !important;
+.config-menu {
+  font-size:1rem;
+  //--options--//
+  li a {
+    color: lighten(@text-color, 10%);
+  }
+  button.btn.btn-default {
+    font-size: 90%;
+    background: rgb(119,57,249);
+    background: linear-gradient(117deg, fade(@sideOpposite, 25%) 0%, rgba(210,17,255,0.3) 40%, fade(@complimentary, 30%) 60%, fade(@complimentary2, 45%) 96%) !important;
+    color: lighten(@text-color, 30%);
+    &:hover {
+      background: @background-color-selected !important;
+      color: @project-panel-background;
+    }
+    .settings-panel-color__active & {
+      background: @button-background-color !important;
+      color: darken(@text-color, 5%);
+      &:hover {
+        color: @text-color-highlight;
+        background: @sideOpposite !important;
       }
+    }
+  }
+  background: rgb(119,57,249);
+  background: linear-gradient(117deg, fade(@sideOpposite, 25%) 0%, rgba(210,17,255,0.3) 40%, fade(@complimentary, 30%) 60%, fade(@complimentary2, 45%) 96%) !important;
+}
 
-
-
+//--if panel color setting toggled on return to normal--//
 .settings-panel-color__active .config-menu {
     background: @tab-bar-background-color !important;
     button.btn.btn-default {
@@ -80,19 +92,15 @@
 
 .settings-view .config-menu {
   .animations-enabled__active & {
-  transition: all 0.2s;
-}
+    transition: all 0.2s;
+  }
   padding-top: 0;
   opacity: 1;
-  border-right: none;
+  border-right: 1px solid @project-panel-background;
   ul.panels-menu.nav.nav-pills.nav-stacked > li a {
     // color: @text-hover !important; //--optional--//
     padding-top: 1.5rem; //increases setting tabs height
     padding-bottom: 1.5rem; //increases setting tabs height
-    &:hover{
-      color: @text-hover;
-      background-color: @project-panel-background;
-    }
     &:active {
       background-color: transparent;
       color: @project-panel-background;
@@ -100,7 +108,16 @@
   }
   //--adds different hover affect for active tabs--//
   ul.panels-menu.nav.nav-pills.nav-stacked li.active a:hover {
-    background-color: mix(@sideOpposite, @project-panel-background);
+    background: mix(@sideOpposite, @project-panel-background);
+  }
+}
+
+ul.panels-menu.nav.nav-pills.nav-stacked > li a:hover {
+  color: white;
+  background: rgb(119,57,249);
+  background: linear-gradient(117deg, fade(@sideOpposite, 25%) 0%, rgba(210,17,255,0.3) 40%, fade(@complimentary, 30%) 60%, fade(@complimentary2, 45%) 96%);
+  .settings-panel-color__active & { //--if panel color setting toggled on return to normal--//
+    background: @project-panel-background;
   }
 }
 /*----settings-menu-panel-end----*/
