@@ -78,7 +78,10 @@ summary.welcome-summary.icon:before {
 
   .medium-red:before {
     color: @text-edited;
-    opacity: 0.3;
+    opacity: 0.5;
+    .tab-bar & {
+      opacity: 0.8;
+    }
     .selected > & {
       opacity: 1;
       color: @text-color-selected;
@@ -86,7 +89,10 @@ summary.welcome-summary.icon:before {
   }
   .medium-blue:before {
   color: @text-suggestion;
-  opacity: 0.3;
+  opacity: 0.5;
+  .tab-bar & {
+    opacity: 0.8;
+  }
   .selected > & {
     opacity: 1;
     color: @text-color-selected;
@@ -94,7 +100,10 @@ summary.welcome-summary.icon:before {
   }
   .medium-green:before, .medium-cyan:before, .dark-cyan:before {
     color: @cyan;
-    opacity: 0.3;
+    opacity: 0.5;
+    .tab-bar & {
+      opacity: 0.8;
+    }
     .selected > & {
       opacity: 1;
       color: @text-color-selected;
@@ -103,7 +112,10 @@ summary.welcome-summary.icon:before {
 
   .medium-yellow:before {
     color: @background-color-selected;
-    opacity: 0.3;
+    opacity: 0.5;
+    .tab-bar & {
+      opacity: 0.8;
+    }
     .selected > & {
       opacity: 1;
       color: @text-color-selected;
@@ -112,7 +124,10 @@ summary.welcome-summary.icon:before {
 
   .dark-blue:before {
     color: darken(@text-suggestion, 40%);
-    opacity: 0.3;
+    opacity: 0.5;
+    .tab-bar & {
+      opacity: 0.8;
+    }
     .selected > & {
       opacity: 1;
       color: @text-color-selected;

@@ -48,7 +48,7 @@
 @text-edited: #d56f3e;
 @project-panel-background: #191c22;
 @welcome-page-color: #22262f;
-@folder-open-text:darken(#98C1D9, 5%);
+@folder-open-text: darken(@text-suggestion, 5%);
 @find-replace-button-text: #191c22;
 @similar-background: #282f3a;
 @dark-yellow: #46473a;
@@ -58,6 +58,7 @@
 @secondAccent: rgba(197, 196, 124, 1);
 @complimentary: spin(@sideOpposite, -(360 / 3));
 @complimentary2: spin(@complimentary, (360 / 3));
+
 
 //--added-fonts--//
 @font-family-default: '.SFNSText-Regular', 'SF UI Text', 'Lucida Grande', 'Segoe UI', Ubuntu, Cantarell, sans-serif;
@@ -71,8 +72,8 @@
 // @text-color:           #8a948e;
 @new-text-color: boolean(@sat > 50%);
 @sat: saturation(@background-color-selected);
-@text-color1: desaturate(@adjusted-text-color, @sat/1.2);
-@text-color: lighten(@text-color1, 5%);
+@text-color1: desaturate(@adjusted-text-color, @sat/1.1);
+@text-color: darken(@text-color1, 15%);
 @111text-color: darken(@saturate, 5%);
 @saturate: saturate(@sideOpposite, -37%);
 @text-color-subtle:    #667272;
@@ -87,7 +88,7 @@
 
 
 /*--Background-colors--*/
-@background-color-info:   #98C1D9;
+@background-color-info:   @text-suggestion;
 @background-color-success:  @cyan;
 @background-color-warning: hsl(32,   60%, 50%);
 @background-color-error:   hsl(0,    70%, 50%);

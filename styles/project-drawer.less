@@ -54,8 +54,11 @@ project drawer.--
   .header.list-item.project-root-header {
     //********* add foggy glass affect *********/
     //**************************************/
+    position: static;
     color: @test2;
+    .project-tab_sticky__active & {
     position: sticky;
+    }
     width: 100%;
     border-top: 0.5rem solid rgba(25, 28, 35, 1);
     background-color: rgba(25, 28, 35, 0.68);

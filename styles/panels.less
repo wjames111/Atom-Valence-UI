@@ -58,13 +58,16 @@
   font-size:1rem;
   //--options--//
   li a {
-    color: lighten(@text-color, 10%);
+    color: lighten(@text-color, 30%);
   }
   button.btn.btn-default {
     font-size: 90%;
     background: rgb(119,57,249);
-    background: linear-gradient(117deg, fade(@sideOpposite, 25%) 0%, rgba(210,17,255,0.3) 40%, fade(@complimentary, 30%) 60%, fade(@complimentary2, 45%) 96%) !important;
-    color: lighten(@text-color, 30%);
+    background: linear-gradient(117deg, fade(@sideOpposite, 15%) 0%, rgba(210,17,255,0.15) 40%, fade(@complimentary, 15%) 60%, fade(@complimentary2, 20%) 96%) !important;
+    color: lighten(@text-color, 40%);
+    -webkit-box-shadow:  -1px 5px 9px 0px rgba(0,0,0,0.2);
+      -moz-box-shadow:  -1px 5px 9px 0px rgba(0,0,0,0.2);
+      box-shadow:  -1px 5px 9px 0px rgba(0,0,0,0.2);
     &:hover {
       background: @background-color-selected !important;
       color: @project-panel-background;
@@ -79,7 +82,7 @@
     }
   }
   background: rgb(119,57,249);
-  background: linear-gradient(117deg, fade(@sideOpposite, 25%) 0%, rgba(210,17,255,0.3) 40%, fade(@complimentary, 30%) 60%, fade(@complimentary2, 45%) 96%) !important;
+  background: linear-gradient(117deg, fade(@sideOpposite, 20%) 0%, rgba(210,17,255,0.2) 40%, fade(@complimentary, 20%) 60%, fade(@complimentary2, 30%) 96%) !important;
 }
 
 //--if panel color setting toggled on return to normal--//
