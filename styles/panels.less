@@ -63,11 +63,14 @@
   button.btn.btn-default {
     font-size: 90%;
     background: rgb(119,57,249);
-    background: linear-gradient(117deg, fade(@sideOpposite, 15%) 0%, rgba(210,17,255,0.15) 40%, fade(@complimentary, 15%) 60%, fade(@complimentary2, 20%) 96%) !important;
+    background: linear-gradient(117deg, fade(@accentColor, 40%) 0%, rgba(210,17,255,0.4) 40%, fade(@complimentary, 40%) 60%, fade(@complimentary2, 45%) 96%) !important;
     color: lighten(@text-color, 40%);
-    -webkit-box-shadow:  -1px 5px 9px 0px rgba(0,0,0,0.2);
-      -moz-box-shadow:  -1px 5px 9px 0px rgba(0,0,0,0.2);
-      box-shadow:  -1px 5px 9px 0px rgba(0,0,0,0.2);
+    -webkit-box-shadow:  -1px 5px 9px 0px rgba(0,0,0,0.1);
+      -moz-box-shadow:  -1px 5px 9px 0px rgba(0,0,0,0.1);
+      box-shadow:  -1px 5px 9px 0px rgba(0,0,0,0.1);
+    .settings-panel-color__active & {
+      box-shadow: none;
+    }
     &:hover {
       background: @background-color-selected !important;
       color: @project-panel-background;
@@ -77,12 +80,12 @@
       color: darken(@text-color, 5%);
       &:hover {
         color: @text-color-highlight;
-        background: @sideOpposite !important;
+        background: @accentColor !important;
       }
     }
   }
   background: rgb(119,57,249);
-  background: linear-gradient(117deg, fade(@sideOpposite, 20%) 0%, rgba(210,17,255,0.2) 40%, fade(@complimentary, 20%) 60%, fade(@complimentary2, 30%) 96%) !important;
+  background: linear-gradient(117deg, fade(@accentColor, 40%) 0%, rgba(210,17,255,0.4) 40%, fade(@complimentary, 40%) 60%, fade(@complimentary2, 60%) 96%) !important;
 }
 
 //--if panel color setting toggled on return to normal--//
@@ -111,14 +114,14 @@
   }
   //--adds different hover affect for active tabs--//
   ul.panels-menu.nav.nav-pills.nav-stacked li.active a:hover {
-    background: mix(@sideOpposite, @project-panel-background);
+    background: mix(@accentColor, @project-panel-background);
   }
 }
 
 ul.panels-menu.nav.nav-pills.nav-stacked > li a:hover {
   color: white;
   background: rgb(119,57,249);
-  background: linear-gradient(117deg, fade(@sideOpposite, 25%) 0%, rgba(210,17,255,0.3) 40%, fade(@complimentary, 30%) 60%, fade(@complimentary2, 45%) 96%);
+  background: linear-gradient(117deg, fade(@accentColor, 25%) 0%, rgba(210,17,255,0.3) 40%, fade(@complimentary, 30%) 60%, fade(@complimentary2, 45%) 96%);
   .settings-panel-color__active & { //--if panel color setting toggled on return to normal--//
     background: @project-panel-background;
   }

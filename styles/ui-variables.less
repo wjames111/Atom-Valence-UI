@@ -18,11 +18,12 @@
 /*------adjusts-accent-color----*/
 //when too dark
 @bg-light: lightness(@color-setting);
+
 .mmm();
 .mmm() when (@bg-light < 31%) {
     @adjustBrightness: lighten(@color-setting, 30% - @bg-light);
     @adjust-welcome-color:lighten(@color-setting, 15% - @bg-light);
-    @adjust-text-color: lighten(@color-setting, 10%);
+    @adjust-text-color: lighten(@adjustBrightness, 10%);
 }
 .mmm() when (@bg-light > 30%) {
     @adjustBrightness: @color-setting;
@@ -34,29 +35,40 @@
       @adjust-text-color: darken(@color-setting, 20%);
 }
 
-@sideOpposite:         @adjustBrightness;
+@accentBrightness:         @adjustBrightness;
 @Welcome-color:    @adjust-welcome-color;
 @adjusted-text-color: @adjust-text-color;
 /*------adjusts-accent-color-end---*/
 
 
+/*----check-saturation---*/
+@bg-saturation: saturation(@accentBrightness);
+.sat-check();
+.sat-check() when (@bg-saturation < 81%) {
+  @adjustSaturation: @accentBrightness;
+}
+.sat-check() when (@bg-saturation > 80%) {
+        @adjustSaturation: desaturate(@accentBrightness, @bg-saturation - 80%);
+}
+@accentColor: @adjustSaturation;
+@textSaturation: desaturate(@accentBrightness, @bg-saturation - 5%);
+@textBrightness: lightness(@textSaturation);
+@textFinal: darken(@textSaturation, @textBrightness - 46%);
+/*----check-saturation---*/
+
+
 /*---added-variables---*/
-@darken-accent-color: darken(desaturate(@sideOpposite, 75%), 60%);
 @white: white;
 @text-hover: #ccdad1;
 @text-suggestion: #98C1D9;
 @text-edited: #d56f3e;
 @project-panel-background: #191c22;
-@welcome-page-color: #22262f;
 @folder-open-text: darken(@text-suggestion, 5%);
 @find-replace-button-text: #191c22;
 @similar-background: #282f3a;
-@dark-yellow: #46473a;
 @highlight-border: 1px solid black;
 @atom-text: darkcyan;
-@cyan: darkcyan;
-@secondAccent: rgba(197, 196, 124, 1);
-@complimentary: spin(@sideOpposite, -(360 / 3));
+@complimentary: spin(@accentColor, -(360 / 3));
 @complimentary2: spin(@complimentary, (360 / 3));
 
 
@@ -66,18 +78,12 @@
 /*---added-variables-end--*/
 
 
-
-
 /*---Text-Colors----*/
-// @text-color:           #8a948e;
-@new-text-color: boolean(@sat > 50%);
-@sat: saturation(@background-color-selected);
-@text-color1: desaturate(@adjusted-text-color, @sat/1.1);
-@text-color: darken(@text-color1, 15%);
+@sat: saturation(@accentBrightness);
+@text-color: @textFinal;
 @111text-color: darken(@saturate, 5%);
-@saturate: saturate(@sideOpposite, -37%);
-@text-color-subtle:    #667272;
-@text-color-subtle:   darken(desaturate(@adjusted-text-color, 90%), 20%);
+@saturate: saturate(@accentColor, -37%);
+@text-color-subtle:  darken(@textFinal, 10%);
 @text-color-highlight: #13161b;
 @text-color-selected:  #1e222b;
 @text-color-info:    @text-suggestion;
@@ -89,14 +95,11 @@
 
 /*--Background-colors--*/
 @background-color-info:   @text-suggestion;
-@background-color-success:  @cyan;
+@background-color-success:  @atom-text;
 @background-color-warning: hsl(32,   60%, 50%);
 @background-color-error:   hsl(0,    70%, 50%);
-@background-color-highlight: @sideOpposite;
-@background-color-selected:  @sideOpposite;
-
-// @background-color-highlight: #c5c47c;
-// @background-color-selected:  #c5c47c;
+@background-color-highlight: @accentColor;
+@background-color-selected:  @accentColor;
 @test2:  @background-color-selected;
 @app-background-color:       darken(@base-background-color, 2%);
 /*--Background-colors--*/
