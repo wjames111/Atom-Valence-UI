@@ -58,13 +58,13 @@
 /*---added-variables---*/
 //--text-variabes-//
 @text-hover:               #ccdad1;
+@text-hover-bright:        white;
 @text-suggestion:          #98C1D9;
 @text-edited:              #d56f3e;
-@folder-open-text:         darken(@text-suggestion, 5%);
+@text-open-folders:         darken(@text-suggestion, 5%);
 @find-replace-button-text: #191c22;
 
 @project-panel-background: #191c22;
-@white:                    white;
 @similar-background:       #282f3a;
 @highlight-border:         1px solid black;
 
@@ -110,7 +110,7 @@
 
 /*---Component-colors---*/
 @pane-item-background-color: @base-background-color;
-@pane-item-border-color: @white;
+@pane-item-border-color: @text-hover-bright;
 @input-background-color: @app-background-color;
 @input-border-color: @base-border-color;
 @tool-panel-background-color: transparent;
@@ -120,7 +120,7 @@
 @panel-heading-background-color: lighten(@base-background-color, 4%);
 @panel-heading-border-color: @base-border-color;
 @overlay-background-color: lighten(@base-background-color, 5%);
-@overlay-border-color: @white;
+@overlay-border-color: @text-hover-bright;
 @button-background-color: lighten(@base-background-color, 10%);
 @button-background-color-hover: lighten(@button-background-color, 12%);
 @button-background-color-selected: @button-background-color-hover;
