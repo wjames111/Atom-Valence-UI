@@ -17,7 +17,7 @@ tabs.--
 /*------Project-tab-(opens project-drawer)-------*/
 .atom-dock-content-wrapper.left {
   .panes li.tab.sortable.active {
-  background-color: @project-panel-background;
+  background-color: @background-project-drawer;
   border-radius: 0 8px 0 0;
     &:after {
     display:none;
@@ -34,7 +34,7 @@ tabs.--
   &::after {
     content: "";
     transform: scaleX(0);
-    background-color:@test2;
+    background-color:@background-main;
     height:2px;
   }
   &.active::after {
@@ -43,7 +43,7 @@ tabs.--
     .animations-enabled__active & {
     transition: transform 0.25s;
   }
-    background-color:@test2;
+    background-color:@background-main;
     transform: scaleX(1);
     height:2px;
   }
@@ -82,9 +82,9 @@ tabs.--
       transition: background-color 0.45s 0.2s;
     }
       border-radius:8px 8px 0 0;
-      border-left: 1px solid @project-panel-background;
-      border-top: 1px solid @project-panel-background;
-      border-right: 1px solid @project-panel-background;
+      border-left: 1px solid @background-project-drawer;
+      border-top: 1px solid @background-project-drawer;
+      border-right: 1px solid @background-project-drawer;
       background-color: lighten(@tab-bar-background-color, 5.2%);
     }
     .close-icon {
@@ -102,7 +102,7 @@ tabs.--
       top: 50%;
       right: @component-padding + 0.333rem; // 4px -> half of icon size
       margin-top: -0.25rem;
-      border-color: @text-color-info;
+      border-color: @background-color-info;
     }
   }
     //---Close Icon not modified (the X) ---//
@@ -128,7 +128,7 @@ tabs.--
 .animations-enabled__active.tab-bar__active .tab-bar {
   transition: height 0.25s ;
   &:after {
-    background-color: @project-panel-background;
+    background-color: @background-project-drawer;
     transition: height 0.25s;
   }
 }

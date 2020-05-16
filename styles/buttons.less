@@ -21,7 +21,7 @@
     &:hover,
     &:focus {
       color: @text-color-highlight;
-      background-color: @test2;
+      background-color: @background-main;
     }
   &:active {
     color: fade(@text-color-selected, 66%);
@@ -29,7 +29,7 @@
   }
   &.selected {
     color: @text-color-selected;
-    background-color: @test2;
+    background-color: @background-main;
   }
   &:focus,
   &:focus:active {
@@ -68,8 +68,8 @@ margin-right: 0.2rem;
   font-size: 1.2rem;
   &:hover,
   &:focus {
-    background-color: @background-color-selected;
-    color: @project-panel-background;
+    background-color: @background-main;
+    color: @background-project-drawer;
   }
 
   &:active {
@@ -99,7 +99,7 @@ margin-right: 0.2rem;
   background-color: darken(@button-background-color, 2%);
   &:hover {
     color: @text-color-highlight;
-    background-color: @test2;
+    background-color: @background-main;
   }
 }
 
@@ -112,7 +112,7 @@ margin-right: 0.2rem;
 
 /*---drawer-handle-button---*/
 .atom-dock-toggle-button-inner {
-  color:@text-suggestion;
+  color:@background-color-info;
   &:hover {
     color: @text-edited;
   }
@@ -123,7 +123,7 @@ margin-right: 0.2rem;
     transition:all 0.25s;
   }
   &:hover {
-    border: 1px solid @white;
+    border: 1px solid @text-hover-bright;
 
   }
 }
@@ -133,12 +133,12 @@ margin-right: 0.2rem;
 //--displays when all packages updated--//
 .alert.alert-info.icon.icon-heart {
 color: @background-color-success;
-background-color: @similar-background;
+background-color: @background-color-lighter;
 }
 
 button.btn.btn-default.selected {
-background-color: @test2;
-color: @project-panel-background;
+background-color: @background-main;
+color: @background-project-drawer;
 }
 
 .select-container button.btn.icon.icon-gear{
@@ -147,7 +147,7 @@ color: @project-panel-background;
   padding-top:1.5rem;
 }
   &:hover {
-    color: @background-color-selected !important;
+    color: @background-main !important;
   }
 }
 
@@ -161,10 +161,10 @@ select.form-control {
   font-size: 1.2rem;
   height: 3rem;
   background-color: transparent !important;
-  border-bottom: 2px solid @background-color-selected !important;
+  border-bottom: 2px solid @background-main !important;
   box-shadow: none !important;
   &:focus {
-    background-color: lighten(@similar-background, 1%) !important;
+    background-color: lighten(@background-color-lighter, 1%) !important;
   }
 }
 
@@ -183,7 +183,7 @@ atom-text-editor.editor.mini{
   overflow: visible;
   font-size: 1.2rem;
   &.is-focused {
-    background-color: lighten(@project-panel-background, 1%);
+    background-color: lighten(@background-project-drawer, 1%);
   }
 }
 
@@ -191,16 +191,13 @@ atom-text-editor[mini],  {
   padding-left: @component-padding/2;
   color: @text-color;
   border-radius: 5px;
-  background-color: @input-background-color;
-
+  background-color: @app-background-color;
   &.is-focused {
-    background-color: darken(@input-background-color, 5%);
+    background-color: darken(@app-background-color, 5%);
+    border: 1px solid darken(@app-background-color, 5%);
   }
-
   .placeholder-text {
     color: @text-color-subtle;
-  }
-  .selection .region {
   }
 }
 /*--settings-input/select-end--*/

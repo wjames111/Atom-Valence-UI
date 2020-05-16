@@ -18,18 +18,18 @@
 
 /*------adjusts-accent-color----*/
 @ac-light: lightness(@color-setting);
-.mmm();
-.mmm() when (@ac-light < 31%) {
+.bright-check();
+.bright-check() when (@ac-light < 31%) {
   @adjust-accent-brightness:  lighten(@color-setting, 30% - @ac-light);
   @adjust-welcome-brightness: lighten(@color-setting, 15% - @ac-light);
   @adjust-text-brightness:    lighten(@adjust-accent-brightness, 10%);
 }
-.mmm() when (@ac-light > 30%) {
+.bright-check() when (@ac-light > 30%) {
   @adjust-accent-brightness:  @color-setting;
   @adjust-welcome-brightness: darken(@color-setting, 10%);
   @adjust-text-brightness:    @color-setting;
 }
-.mmm() when (@ac-light > 70%) {
+.bright-check() when (@ac-light > 70%) {
   @adjust-text-brightness:    darken(@color-setting, 20%);
 }
 @accentBrightness: @adjust-accent-brightness;
@@ -55,84 +55,85 @@
 
 
 
-/*---added-variables---*/
-//--text-variabes-//
-@text-hover:                #ccdad1;
-@text-hover-bright:         white;
-@text-edited:               #d56f3e;
-@text-open-folders:         darken(@background-color-info, 5%);
-@text-find-replace-buttons: #191c22;
-
-@project-panel-background:  #191c22;
-@similar-background:        #282f3a;
-@highlight-border:          1px solid black;
-
-//--settings-panel-gradient--//
+/*--settings-panel-gradient--*/
 @complimentary:             spin(@accentColor, -(360 / 3));
 @complimentary2:            spin(@complimentary, (360 / 3));
+/*--settings-panel-gradient-end-*/
 
-//--added-fonts--//
+
+
+/*--fonts--*/
 @font-family-default: '.SFNSText-Regular', 'SF UI Text', 'Lucida Grande', 'Segoe UI', Ubuntu, Cantarell, sans-serif;
 @font-family-light:   Gotham, Roboto, "Lucida Grande", "Segoe UI", Ubuntu, Cantarell, sans-serif;
-/*---added-variables-end--*/
+@font-family:         @font-family-light;
+/*--fonts-end-*/
 
 
 
 /*---Text-Colors----*/
+@text-hover:                #ccdad1;  // seafoam green
+@text-hover-bright:         white;
+@text-edited:               #d56f3e;  // orange
+@text-open-folders:         darken(@background-color-info, 5%);
+@text-find-replace-buttons: #191c22;  // darker blue
 @text-color-subtle:         darken(@text-color, 10%);
 @atom-text:                 darkcyan;
-@text-color-highlight:      #13161b;
-@text-color-selected:       #1e222b;
-@text-color-success:        hsl(140,  44%, 62%);
-@text-color-warning:        hsl( 36,  60%, 72%);
-@text-color-error:          hsl(  9, 100%, 64%);
+@text-color-highlight:      #13161b;  // black
+@text-color-selected:       #1e222b;  // darkest blue
+@text-color-success:        hsl(140,  44%, 62%);  // teal-green
+@text-color-warning:        hsl( 36,  60%, 72%);  // tan
+@text-color-error:          hsl(  9, 100%, 64%);  // orange-red
 /*---Text-Colors-end---*/
 
 
 
 /*--Background-colors--*/
-@background-color-info:     #98C1D9;
+@background-project-drawer: #191c22;  // darker blue
+@background-color-lighter:  #282f3a;  // dark blue lighter
+@background-color-info:     #98C1D9;  // baby blue
 @background-color-success:  darkcyan;
-@background-color-warning:  hsl(32, 60%, 50%);
-@background-color-error:    hsl(0,  70%, 50%);
-@background-color-highlight:@accentColor;
-@background-color-selected: @accentColor;
+@background-color-warning:  hsl(32, 60%, 50%);  // deep sky blue
+@background-color-error:    hsl(0,  70%, 50%);  // red
 @background-main:           @accentColor;
+@background-color-selected: @accentColor;
 @app-background-color:      darken(@base-background-color, 2%);
 /*--Background-colors--*/
 
 
+
 /*----Base-colors----*/
-@base-background-color: #212630;
+@base-background-color: #212630;    // dark blue
 @base-border-color:     transparent;
 /*--Base-colors-end--*/
 
 
+
+/*---border-colors---*/
+@highlight-border:                  1px solid black;
+@tool-panel-border-color:           @base-border-color;
+@inset-panel-border-color:          @base-border-color;
+@panel-heading-border-color:        @base-border-color;
+@button-border-color:               @base-border-color;
+@tab-bar-border-color:              @base-border-color;
+@tab-border-color:                  @base-border-color;
+@tree-view-border-color:            @base-border-color;
+/*---border-colors-end--*/
+
+
+
 /*---Component-colors---*/
-@pane-item-background-color: @base-background-color;
-@pane-item-border-color: @text-hover-bright;
-@input-background-color: @app-background-color;
-@input-border-color: @base-border-color;
-@tool-panel-background-color: transparent;
-@tool-panel-border-color: @base-border-color;
-@inset-panel-background-color: lighten(@base-background-color, 4%);
-@inset-panel-border-color: @base-border-color;
-@panel-heading-background-color: lighten(@base-background-color, 4%);
-@panel-heading-border-color: @base-border-color;
-@overlay-background-color: lighten(@base-background-color, 5%);
-@overlay-border-color: @text-hover-bright;
-@button-background-color: lighten(@base-background-color, 10%);
-@button-background-color-hover: lighten(@button-background-color, 12%);
-@button-background-color-selected: @button-background-color-hover;
-@button-border-color: @base-border-color;
-@tab-bar-background-color: lighten(@project-panel-background, 3%);
-@tab-bar-border-color: @base-border-color;
-@tab-background-color: @tab-bar-background-color;
-@tab-background-color-active: lighten(@tab-bar-background-color, 10%);
-@tab-border-color: @base-border-color;
-@tree-view-background-color: @project-panel-background;
-@tree-view-border-color: @base-border-color;
+@panel-heading-background-color:    lighten(@base-background-color, 4%);
+@overlay-background-color:          lighten(@base-background-color, 5%);
+@button-background-color:           lighten(@base-background-color, 10%);
+@button-background-color-hover:     lighten(@button-background-color, 12%);
+@tab-background-color:              @tab-bar-background-color;
+@tab-background-color-active:       lighten(@tab-bar-background-color, 10%);
+@button-background-color-selected:  @button-background-color-hover;
+@tree-view-background-color:        @background-project-drawer;
+@tab-bar-background-color:          lighten(@background-project-drawer, 3%);
+@tool-panel-background-color:       transparent;
 /*---Component-colors-end--*/
+
 
 
 /*----Site-colors---*/
@@ -144,19 +145,14 @@
 /*----Site-colors---*/
 
 
+
 /*--Sizes--*/
-@font-size: 1rem;
-@input-font-size: 1.1rem;
-@disclosure-arrow-size: 1rem;
-@component-padding: 0.9rem;
-@component-icon-padding: 0.4rem;
-@component-icon-size: 1.2rem;
-@component-line-height: 2rem;
-@tab-height: 3.3rem;
-/*--Sizes-end--*/
-
-
-/*---Misc--*/
+@font-size:               1rem;
+@input-font-size:         1.1rem;
+@component-padding:       0.9rem;
+@component-icon-padding:  0.4rem;
+@component-icon-size:     1.2rem;
+@component-line-height:   2rem;
+@tab-height:              3.3rem;
 @component-border-radius: 0.25rem;
-@font-family: @font-family-light;
-/*---Misc-end--*/
+/*--Sizes-end--*/

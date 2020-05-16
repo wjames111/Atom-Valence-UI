@@ -18,9 +18,9 @@
 }
 
 .inset-panel {
-  background-color: @inset-panel-background-color;
+  background-color: @panel-heading-background-color;
   .panel-heading {
-    background-color: lighten(@inset-panel-background-color, 4%);
+    background-color: lighten(@panel-heading-background-color, 4%);
   }
 }
 /*-----unsure-where-applies-end---*/
@@ -29,7 +29,7 @@
 
 /*-----THEME_SETTING: syntax-theme-overide (default=ON)-----*/
 .match-syntaxTheme__active atom-text-editor {
-  background-color: @similar-background;
+  background-color: @background-color-lighter;
 }
 .match-syntaxTheme__active .gutter.line-numbers {
   background-color: rgba(25,28,35,0.25);
@@ -72,8 +72,8 @@
       box-shadow: none;
     }
     &:hover {
-      background: @background-color-selected !important;
-      color: @project-panel-background;
+      background: @background-main !important;
+      color: @background-project-drawer;
     }
     .settings-panel-color__active & {
       background: @button-background-color !important;
@@ -102,19 +102,19 @@
   }
   padding-top: 0;
   opacity: 1;
-  border-right: 1px solid @project-panel-background;
+  border-right: 1px solid @background-project-drawer;
   ul.panels-menu.nav.nav-pills.nav-stacked > li a {
     // color: @text-hover !important; //--optional--//
     padding-top: 1.5rem; //increases setting tabs height
     padding-bottom: 1.5rem; //increases setting tabs height
     &:active {
       background-color: transparent;
-      color: @project-panel-background;
+      color: @background-project-drawer;
     }
   }
   //--adds different hover affect for active tabs--//
   ul.panels-menu.nav.nav-pills.nav-stacked li.active a:hover {
-    background: mix(@accentColor, @project-panel-background);
+    background: mix(@accentColor, @background-project-drawer);
   }
 }
 
@@ -123,7 +123,7 @@ ul.panels-menu.nav.nav-pills.nav-stacked > li a:hover {
   background: rgb(119,57,249);
   background: linear-gradient(117deg, fade(@accentColor, 25%) 0%, rgba(210,17,255,0.3) 40%, fade(@complimentary, 30%) 60%, fade(@complimentary2, 45%) 96%);
   .settings-panel-color__active & { //--if panel color setting toggled on return to normal--//
-    background: @project-panel-background;
+    background: @background-project-drawer;
   }
 }
 /*----settings-menu-panel-end----*/

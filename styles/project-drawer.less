@@ -55,7 +55,7 @@ project drawer.--
     //********* add foggy glass affect *********/
     //**************************************/
     position: static;
-    color: @test2;
+    color: @background-main;
     .project-tab_sticky__active & {
     position: sticky;
     }
@@ -116,7 +116,7 @@ ol.entries.list-tree{
       padding-bottom:0rem;
     }
     &.expanded{
-      color:@folder-open-text;
+      color:@text-open-folders;
       border-radius:8px;
     }
   }
@@ -138,7 +138,7 @@ ol.entries.list-tree{
     &.expanded{
       width:100%;
       overflow-x:hidden;
-      color:@folder-open-text;
+      color:@text-open-folders;
       margin-right:-0.65rem;
       padding-right:0.65rem;
       border-radius:8px;
@@ -175,19 +175,19 @@ ol.entries.list-tree{
 .list-item.selected, .list-nested-item.selected {
   color: #212630 !important;
   &.edited, .edited, &.modified, .modified, &.status-modified, .status-modified{
-    color: @test2 !important;
+    color: @background-main !important;
   }
 }
 
 //--selected, hover + modified files--//
  li.file.entry.list-item.status-modified.selected {
-  color: @project-panel-background !important;
+  color: @background-project-drawer !important;
   & span {
-    background-color: @test2;
+    background-color: @background-main;
     &:hover {
       transition: none;
       color: @text-hover;
-      background-color: fade(@background-color-selected, 25%);
+      background-color: fade(@background-main, 25%);
     }
   }
 }
@@ -195,14 +195,14 @@ ol.entries.list-tree{
 //--selected, hover + modified, expanded directories--//
 li.directory.entry.list-nested-item.status-modified {
   &.expanded {
-    color: @test2;
+    color: @background-main;
   }
   &.selected {
-    color: @project-panel-background !important;
+    color: @background-project-drawer !important;
     & > div {
-      background-color: @test2;
+      background-color: @background-main;
       &:hover {
-        background-color: fade(@background-color-selected, 25%);
+        background-color: fade(@background-main, 25%);
       }
     }
   }
@@ -217,7 +217,7 @@ li.file.entry.list-item.selected {
     .animations-enabled__active & {
     transition: background-color 0.2s;
   }
-    background-color: @text-suggestion;
+    background-color: @background-color-info;
     border-radius: 4px;
     &:hover {
       transition: none;
@@ -241,7 +241,7 @@ li.directory.entry.list-nested-item.selected {
     .animations-enabled__active & {
     transition: background-color 0.2s;
   }
-    background-color: @text-suggestion;
+    background-color: @background-color-info;
     border-radius: 4px;
     &:hover {
       transition: none;

@@ -21,7 +21,7 @@ please check text.less--
     padding: 0.75em;
     white-space: nowrap;
     max-width: none;
-    color: @similar-background;
+    color: @background-color-lighter;
   }
 
   .keystroke {
@@ -29,7 +29,7 @@ please check text.less--
     margin: 0 -0.3rem 0 0.25rem;
     border-radius: 4px;
     color: @text-edited;
-    background: @test2;
+    background: @background-main;
   }
 }
 /*----Overrides:-Bootstrap's-`.tooltip`-end-----*/
@@ -38,10 +38,10 @@ please check text.less--
 
 /*------text-cases--------*/
 .text-smaller { font-size: 0.9rem; }
-.status-modified { color: @background-color-selected;}
+.status-modified { color: @background-main;}
 .text-subtle { color: @text-color-subtle; }
 .text-highlight { color: @text-color-highlight; }
-.text-info { color: @text-color-info; }
+.text-info { color: @background-color-info; }
 .text-success { color: @text-color-success; }
 .text-warning { color: @text-color-warning; }
 .text-error { color: @text-color-error; }
@@ -50,7 +50,7 @@ please check text.less--
 
 
 /*------Highlights-------*/
-.highlight { .highlight-mixin(@background-color-highlight); }
+.highlight { .highlight-mixin(@background-main); }
 .highlight-info { .highlight-mixin(@background-color-info); }
 .highlight-warning { .highlight-mixin(@background-color-warning); }
 .highlight-error { .highlight-mixin(@background-color-error); }
@@ -68,7 +68,7 @@ please check text.less--
 /*------text-events-------*/
 .text-info {
     &:hover {
-        color: @text-color-info;
+        color: @background-color-info;
     }
 }
 
@@ -89,7 +89,7 @@ please check text.less--
 
 /*------text-code-------*/
 code {
-    background: @background-color-highlight;
+    background: @background-main;
     border-radius: @component-border-radius;
 }
 
@@ -102,9 +102,9 @@ code {
 
 /*-----theme-name-breadcrumb----*/
 ol.native-key-bindings.breadcrumb .active {
-  color: @background-color-selected;
+  color: @background-main;
   a {
-    color: @background-color-selected;
+    color: @background-main;
   }
 }
 /*-----theme-name-breadcrumb----*/
@@ -128,7 +128,7 @@ a.author {
   text-decoration: none !important;
   &:hover {
     text-decoration: none !important;
-    color: @background-color-selected !important;
+    color: @background-main !important;
   }
 }
 /*-----atom-author-style----*/

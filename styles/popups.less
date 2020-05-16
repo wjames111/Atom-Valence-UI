@@ -56,13 +56,14 @@ the current buffer or across the entire project.
   .input-block-item.input-block-item--flex.editor-container .editor.mini, atom-text-editor.editor.mini {
     background-color: rgba(204, 218, 209, 0.06);
     border-radius: 4px;
-    color: @text-color-info;
+    color: @background-color-info;
     padding: 0.9rem 1rem 0.7rem 1.5rem;
     border: 1px solid darken( @app-background-color, 2%);
     font-size: 1.2rem;
     height:3.5rem;
     &.is-focused {
       background-color: rgba(73, 86, 106, 0.3);
+        border: 1px solid black;
     }
   }
   .header{
@@ -100,7 +101,7 @@ atom-panel.tool-panel.panel-bottom.bottom {
   // padding:0;
   // background-color: rgba(73, 86, 106, 0.3);
   // border-radius: 4px;
-  // color: @text-color-info;
+  // color: @background-color-info;
   //   div:nth-child(-n+3) {
   //     background-color: transparent;
   //   }
