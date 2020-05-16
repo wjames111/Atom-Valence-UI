@@ -15,62 +15,62 @@
 -------contents-end-------*/
 
 
+
 /*------adjusts-accent-color----*/
-//when too dark
-@bg-light: lightness(@color-setting);
-
+@ac-light: lightness(@color-setting);
 .mmm();
-.mmm() when (@bg-light < 31%) {
-    @adjustBrightness: lighten(@color-setting, 30% - @bg-light);
-    @adjust-welcome-color:lighten(@color-setting, 15% - @bg-light);
-    @adjust-text-color: lighten(@adjustBrightness, 10%);
+.mmm() when (@ac-light < 31%) {
+  @adjust-accent-brightness:  lighten(@color-setting, 30% - @ac-light);
+  @adjust-welcome-brightness: lighten(@color-setting, 15% - @ac-light);
+  @adjust-text-brightness:    lighten(@adjust-accent-brightness, 10%);
 }
-.mmm() when (@bg-light > 30%) {
-    @adjustBrightness: @color-setting;
-      @adjust-welcome-color: darken(@color-setting, 10%);
-      @adjust-text-color: @color-setting;
+.mmm() when (@ac-light > 30%) {
+  @adjust-accent-brightness:  @color-setting;
+  @adjust-welcome-brightness: darken(@color-setting, 10%);
+  @adjust-text-brightness:    @color-setting;
 }
-
-.mmm() when (@bg-light > 70%) {
-      @adjust-text-color: darken(@color-setting, 20%);
+.mmm() when (@ac-light > 70%) {
+  @adjust-text-brightness:    darken(@color-setting, 20%);
 }
-
-@accentBrightness:         @adjustBrightness;
-@Welcome-color:    @adjust-welcome-color;
-@adjusted-text-color: @adjust-text-color;
+@accentBrightness: @adjust-accent-brightness;
+@Welcome-color:    @adjust-welcome-brightness;
 /*------adjusts-accent-color-end---*/
 
 
+
 /*----check-saturation---*/
-@bg-saturation: saturation(@accentBrightness);
+@ac-saturation: saturation(@accentBrightness);
 .sat-check();
-.sat-check() when (@bg-saturation < 81%) {
-  @adjustSaturation: @accentBrightness;
+.sat-check() when (@ac-saturation < 81%) {
+  @adjust-accent-saturation: @accentBrightness;
 }
-.sat-check() when (@bg-saturation > 80%) {
-        @adjustSaturation: desaturate(@accentBrightness, @bg-saturation - 80%);
+.sat-check() when (@ac-saturation > 80%) {
+  @adjust-accent-saturation: desaturate(@accentBrightness, @ac-saturation - 80%);
 }
-@accentColor: @adjustSaturation;
-@textSaturation: desaturate(@accentBrightness, @bg-saturation - 5%);
+@textSaturation: desaturate(@accentBrightness, @ac-saturation - 5%);
 @textBrightness: lightness(@textSaturation);
-@textFinal: darken(@textSaturation, @textBrightness - 46%);
+@text-color:     darken(@textSaturation, @textBrightness - 46%);
+@accentColor:    @adjust-accent-saturation;
 /*----check-saturation---*/
+
 
 
 /*---added-variables---*/
-@white: white;
-@text-hover: #ccdad1;
-@text-suggestion: #98C1D9;
-@text-edited: #d56f3e;
-@project-panel-background: #191c22;
-@folder-open-text: darken(@text-suggestion, 5%);
+//--text-variabes-//
+@text-hover:               #ccdad1;
+@text-suggestion:          #98C1D9;
+@text-edited:              #d56f3e;
+@text-folder-open:         darken(@text-suggestion, 5%);
 @find-replace-button-text: #191c22;
-@similar-background: #282f3a;
-@highlight-border: 1px solid black;
-@atom-text: darkcyan;
-@complimentary: spin(@accentColor, -(360 / 3));
-@complimentary2: spin(@complimentary, (360 / 3));
 
+@project-panel-background: #191c22;
+@white:                    white;
+@similar-background:       #282f3a;
+@highlight-border:         1px solid black;
+
+//--settings-panel-gradient--//
+@complimentary:            spin(@accentColor, -(360 / 3));
+@complimentary2:           spin(@complimentary, (360 / 3));
 
 //--added-fonts--//
 @font-family-default: '.SFNSText-Regular', 'SF UI Text', 'Lucida Grande', 'Segoe UI', Ubuntu, Cantarell, sans-serif;
@@ -79,11 +79,7 @@
 
 
 /*---Text-Colors----*/
-@sat: saturation(@accentBrightness);
-@text-color: @textFinal;
-@111text-color: darken(@saturate, 5%);
-@saturate: saturate(@accentColor, -37%);
-@text-color-subtle:  darken(@textFinal, 10%);
+@text-color-subtle:  darken(@text-color, 10%);
 @text-color-highlight: #13161b;
 @text-color-selected:  #1e222b;
 @text-color-info:    @text-suggestion;
@@ -95,7 +91,7 @@
 
 /*--Background-colors--*/
 @background-color-info:   @text-suggestion;
-@background-color-success:  @atom-text;
+@background-color-success:  darkcyan;
 @background-color-warning: hsl(32,   60%, 50%);
 @background-color-error:   hsl(0,    70%, 50%);
 @background-color-highlight: @accentColor;
