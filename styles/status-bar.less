@@ -10,26 +10,26 @@
 
 
 
-//--status-bar-container--//
+/*--status-bar-container--*/
 .status-bar {
   font-size: @font-size;
   background-color: @tab-bar-background-color;
 }
-//--status-bar-container-end--//
+/*--status-bar-container-end--*/
 
 
 
-//----bottom-status-bar-icon-placement--//
+/*----bottom-status-bar-icon-placement--*/
 .status-bar-right, .status-bar-left  {
   display: flex;
   align-items: center;
-  height: inherit;
-  flex-direction: row;
+  // height: inherit;
+  // flex-direction: row;
   & .inline-block, & a {
     &:hover {
-      text-decoration: none !important;
+      text-decoration: none;
       color: @text-hover;
     }
   }
 }
-//----bottom-status-bar-icon-placement-end--//
+/*----bottom-status-bar-icon-placement-end--*/

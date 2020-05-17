@@ -13,8 +13,8 @@ project drawer.--
 /*--------general----------*/
 //--expanded directory--//
 .expanded {
-  color: @text-open-folders;  //open folder color
-  border-radius: 4px;
+  // color: @text-open-folders;  //open folder color
+  // border-radius: 4px;
 }
 
 li.directory.entry.list-nested-item {
@@ -46,16 +46,10 @@ li.directory.entry.list-nested-item {
 
 
 /*------project-drawer-partition-----*/
-.atom-dock-resize-handle.left { //allows resizing of drawer
-  width: 1px;
-  background-color: darken( @app-background-color, 2%) ;
-}
-
-.atom-dock-resize-handle.right { //allows resizing of drawer
+.atom-dock-resize-handle.right, .atom-dock-resize-handle.left { //allows resizing of drawer
   width: 3px;
-  background-color: #1f232b ;
+  // background-color: #1f232b;
 }
-
 /*------project-drawer-partition-end--*/
 
 
@@ -69,36 +63,32 @@ li.directory.entry.list-nested-item {
     position: static;
     color: @background-main;
     .project-tab_sticky__active & {
-    position: sticky;
+      position: sticky;
     }
     width: 100%;
-    border-top: 0.5rem solid rgba(25, 28, 35, 1);
     background-color: rgba(25, 28, 35, 0.68);
     padding-top: 0.5rem;
-    // backdrop-filter: blur(1px);
     z-index: 100;
     top: -1px;
-    margin: 0;
     .name.icon {
-      margin-left:0.5rem;
+      margin-left: 1rem;
     }
     &:hover {
       color: @text-hover;
+      background-color: transparent;
     }
     &:after {
       content: "";
-      margin-top:-1px;
       display: block;
       position: absolute;
-      box-sizing:content-box;
-      border-top:1.1rem solid rgba(25, 28, 35, 0.68);
-      border-left:1rem solid rgba(25, 28, 35, 0.68);
-      border-right:1rem solid rgba(25, 28, 35, 0.68);
+      box-sizing: content-box;
+      border-top: 1.1rem solid rgba(25, 28, 35, 0.68);
+      border-left: 1rem solid rgba(25, 28, 35, 0.68);
+      border-right: 1rem solid rgba(25, 28, 35, 0.68);
       width: 100%;
-      margin-left:-12px;
-      background: transparent;
+      margin-left: -6.5%;
       height: 2rem;
-      pointer-events:none;
+      pointer-events: none;
       border-radius: 24px 24px 0 0;
     }
     &:before {
@@ -107,7 +97,7 @@ li.directory.entry.list-nested-item {
       position: absolute;
       backdrop-filter: blur(1px);
       width: 100%;
-      z-index:-10;
+      z-index: -10;
       height: 100%;
     }
   }
@@ -115,21 +105,23 @@ li.directory.entry.list-nested-item {
 
 li.directory.entry.list-nested-item.project-root.expanded > ol.entries.list-tree{
   &:first-of-type {
-    margin-top:0rem; //increases spacing below master directory
+    margin-top: 0rem; //increases spacing below master directory
+    .project-tab_sticky__active & {
+      margin-top: 0.5rem;
+    }
   }
 }
 
 //--nested folders/files--//
 ol.entries.list-tree{
   li {
-    padding-top:0.65rem;
-    padding-bottom:0.65rem;
+    padding: 0.65rem 0;
     .directory.entry.list-nested-item.expanded {
-      padding-bottom:0rem;
+      // padding-bottom: 0rem;
     }
     &.expanded{
-      color:@text-open-folders;
-      border-radius:8px;
+      // color: @text-open-folders;
+      // border-radius: 8px;
     }
   }
 }
@@ -137,7 +129,7 @@ ol.entries.list-tree{
 //-----adds spacing between 2 open directories---//
 .directory-highlight__active ol.entries.list-tree li.expanded {
   & ~ .expanded, &:nth-child(1){
-    margin-top:0.65rem;
+    margin-top: 0.65rem;
   }
 }
 /*------project-directory-structure-end---*/
@@ -148,29 +140,29 @@ ol.entries.list-tree{
 .directory-highlight__active ol.entries.list-tree{
   li {
     &.expanded{
-      width:100%;
-      overflow-x:hidden;
-      color:@text-open-folders;
-      margin-right:-0.65rem;
-      padding-right:0.65rem;
-      border-radius:8px;
-      background-color:  lighten(@tree-view-background-color, 1.5%);
+      width: 100%;
+      overflow-x: hidden;
+      color: @text-open-folders;
+      margin-right: -0.65rem;
+      padding-right: 0.65rem;
+      border-radius: 8px;
+      background-color: lighten(@tree-view-background-color, 1.5%);
       & .expanded{
-        margin-right:0.15rem;
-        padding-right:0.65rem;
-        background-color:  lighten(@tree-view-background-color, 3%);
+        margin-right: 0.15rem;
+        padding-right: 0.65rem;
+        background-color: lighten(@tree-view-background-color, 3%);
         & .expanded {
-          margin-right:0.15rem;
-          padding-right:0.65rem;
-          background-color:  lighten(@tree-view-background-color, 4%);
+          margin-right: 0.15rem;
+          padding-right: 0.65rem;
+          background-color: lighten(@tree-view-background-color, 4%);
           & .expanded{
-            margin-right:0.15rem;
-            padding-right:0.65rem;
-            background-color:  lighten(@tree-view-background-color, 5.5%);
+            margin-right: 0.15rem;
+            padding-right: 0.65rem;
+            background-color: lighten(@tree-view-background-color, 5.5%);
             & .expanded{
               margin-right: 0.15rem;
-              padding-right:0.65rem;
-              background-color:  lighten(@tree-view-background-color, 7%);
+              padding-right: 0.65rem;
+              background-color: lighten(@tree-view-background-color, 7%);
             }
           }
         }
@@ -185,17 +177,16 @@ ol.entries.list-tree{
 /*------folder/file-state-styles-----*/
 //--selected-items--//
 .list-item.selected, .list-nested-item.selected {
-  color: #212630 !important;
   &.edited, .edited, &.modified, .modified, &.status-modified, .status-modified{
-    color: @background-main !important;
+    color: @background-main;
   }
 }
 
 //--selected, hover + modified files--//
  li.file.entry.list-item.status-modified.selected {
-  color: @background-project-drawer !important;
+  color: black !important;
   & span {
-    background-color: @background-main;
+    background-color: fade(@background-main, 70%);
     &:hover {
       transition: none;
       color: @text-hover;
@@ -210,9 +201,9 @@ li.directory.entry.list-nested-item.status-modified {
     color: @background-main;
   }
   &.selected {
-    color: @background-project-drawer !important;
+    color: @background-project-drawer;
     & > div {
-      background-color: @background-main;
+      background-color: fade(@background-main, 80%);
       &:hover {
         background-color: fade(@background-main, 25%);
       }
@@ -224,21 +215,21 @@ li.directory.entry.list-nested-item.status-modified {
 li.file.entry.list-item.selected {
   margin-right: 0.65rem;
   & span {
-    padding: 0.5rem 0.5rem;
+    padding: 0.5rem;
     font-size: 1.1rem;
     .animations-enabled__active & {
-    transition: background-color 0.2s;
-  }
+      transition: background-color 0.2s;
+    }
     background-color: @background-color-info;
     border-radius: 4px;
     &:hover {
       transition: none;
       color: @text-hover;
-      background-color: rgba(152,193,217,25%);
+      background-color: rgba(152, 193, 217, 25%);
     }
   }
   &:before {
-    content: '';
+    // content: '';
     display: none;
   }
 }
@@ -248,17 +239,17 @@ li.directory.entry.list-nested-item.selected {
   margin-right: 0.65rem;
   & > div {
     padding-left: 0.5rem;
-    width: 100%;
+    // width: 100%;
     font-size: 1.1rem;
     .animations-enabled__active & {
-    transition: background-color 0.2s;
-  }
+      transition: background-color 0.2s;
+    }
     background-color: @background-color-info;
     border-radius: 4px;
     &:hover {
       transition: none;
       color: @text-hover;
-      background-color: rgba(152,193,217,25%);
+      background-color: rgba(152, 193, 217, 25%);
     }
   }
   &:before {
