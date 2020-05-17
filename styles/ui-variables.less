@@ -47,7 +47,7 @@
 .sat-check() when (@ac-saturation > 80%) {
   @adjust-accent-saturation: desaturate(@accentBrightness, @ac-saturation - 80%);
 }
-@textSaturation: desaturate(@accentBrightness, @ac-saturation - 5%);
+@textSaturation: desaturate(@accentBrightness, @ac-saturation - 10%);
 @textBrightness: lightness(@textSaturation);
 @text-color:     darken(@textSaturation, @textBrightness - 46%);
 @accentColor:    @adjust-accent-saturation;

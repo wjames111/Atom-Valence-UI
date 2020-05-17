@@ -13,16 +13,16 @@
 
 /*----general-buttons---*/
 .btn {
-  & ~ .btn{
-  }
+  // & ~ .btn{
+  // }
   color: lighten(@text-color, 5%);
-  background-color: @button-background-color;
-  border: none;
-    &:hover,
-    &:focus {
-      color: @text-color-highlight;
-      background-color: @background-main;
-    }
+  // background-color: @button-background-color;
+  // border: none;
+  &:hover,
+  &:focus {
+    color: @text-color-highlight;
+    background-color: @background-main;
+  }
   &:active {
     color: fade(@text-color-selected, 66%);
     background-color: darken(@button-background-color, 2%);
@@ -38,20 +38,19 @@
 }
 
 .btn-group {
-  border-radius:4px !important;
-  overflow:hidden;
+  border-radius: 0.25rem;
+  overflow: hidden;
   & .btn{
-    border-radius:0px;
+    border-radius: 0px;
     &:before {
-      height:1.7rem;
+      height: 1.7rem;
     }
   }
-
 }
 
 //--only applies to setting pages--//
-.meta-controls .btn-group .btn:first-child {
-margin-right: 0.2rem;
+.meta-controls .btn-group .btn:first-child, .btn-group .btn:nth-child(2), .btn-group .btn:nth-child(3) {
+  margin-right: 0.4rem;
 }
 /*----general-buttons---*/
 
@@ -63,23 +62,20 @@ margin-right: 0.2rem;
 .btn.btn-warning { .btn-color(@background-color-warning); }
 .btn.btn-error   { .btn-color(@background-color-error); }
 .btn-color(@bg) {
-  color: @text-color-selected;
-  background-color: @bg;
+  // color: @text-color-selected;
+  // background-color: @bg;
   font-size: 1.2rem;
   &:hover,
   &:focus {
     background-color: @background-main;
     color: @background-project-drawer;
   }
-
   &:active {
     background-color: darken(@bg, 4%);
   }
-
   &.selected {
     background-color: lighten(@bg, 4%);
   }
-
   &.selected:focus,
   &.selected:hover {
     background-color: lighten(@bg, 8%);
@@ -89,9 +85,11 @@ margin-right: 0.2rem;
 
 
 
+/*-----settings-panel-buttons---*/
 //---dual-buttons---//
 .btn-group > .btn {
-  border-color: hsla(0,0%,0%,.2);
+  // border-color: hsla(0,0%,0%,.2);
+  border: none;
 }
 
 //--check for updates button--//
@@ -105,65 +103,68 @@ margin-right: 0.2rem;
 
 //--settings button--//
 .select-container button.btn.icon.icon-gear {
-   background-color: transparent ;
+   background-color: transparent;
 }
+/*-----settings-panel-buttons---*/
 
 
 
 /*---drawer-handle-button---*/
 .atom-dock-toggle-button-inner {
-  color:@background-color-info;
+  color: @background-color-info;
   &:hover {
     color: @text-edited;
   }
 }
+
 .atom-dock-toggle-button .atom-dock-toggle-button-inner {
   border: 1px solid @text-color;
   .animations-enabled__active & {
-    transition:all 0.25s;
+    transition: all 0.25s;
   }
   &:hover {
     border: 1px solid @text-hover-bright;
-
   }
 }
 /*---drawer-handle-button---*/
 
 
-//--displays when all packages updated--//
+
+/*--displays-when-all-packages-updated--*/
 .alert.alert-info.icon.icon-heart {
-color: @background-color-success;
-background-color: @background-color-lighter;
+  color: @background-color-success;
+  background-color: @background-color-lighter;
 }
 
 button.btn.btn-default.selected {
-background-color: @background-main;
-color: @background-project-drawer;
+  background-color: @background-main;
+  color: @background-project-drawer;
 }
 
 .select-container button.btn.icon.icon-gear{
   &:before {
-  font-size:2rem !important;
-  padding-top:1.5rem;
-}
+    font-size: 2rem;
+    padding-top: 1.5rem;
+  }
   &:hover {
-    color: @background-main !important;
+    color: @background-main;
   }
 }
+/*--displays-when-all-packages-updated-end--*/
 
 
 
 /*--settings-input/select--*/
 select.form-control {
-  color: @text-color !important;
+  color: @text-color;
   margin-top: 1rem;
-  padding: 1rem;
   font-size: 1.2rem;
   height: 3rem;
   background-color: transparent !important;
   border-bottom: 2px solid @background-main !important;
-  box-shadow: none !important;
+  box-shadow: none;
   &:focus {
+    color: @text-hover;
     background-color: lighten(@background-color-lighter, 1%) !important;
   }
 }
@@ -189,15 +190,13 @@ atom-text-editor.editor.mini{
 
 atom-text-editor[mini],  {
   padding-left: @component-padding/2;
-  color: @text-color;
+  color: darken(@text-color, 15%);
   border-radius: 5px;
-  background-color: @app-background-color;
+  // background-color: @app-background-color;
   &.is-focused {
-    background-color: darken(@app-background-color, 5%);
+    // background-color: darken(@app-background-color, 5%);
+    color: darken(@text-color, 15%);
     border: 1px solid darken(@app-background-color, 5%);
-  }
-  .placeholder-text {
-    color: @text-color-subtle;
   }
 }
 /*--settings-input/select-end--*/

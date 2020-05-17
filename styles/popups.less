@@ -12,75 +12,58 @@ the current buffer or across the entire project.
 
 /*---find+replace--adds foggy glass affect---*/
 .find-and-replace, .project-find.padded {
-  &:focus{
-    border: none;
-    text-decoration:  none;
-  }
+  // &:focus{
+  //   border: none;
+  //   text-decoration: none;
+  // }
   width: 100%;
   bottom: 0;
   position: absolute;
-  z-index:  100;
-  margin: 0;
-  padding:  0 0 1.7rem 0;
+  z-index: 100;
+  // margin: 0;
+  padding: 0 0 1.7rem 0;
   background-color: rgba(25, 28, 35, .55);
   backdrop-filter: blur(5px);
-//adds top border to find-replace
-// &:before{
-//   content:" ";
-//   z-index:10;
-//   position:absolute;
-//   top:0;
-//   width:100%;
-//   height:2px;
-//   background-color:rgba(25, 28, 35, 1);
-// }
   .icon-x:hover {
     color: @text-edited;
   }
-  input:focus {
-    border: none;
-    text-decoration: none;
+  // input:focus {
+  //   border: none;
+  //   text-decoration: none;
+  // }
+  .input-block, .header-item {
+    padding: 0 2rem;
   }
-  .input-block,{
-    padding: 0 1rem;
-  }
-  .header-item{
-    padding: 0 1rem;
-  }
-  .editor.mini > div {
-    background-color: transparent !important;
-  }
-  .scroll-view {
+  .editor.mini > div, .scroll-view {
     background-color: transparent !important;
   }
   .input-block-item.input-block-item--flex.editor-container .editor.mini, atom-text-editor.editor.mini {
-    background-color: rgba(204, 218, 209, 0.06);
+    background-color: rgba(73, 86, 106, 0.3);
     border-radius: 4px;
-    color: @background-color-info;
+    // color: @background-color-info;
     padding: 0.9rem 1rem 0.7rem 1.5rem;
-    border: 1px solid darken( @app-background-color, 2%);
-    font-size: 1.2rem;
-    height:3.5rem;
+    // border: 1px solid darken( @app-background-color, 2%);
+    // font-size: 1.2rem;
+    height: 3.5rem;
     &.is-focused {
-      background-color: rgba(73, 86, 106, 0.3);
-        border: 1px solid black;
+      background-color: rgba(204, 218, 209, 0.08);
     }
   }
   .header{
     padding-top: 1.7rem;
-    padding-bottom:1rem;
-   }
+    padding-bottom: 1rem;
+  }
 }
 
 atom-panel.tool-panel.panel-bottom.bottom {
   .btn-group-options {
-    height:2rem;
+    height: 2rem;
     .btn {
-      height:inherit;
+      height: inherit;
     }
   }
   .btn {
-  height:3.4rem;
+  height: 3.4rem;
   }
 }
 /*---find+replace-end---*/
@@ -89,29 +72,13 @@ atom-panel.tool-panel.panel-bottom.bottom {
 
 /*------pop-up-finder-window+command-pallete----*/
 //---text search area--//
-.select-list.fuzzy-finder .editor.mini, .select-list.command-palette .editor.mini{
+.select-list.fuzzy-finder .editor.mini, .select-list.command-palette .editor.mini {
   border-radius: 0 0 8px 8px;
   font-size: 1.2rem;
-  padding: 0;
   padding: 1rem 1rem 1rem 1.5rem;
-
-  //------old command pallet design----//
-  // max-height: none;
-  // margin:0.5rem;
-  // padding:0;
-  // background-color: rgba(73, 86, 106, 0.3);
-  // border-radius: 4px;
-  // color: @background-color-info;
-  //   div:nth-child(-n+3) {
-  //     background-color: transparent;
-  //   }
-  // span {
-  //
-  // }
-    //------old command pallet design end----//
-
+  opacity: 0.9;
   .lines {
-    padding-left: 0.75rem;
+    padding-left: 0.75rem;  // input text indent
   }
   div {
     background-color: transparent !important;
@@ -120,17 +87,14 @@ atom-panel.tool-panel.panel-bottom.bottom {
 
 //--creates foggy glass affect--//
 atom-panel.modal {
-  &:focus, &:hover {
-    border: none;
-  }
   border-radius: 8px;
   border: 1px solid darken( @app-background-color, 2%) !important;
   top: 0;
   margin-top: 4rem;
-  .tab-bar__active & {
+  .tab-bar__active & {  // changes placement of pallete if tab bar hidden
     margin-top: 1.2rem;
   }
-  height: auto;
+  // height: auto;
   position: absolute;
   z-index: 100;
   padding: 0;
@@ -143,15 +107,19 @@ atom-panel.modal {
 
 /*------git-branch-popup----*/
 .tooltip.github-StatusBarTileController-tooltipMenu .tooltip-inner {
-  border-radius: 6px 6px 0 0;
+  border-radius: 8px 8px 0 0;
   overflow: hidden;
-  border: 1px solid darken( @app-background-color, 2%) !important;
-  padding: 0rem !important;
+  border: 1px solid darken( @app-background-color, 2%);
+  padding: 0;
+  select, button {
+    opacity: 0.7;
+  }
+  // margin-bottom: 1rem !important;
   .github-BranchMenuView-selector {
-    height: 100%;
-    width: 100%;
+    // height: 100%;
+    // width: 100%;
     background-color: rgba(25, 28, 35, 0.55);
-    padding: 1rem;
+    padding: 0.9rem;
   }
 }
 /*------git-branch-popup-end---*/

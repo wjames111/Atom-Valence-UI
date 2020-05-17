@@ -11,8 +11,20 @@ project drawer.--
 
 
 /*--------general----------*/
+//--expanded directory--//
+.expanded {
+  color: @text-open-folders;  //open folder color
+  border-radius: 4px;
+}
+
+li.directory.entry.list-nested-item {
+  .selected {
+    color: @text-find-replace-buttons;  // selected folder color
+  }
+}
+
 .tree-view-resizer {
-  border-right: 1px solid @base-border-color;
+  // border-right: 1px solid @base-border-color;
 }
 
 .tree-view {
@@ -25,7 +37,7 @@ project drawer.--
       color: @text-hover;
     }
     &.selected {
-      color: @text-color-selected;
+      // color: @text-color-selected;
     }
   }
 }
@@ -84,7 +96,7 @@ project drawer.--
       border-right:1rem solid rgba(25, 28, 35, 0.68);
       width: 100%;
       margin-left:-12px;
-       background: transparent;
+      background: transparent;
       height: 2rem;
       pointer-events:none;
       border-radius: 24px 24px 0 0;

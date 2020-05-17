@@ -10,36 +10,38 @@
 
 /*---Settings/list-of-key-bindings---------------*/
 .key-binding {
-  display: inline-block;
-  color:@text-color;
-  margin-left: 1px;
-  padding: 0 @component-padding/2;
-  line-height: 2;
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  font-size: .8em;
-  letter-spacing: 1px;
-  border-radius: @component-border-radius;
-  background-color: @app-background-color;
+  // display: inline-block;
+  // color: green;
+  // margin-left: 1px;
+  // padding: 0 @component-padding/2;
+  // line-height: 2;
+  // font-family: 'Helvetica Neue', Arial, sans-serif;
+  // font-size: .8em;
+  // letter-spacing: 1px;
+  // border-radius: @component-border-radius;
+  // background-color: @app-background-color;
 }
 
 //---key-bindings-text--//
 .native-key-bindings {
-  & thead{
+  & thead {
     tr:hover {
-      color: @text-hover;
+      // color: @text-hover;
       background-color: transparent;
     }
     & th {
       color: @text-hover;
+      font-weight: normal;
       font-size: 1.2rem;
-      }
     }
+  }
   tr {
-      color: @background-color-info;
-      &:hover {
-        color: @text-hover;
-        background-color: @background-project-drawer;
-      }
+    color: @background-color-info;
+    &:hover {
+      color: @text-hover;
+      // border-radius: 1rem !important;
+      background-color: @background-project-drawer;
     }
+  }
 }
 /*---Settings/list-of-key-bindings-end---------*/

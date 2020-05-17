@@ -17,7 +17,7 @@ summary.welcome-summary.icon:before {
 
 //--icon with clipboard + arrow, used throughout key bindings page--//
 .text .icon::before, .text.icon::before {
-    margin: 0 4px;
+  margin: 0 4px;
 }
 
 //--installed themes, packages, updates badge--//
@@ -30,14 +30,14 @@ summary.welcome-summary.icon:before {
 }
 
 .icon-gear:before, .icon-trashcan:before, .icon.icon-playback-pause.enablement:before, .icon.enablement.icon-playback-play:before{
-  line-height: inherit;
-  display: block;
+  line-height: inherit; // icon + text vertical
+  display: block; // icon + text vertical
   margin: 0rem !important;
-  .section-heading& {
-    display: inline-block;
-    margin-right: 2rem !important;
-    font-size: 1.7rem;
-  }
+  // .section-heading& {
+  //   display: inline-block;
+  //   margin-right: 2rem !important;
+  //   font-size: 1.7rem;
+  // }
 }
 
 //--large Github icon located in left Github drawer--//
@@ -71,25 +71,13 @@ summary.welcome-summary.icon:before {
 
 
 /*------file-extention-color----*/
-  .file-ext-color__active .icon:before {
-      color: inherit;
-      opacity: 1;
+.file-extention-mixin(@file-color){
+  .file-ext-color__active & {
+    color: inherit; //---makes file icons stand out (available in settings)--//
+    opacity: 1;
   }
-
-  .medium-red:before {
-    color: @text-edited;
-    opacity: 0.5;
-    .tab-bar & {
-      opacity: 0.8;
-    }
-    .selected > & {
-      opacity: 1;
-      color: @text-color-selected;
-    }
-  }
-  .medium-blue:before {
-  color: @background-color-info;
   opacity: 0.5;
+  color: @file-color;
   .tab-bar & {
     opacity: 0.8;
   }
@@ -97,40 +85,25 @@ summary.welcome-summary.icon:before {
     opacity: 1;
     color: @text-color-selected;
   }
-  }
-  .medium-green:before, .medium-cyan:before, .dark-cyan:before {
-    color: @atom-text;
-    opacity: 0.5;
-    .tab-bar & {
-      opacity: 0.8;
-    }
-    .selected > & {
-      opacity: 1;
-      color: @text-color-selected;
-    }
-  }
+}
 
-  .medium-yellow:before {
-    color: @background-main;
-    opacity: 0.5;
-    .tab-bar & {
-      opacity: 0.8;
-    }
-    .selected > & {
-      opacity: 1;
-      color: @text-color-selected;
-    }
-  }
+.medium-red:before {
+  .file-extention-mixin(@text-edited)
+}
 
-  .dark-blue:before {
-    color: darken(@background-color-info, 40%);
-    opacity: 0.5;
-    .tab-bar & {
-      opacity: 0.8;
-    }
-    .selected > & {
-      opacity: 1;
-      color: @text-color-selected;
-    }
+.medium-blue:before {
+  .file-extention-mixin(@background-color-info)
+}
+
+.medium-green:before, .medium-cyan:before, .dark-cyan:before {
+  .file-extention-mixin(@atom-text)
+}
+
+.medium-yellow:before {
+  .file-extention-mixin(@background-main)
+}
+
+.dark-blue:before {
+  .file-extention-mixin(darken(@background-color-info, 40%))
 }
 /*------file-extention-color----*/

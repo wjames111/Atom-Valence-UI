@@ -12,6 +12,7 @@
 
 
 /*------List-Group--------------*/
+//---command pallete---//
 .list-group {
   li {
     padding-left: @component-padding/2;
@@ -20,7 +21,7 @@
       background-color: @background-main;
       &:before {
         display: none;
-       }
+      }
     }
   }
 }
@@ -30,7 +31,7 @@
 
 /*-----List-Project-Folder-contents-------------*/
 .list-tree {
-  color: @text-color;
+  color: @text-color;  // color: saturate(@text-color, 10%);
   .selected {
     color: @text-color-selected;
   }
@@ -40,9 +41,10 @@
 
 
 /*-----Select-Lists-------------*/
+//---command pallete---//
 .select-list {
   li {
-    padding: @component-padding/2 @component-padding;
+    padding: @component-padding/2 @component-padding * 2;
   }
   .status {
     float: right;
@@ -58,7 +60,6 @@
   @popover-list-padding: @component-padding/2;
   padding: @popover-list-padding;
   border-radius: @component-border-radius;
-  background-color: @overlay-background-color;
   box-shadow: 0 2px 8px 1px hsla(0,0%,0%,.3);
   .list-group {
     margin-top: @popover-list-padding;
