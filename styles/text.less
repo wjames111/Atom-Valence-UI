@@ -12,42 +12,42 @@
 
 /*-------base-text-styles------*/
 h1, h2, h3 {
-    line-height: 1em;
-    margin-bottom: 1.25rem;
+  line-height: 1em;
+  margin-bottom: 1.25rem;
 }
 
 h1 {
-    font-size: 2em;
-    font-weight: 200;
+  font-size: 2em;
+  font-weight: 200;
 }
 
 h2 {
-    font-size: 1.5em;
+  font-size: 1.5em;
 }
 
 h3 {
-    font-size: 1.2em;
+  font-size: 1.2em;
 }
 
 p {
-    line-height: 1.6;
-    margin-bottom: 1.25rem;
+  line-height: 1.6em;
+  margin-bottom: 1.25rem;
 }
 
-a {
+.welcome a, a {
+  color: @background-color-info;
   .animations-enabled__active & {
   transition: color 0.5s;
-}
-  color: @background-color-info;
+  }
   &:hover {
-    text-decoration:none;
-    color:@text-hover;
-    }
+    text-decoration: none;
+    color: @text-hover;
+  }
 }
 
 //----editor label settings--//
 label {
-    font-weight: normal; //font-family/font-size editor setting
+  font-weight: normal; //font-family/font-size editor setting
 }
 /*-------base-text-styles-end-----*/
 
@@ -60,15 +60,16 @@ label {
 }
 
 .highlight {
-    color: @text-color-highlight;
-    font-weight: bold;
-    text-shadow: none;
-    background-color: @background-main;
-    border-radius: @component-border-radius;
-    padding: 1px 3px;
+  color: @text-color-highlight;
+  font-weight: bold;
+  text-shadow: none;
+  background-color: @background-main;
+  border-radius: @component-border-radius;
+  padding: 1px 3px;
 }
 
 .welcome-logo {
+  margin-bottom: 0;
   color: @background-main;
   @col: desaturate(@Welcome-color, 50%);
   g:nth-child(2){
@@ -77,17 +78,20 @@ label {
   }
 }
 
-.welcome-title {
-  font-size: 2.7rem;
-  text-decoration: none !important;
-  underline: none;
+.welcome-header {
+  margin-bottom: 3rem;
+  & .welcome-title {
+    font-size: 2.5rem;
+    margin: 1rem 2rem 1rem;
+    // text-decoration: none !important;
+  }
 }
 
 //--welcome logo animation --//
 .animations-enabled__active .welcome-logo g:nth-child(2) path:nth-child(1) { animation: e7bwtwskp4xm10_to__to 1100ms linear infinite normal forwards }
 @keyframes e7bwtwskp4xm10_to__to {
   0% { transform: translate(0px, 0px); &:extend(.welcome-logo g:nth-child(2)); }
-  9.090909% { transform: translate(-1.818804px, -16.893591px);}
+  9.090909%  { transform: translate(-1.818804px, -16.893591px);}
   18.181818% { transform: translate(-17.733341px, -6.900506px);color: saturate(@accentColor, -35%); }
   32.727273% { transform: translate(11.179299px, 26.094713px); }
   45.454545% { transform: translate(21.541633px, 12.680402px);color: inherit;}
@@ -96,12 +100,12 @@ label {
   72.727273% { transform: translate(-2.691159px, 14.341415px) ; }
   81.818182% { transform: translate(19.441472px, 4.675027px);color: inherit; }
   90.909091% { transform: translate(17.167967px, -17.126732px) }
-  100% { transform: translate(0px, 0px);color: saturate(@accentColor, -35%);  }
+  100%       { transform: translate(0px,0px);color: saturate(@accentColor, -35%);  }
 }
 
 //---unsure where this goes--//
 .results-view .path-details.list-item {
-    color: darken(@text-color-highlight, 18%);
+  color: darken(@text-color-highlight, 18%);
 }
 /*----misc-text-end---*/
 
@@ -109,14 +113,14 @@ label {
 
 /*----------mixins---------*/
 .highlight-color(@name, @color, @text-color) {
-    .highlight-@{name} {
-        color: lighten(saturate(@text-color, 0%), 60%);
-        font-weight: bold;
-        text-shadow: none;
-        background-color: fadeout(@color, 30%);
-        border-radius: @component-border-radius;
-        padding: 1px 3px;
-    }
+  .highlight-@{name} {
+    color: lighten(saturate(@text-color, 0%), 60%);
+    font-weight: bold;
+    text-shadow: none;
+    background-color: fadeout(@color, 30%);
+    border-radius: @component-border-radius;
+    padding: 1px 3px;
+  }
 }
 
 .highlight-color(info, @background-color-info, @background-color-info);
@@ -130,7 +134,7 @@ label {
 /*----settings-pages---*/
 .settings-view section .section-heading, .settings-view .section .section-heading{
   color: @text-hover;
-  font-size:2rem;
+  font-size: 2rem;
   font-weight: lighter;
 }
 
@@ -150,17 +154,20 @@ label {
 }
 
 .settings-view .sub-section .sub-section-heading, .setting-title.themes-label.text{
-  color:lighten(@text-color, 15%);
+  color: lighten(@text-color, 20%);
+  font-size: 1.5rem;
+  font-weight: 500;
 }
 
 .setting-title {
-  color: lighten(@text-color, 20%);
+  &:extend(.settings-view .sub-section .sub-section-heading);
+  color: lighten(@text-color, 35%);
 }
 
 //--adds padding at start+end of settings pages--//
 .settings-view.pane-item .panels .section{
-  padding-top:5rem ;
-  padding-bottom:5rem ;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
 }
 
 //--styles list of installed packages in settings--//
@@ -175,7 +182,7 @@ label {
 
 //----settings panel padding---//
 .settings-view.pane-item .panels {
-    overflow-x: scroll;
-    padding: 0 3rem;
+  overflow-x: scroll;
+  padding: 0 3rem;
 }
 /*----setting-page-headers-end--*/

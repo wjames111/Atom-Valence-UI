@@ -23,13 +23,12 @@ please check text.less--
     max-width: none;
     color: @background-color-lighter;
   }
-
   .keystroke {
-    padding: 0.15rem 0.4rem;
-    margin: 0 -0.3rem 0 0.25rem;
-    border-radius: 4px;
-    color: @text-edited;
-    background: @background-main;
+    // padding: 0.15rem 0.4rem;
+    // margin: 0 -0.3rem 0 0.25rem;
+    // border-radius: 4px;
+    // color: @text-edited;
+    // background: @background-main;
   }
 }
 /*----Overrides:-Bootstrap's-`.tooltip`-end-----*/
@@ -67,21 +66,21 @@ please check text.less--
 
 /*------text-events-------*/
 .text-info {
-    &:hover {
-        color: @background-color-info;
-    }
+  &:hover {
+    color: @background-color-info;
+  }
 }
 
 .text-warning {
-    &:hover {
-        color: @text-color-warning;
-    }
+  &:hover {
+    color: @text-color-warning;
+  }
 }
 
 .text-success {
-    &:hover {
-        color: @text-color-success;
-    }
+  &:hover {
+    color: @text-color-success;
+  }
 }
 /*------text-events-------*/
 
@@ -89,23 +88,20 @@ please check text.less--
 
 /*------text-code-------*/
 code {
-    background: @background-main;
-    border-radius: @component-border-radius;
+  background: @background-main;
+  border-radius: @component-border-radius;
 }
 
 .markdown-preview code {
-    text-shadow: none;
+  text-shadow: none;
 }
 /*------text-code-------*/
 
 
 
 /*-----theme-name-breadcrumb----*/
-ol.native-key-bindings.breadcrumb .active {
+ol.native-key-bindings.breadcrumb .active, a {
   color: @background-main;
-  a {
-    color: @background-main;
-  }
 }
 /*-----theme-name-breadcrumb----*/
 
@@ -125,9 +121,7 @@ ol.native-key-bindings.breadcrumb .active {
 /*-----atom-author-style----*/
 a.author {
   color: @background-color-success !important;
-  text-decoration: none !important;
   &:hover {
-    text-decoration: none !important;
     color: @background-main !important;
   }
 }
