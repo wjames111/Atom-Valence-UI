@@ -23,13 +23,14 @@
 .status-bar-right, .status-bar-left  {
   display: flex;
   align-items: center;
-  // height: inherit;
-  // flex-direction: row;
   & .inline-block, & a {
     &:hover {
       text-decoration: none;
       color: @text-hover;
     }
+  }
+  .icon-color-mode {
+    color: @text-edited;
   }
 }
 /*----bottom-status-bar-icon-placement-end--*/

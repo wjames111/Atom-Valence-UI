@@ -23,21 +23,21 @@ summary.welcome-summary.icon:before {
 //--installed themes, packages, updates badge--//
 .badge {
   background-color: @atom-text;
-  //---old-color---//
-  // background-color: @text-edited;
+  // border: 1px solid @text-edited;  // option
   color: black;
   padding: 0.35em 0.5em 0.25em !important;
 }
 
-.icon-gear:before, .icon-trashcan:before, .icon.icon-playback-pause.enablement:before, .icon.enablement.icon-playback-play:before{
+.btn-group .icon-gear:before, .btn-group .icon-trashcan:before, .btn-group .icon.icon-playback-pause.enablement:before, .btn-group .icon.enablement.icon-playback-play:before{
   line-height: inherit; // icon + text vertical
   display: block; // icon + text vertical
   margin: 0rem !important;
-  // .section-heading& {
-  //   display: inline-block;
-  //   margin-right: 2rem !important;
-  //   font-size: 1.7rem;
-  // }
+}
+
+//----fixes other settings---/
+section.section.settings-panel & {
+  display: inline;
+  margin-right: 1rem !important;
 }
 
 //--large Github icon located in left Github drawer--//

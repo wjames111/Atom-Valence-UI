@@ -13,11 +13,8 @@
 
 /*----general-buttons---*/
 .btn {
-  // & ~ .btn{
-  // }
+  border: none !important;
   color: lighten(@text-color, 5%);
-  // background-color: @button-background-color;
-  // border: none;
   &:hover,
   &:focus {
     color: @text-color-highlight;
@@ -38,6 +35,7 @@
 }
 
 .btn-group {
+  border: none;
   border-radius: 0.25rem;
   overflow: hidden;
   & .btn{
@@ -49,21 +47,34 @@
 }
 
 //--only applies to setting pages--//
-.meta-controls .btn-group .btn:first-child, .btn-group .btn:nth-child(2), .btn-group .btn:nth-child(3) {
-  margin-right: 0.4rem;
+.meta-controls .btn-group .btn:first-child, .btn-group .btn:nth-child(2), .btn-group .btn:nth-child(3),
+atom-panel.tool-panel.panel-bottom.bottom button:first-child {
+  margin-right: 5px !important;
 }
+
+.search-container.clearfix .btn-group .btn {
+  margin-left: 5px;
+}
+// button > svg > use[href="#find-and-replace-icon-regex"] {
+//   margin-right: 5px !important;
+//   color: green;
+// }
 /*----general-buttons---*/
 
 
 
 /*---colored-buttons----*/
-.btn.btn-primary { .btn-color(@button-background-color); color: @text-color; }
+.btn.btn-primary {
+  background-color: @text-edited;
+  color: @background-project-drawer;
+  border: 1px solid darken(@background-project-drawer, 5%) !important;
+}
 .btn.btn-success { .btn-color(@background-color-success); }
 .btn.btn-warning { .btn-color(@background-color-warning); }
 .btn.btn-error   { .btn-color(@background-color-error); }
 .btn-color(@bg) {
-  // color: @text-color-selected;
-  // background-color: @bg;
+  color: lighten(@text-color, 5%);
+  background-color: @bg;
   font-size: 1.2rem;
   &:hover,
   &:focus {
@@ -86,12 +97,6 @@
 
 
 /*-----settings-panel-buttons---*/
-//---dual-buttons---//
-.btn-group > .btn {
-  // border-color: hsla(0,0%,0%,.2);
-  border: none;
-}
-
 //--check for updates button--//
 .section.packages .btn {
   background-color: darken(@button-background-color, 2%);
@@ -174,12 +179,21 @@ select.github-Project-path.input-select {
   margin-top: 0px;
 }
 
+.github-CommitView-button.btn {
+  color: lighten(@text-color, 15%);
+  &:hover {
+    color: @text-color-highlight;
+    background-color: @background-main;
+  }
+}
+
 .controls {
   padding-top: 1.5rem;
 }
 
 atom-text-editor.editor.mini{
   padding: 1rem 1rem 1rem 1.5rem;
+  // color: @background-main; // option
   border: 1px solid darken( @app-background-color, 2%);
   overflow: visible;
   font-size: 1.2rem;
@@ -192,9 +206,7 @@ atom-text-editor[mini],  {
   padding-left: @component-padding/2;
   color: darken(@text-color, 15%);
   border-radius: 5px;
-  // background-color: @app-background-color;
   &.is-focused {
-    // background-color: darken(@app-background-color, 5%);
     color: darken(@text-color, 15%);
     border: 1px solid darken(@app-background-color, 5%);
   }

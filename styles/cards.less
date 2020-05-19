@@ -16,11 +16,12 @@ includes welcome/package/theme cards --
     transition: border 0.25s;
   }
   margin: 0.5rem auto 2rem;
-  border: 0.5px solid transparent;
+  padding: 2rem;
+  border: 0.5px solid darken(@button-background-color, 7%);
   color: lighten(@text-color, 5%);
   background-color: darken(@button-background-color, 7%);
   &:hover {
-    background-color: darken(@button-background-color, 7%);
+    background-color: darken(@button-background-color, 7%) !important;
     border: 0.5px solid rgba(255,255,255,0.05);
     // -webkit-box-shadow:  -1px 5px 9px -3px rgba(0,0,0,0.2);
     // -moz-box-shadow:  -1px 5px 9px -3px rgba(0,0,0,0.2);
@@ -50,9 +51,20 @@ section.sub-section {
 
 .welcome-highlight {
   color: @background-color-info;
+  .animations-enabled__active & {
+    transition: all 0.2s;
+  }
+  &:hover {
+    color: @text-hover;
+  }
 }
 
 summary.welcome-summary.icon {
   padding: 1.2em 1.5em;
+  color: @text-color;
+  &:before {
+    font-size: 1.7rem;
+    margin-right: 1rem;
+  }
 }
 /*---welcome-card-end---*/

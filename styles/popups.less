@@ -17,10 +17,10 @@ the current buffer or across the entire project.
   //   text-decoration: none;
   // }
   width: 100%;
+  border-top: 4px solid @app-background-color;
   bottom: 0;
   position: absolute;
   z-index: 100;
-  // margin: 0;
   padding: 0 0 1.7rem 0;
   background-color: rgba(25, 28, 35, .55);
   backdrop-filter: blur(5px);
@@ -38,15 +38,14 @@ the current buffer or across the entire project.
     background-color: transparent !important;
   }
   .input-block-item.input-block-item--flex.editor-container .editor.mini, atom-text-editor.editor.mini {
-    background-color: rgba(73, 86, 106, 0.3);
+    // background-color: rgba(73, 86, 106, 0.3);
     border-radius: 4px;
-    // color: @background-color-info;
-    padding: 0.9rem 1rem 0.7rem 1.5rem;
-    // border: 1px solid darken( @app-background-color, 2%);
-    // font-size: 1.2rem;
+    border: none;
+    color: @background-color-info;
+    padding: auto 1rem auto 1.5rem;
     height: 3.5rem;
     &.is-focused {
-      background-color: rgba(204, 218, 209, 0.08);
+      // background-color: rgba(204, 218, 209, 0.08);
     }
   }
   .header{
@@ -63,7 +62,7 @@ atom-panel.tool-panel.panel-bottom.bottom {
     }
   }
   .btn {
-  height: 3.4rem;
+    height: 3.4rem;
   }
 }
 /*---find+replace-end---*/
@@ -72,13 +71,21 @@ atom-panel.tool-panel.panel-bottom.bottom {
 
 /*------pop-up-finder-window+command-pallete----*/
 //---text search area--//
-.select-list.fuzzy-finder .editor.mini, .select-list.command-palette .editor.mini {
+.select-list.fuzzy-finder, .select-list.encoding-selector, atom-panel.modal.overlay.from-top .select-list {
+  padding: 0.1rem 0.2rem 0rem;
+}
+
+.select-list.fuzzy-finder .editor.mini,
+.select-list.command-palette .editor.mini,
+.select-list.encoding-selector .editor.mini,
+atom-panel.modal.overlay.from-top .select-list .editor.mini {
+  color: @background-color-info;
   border-radius: 0 0 8px 8px;
   font-size: 1.2rem;
   padding: 1rem 1rem 1rem 1.5rem;
   opacity: 0.9;
   .lines {
-    padding-left: 0.75rem;  // input text indent
+    padding-left: 0rem;  // input text indent
   }
   div {
     background-color: transparent !important;
@@ -94,7 +101,6 @@ atom-panel.modal {
   .tab-bar__active & {  // changes placement of pallete if tab bar hidden
     margin-top: 1.2rem;
   }
-  // height: auto;
   position: absolute;
   z-index: 100;
   padding: 0;

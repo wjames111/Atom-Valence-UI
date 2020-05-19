@@ -55,13 +55,8 @@ tabs.--
 /*--------tab-bar-------*/
 .tab-bar {
   background-color: @tab-bar-background-color;
-  // border-radius: 0px;
   & .title { //individual tab name
-    margin-top: auto;
-    margin-bottom: auto;
-    margin-left: 1.25rem;
-    // padding-right:1.667rem;//old
-    // padding-right: 1.9rem;
+    margin: auto 1.667rem auto 1.25rem;
     &:before {
       margin-right: 0.5rem;
     }
@@ -89,9 +84,8 @@ tabs.--
     }
     .close-icon {
       display: flex;
-      // justify-content: center;
       align-items: center;
-      height: @tab-height;
+      height: @tab-height - 0.35rem;
     }
     //---Modified Icon in tab (x || o) ----//
     &.modified {

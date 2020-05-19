@@ -45,6 +45,14 @@ p {
   }
 }
 
+.link {
+  color: @background-color-info !important;
+  text-decoration: none !important;
+  &:hover {
+    color: @text-hover !important;
+  }
+}
+
 //----editor label settings--//
 label {
   font-weight: normal; //font-family/font-size editor setting
@@ -85,6 +93,12 @@ label {
     margin: 1rem 2rem 1rem;
     // text-decoration: none !important;
   }
+}
+
+.welcome-panel .welcome-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: lighten(@text-color, 20%);
 }
 
 //--welcome logo animation --//
@@ -133,8 +147,7 @@ label {
 
 /*----settings-pages---*/
 .settings-view section .section-heading, .settings-view .section .section-heading{
-  color: @text-hover;
-  font-size: 2rem;
+  color: lighten(@text-color, 30%);
   font-weight: lighter;
 }
 
@@ -153,21 +166,15 @@ label {
   }
 }
 
-.settings-view .sub-section .sub-section-heading, .setting-title.themes-label.text{
+.settings-view .sub-section .sub-section-heading, .setting-title.themes-label.text, .setting-title {
   color: lighten(@text-color, 20%);
   font-size: 1.5rem;
-  font-weight: 500;
-}
-
-.setting-title {
-  &:extend(.settings-view .sub-section .sub-section-heading);
-  color: lighten(@text-color, 35%);
+  font-weight: 400;
 }
 
 //--adds padding at start+end of settings pages--//
-.settings-view.pane-item .panels .section{
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+.settings-view .panels-item {
+    padding: 4.5rem 4rem 4rem 5.5rem;
 }
 
 //--styles list of installed packages in settings--//
@@ -180,9 +187,12 @@ label {
   }
 }
 
+.updates-heading-container {
+  margin-bottom: 2rem;
+}
+
 //----settings panel padding---//
 .settings-view.pane-item .panels {
   overflow-x: scroll;
-  padding: 0 3rem;
 }
 /*----setting-page-headers-end--*/
