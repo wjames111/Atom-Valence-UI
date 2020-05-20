@@ -10,16 +10,42 @@
 
 /*---Settings/list-of-key-bindings---------------*/
 .key-binding {
-  // display: inline-block;
-  // color: green;
-  // margin-left: 1px;
-  // padding: 0 @component-padding/2;
-  // line-height: 2;
-  // font-family: 'Helvetica Neue', Arial, sans-serif;
-  // font-size: .8em;
-  // letter-spacing: 1px;
-  // border-radius: @component-border-radius;
-  // background-color: @app-background-color;
+  display: inline-block;
+  color: @accentColor;
+  border: 1px solid transparent;
+  box-shadow: 0px 0px 8px 0px rgba(213, 111, 62, 1);
+  margin-left: 1px;
+  padding: 0 @component-padding/2;
+  line-height: 2;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: .8em;
+  letter-spacing: 1px;
+  border-radius: @component-border-radius;
+  background-color: @app-background-color;
+  &:hover {
+    transition: none;
+    .animations-enabled__active & {
+      transition: all 0.1s;
+    }
+    transform: scale(1.4);
+    opacity: 0.7;
+    border: 1px solid @text-edited;
+    box-shadow: 0px 0px 14px 0px rgba(213, 111, 62, 1);
+  }
+}
+
+.select-list.command-palette .pull-right:hover ~ div {
+  transition: none;
+  width: 100%;
+  background-color: rgba(25, 28, 35, .55);
+  & > .primary-line {
+    color: @accentColor;
+    font-size: 1.2rem;
+    transition: none;
+    .animations-enabled__active & {
+      transition: all 0.2s;
+    }
+  }
 }
 
 //---key-bindings-text--//

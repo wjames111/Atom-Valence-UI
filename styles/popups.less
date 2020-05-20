@@ -12,12 +12,9 @@ the current buffer or across the entire project.
 
 /*---find+replace--adds foggy glass affect---*/
 .find-and-replace, .project-find.padded {
-  // &:focus{
-  //   border: none;
-  //   text-decoration: none;
-  // }
   width: 100%;
-  border-top: 4px solid @app-background-color;
+  border-top: 2px solid darken( @app-background-color, 2%);
+  box-shadow: inset 4px -6px 25px -10px rgba(0,0,0,0.5);  // optional
   bottom: 0;
   position: absolute;
   z-index: 100;
@@ -27,10 +24,6 @@ the current buffer or across the entire project.
   .icon-x:hover {
     color: @text-edited;
   }
-  // input:focus {
-  //   border: none;
-  //   text-decoration: none;
-  // }
   .input-block, .header-item {
     padding: 0 2rem;
   }
@@ -38,14 +31,17 @@ the current buffer or across the entire project.
     background-color: transparent !important;
   }
   .input-block-item.input-block-item--flex.editor-container .editor.mini, atom-text-editor.editor.mini {
-    // background-color: rgba(73, 86, 106, 0.3);
+    background-color: lighten(rgba(40, 47, 58, 0.7), 10%);
+    border: 1px solid darken( @app-background-color, 8%) !important;
     border-radius: 4px;
+    opacity: 0.5;
     border: none;
-    color: @background-color-info;
+    color: darken( @app-background-color, 8%) ;
     padding: auto 1rem auto 1.5rem;
     height: 3.5rem;
     &.is-focused {
-      // background-color: rgba(204, 218, 209, 0.08);
+      opacity: 1;
+      border: 1px solid darken( @app-background-color, 5%) !important;
     }
   }
   .header{
@@ -95,6 +91,7 @@ atom-panel.modal.overlay.from-top .select-list .editor.mini {
 //--creates foggy glass affect--//
 atom-panel.modal {
   border-radius: 8px;
+  overflow: hidden !important;
   border: 1px solid darken( @app-background-color, 2%) !important;
   top: 0;
   margin-top: 4rem;
@@ -105,7 +102,7 @@ atom-panel.modal {
   z-index: 100;
   padding: 0;
   background-color: rgba(25, 28, 35, .55);
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(2px);
 }
 /*------pop-up-finder-window-end----*/
 

@@ -76,6 +76,15 @@ label {
   padding: 1px 3px;
 }
 
+select#core\.uriHandlerRegistration {
+  color: lighten(@text-color, 30%);
+}
+
+.uri-history th {
+  font-weight: 400;
+  color: lighten(@text-color, 20%);
+}
+
 .welcome-logo {
   margin-bottom: 0;
   color: @background-main;
@@ -194,5 +203,18 @@ label {
 //----settings panel padding---//
 .settings-view.pane-item .panels {
   overflow-x: scroll;
+}
+
+//----adds padding to theme picker section----//
+.themes-picker-item.control-group {
+  margin-top: 0 !important;
+}
+
+.themes-picker {
+  padding-bottom: 2rem;
+}
+
+.section.packages.themes-panel .section-container > .section-heading {
+  margin-bottom: 0.5rem;
 }
 /*----setting-page-headers-end--*/

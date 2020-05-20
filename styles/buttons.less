@@ -64,10 +64,14 @@ atom-panel.tool-panel.panel-bottom.bottom button:first-child {
 
 
 /*---colored-buttons----*/
+label ~ .btn.btn-primary {
+  background-color: @background-color-info;
+  color: @text-color-selected !important;
+  border: 1px solid @text-hover !important;
+}
 .btn.btn-primary {
-  background-color: @text-edited;
-  color: @background-project-drawer;
-  border: 1px solid darken(@background-project-drawer, 5%) !important;
+  color: lighten(@text-color, 5%);
+  background-color: darken(@button-background-color, 2%);
 }
 .btn.btn-success { .btn-color(@background-color-success); }
 .btn.btn-warning { .btn-color(@background-color-warning); }
