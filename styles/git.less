@@ -22,19 +22,111 @@
 
 /*-----git-popout-drawer-left-----*/
 .github-StubItem-github, .github-GitHub-root, .github-StubItem-git.github-Git-root {
-    // flex: 1;
-    // display: flex;
-    font-size: 1.2rem;
-    // line-height: 1.4;
-    color: #667272;
-    background-color: @tab-bar-background-color;
-    // overflow-x: auto;
+  font-size: 1rem;
+  color: #667272;
+  background-color: @tab-bar-background-color;
+}
+
+//-----staging view boundry-----//
+header.github-StagingView-header,  {
+  background-color: @tab-bar-background-color;
+  font-weight: 300;
+  color: lighten(@text-color, 20%);
+  border-top: @global-outline-border;
+  border-bottom: @global-outline-border;
+  & .icon::before {
+    color: @accentColor;
+  }
+}
+
+//---Github lock button----//
+.icon-unlock{
+  fill: @accentColor !important;
+  &:hover {
+    fill: @text-hover !important;
+  }
+}
+
+.icon-lock{
+  fill: @text-edited !important;
+  &:hover {
+    fill: @text-hover !important;
+  }
+}
+
+button.github-StagingView-headerButton.icon.icon-move-up {
+  &:before {
+    color: @text-edited;
+  }
+}
+
+//--adds color to selected files in staging area--//
+.github-StagingView-list .is-selected, .github-StagingView-list .is-selected .icon:before {
+  background-color: @accentColor !important;
+  color: @text-color-selected !important;
+}
+
+.github-StagingView-unstaged, .github-StagedChanges {
+  background-color: @tree-view-background-color;
+}
+
+.github-CommitView {
+  border-top: @global-outline-border;
 }
 /*-----git-popout-drawer-left-end----*/
 
 
 
+//-------git init button -----//
 .initialize-repo-description strong {
   font-weight: normal;
   color: @text-hover;
+}
+
+.github-CommitView-remaining-characters {
+  font-size: 1.4em;
+  min-width: 2.5em;
+  min-height: 1.8em;
+  padding-top: 0.2em;
+  background-color: @text-edited;
+  color: black;
+  text-align: center;
+  border-radius: 1em;
+}
+
+.github-CommitView-buttonWrapper, footer.github-CommitView-bar {
+  margin: 0;
+  padding: 0;
+  height: 4rem;
+}
+
+.github-CommitView-editor {
+  margin-top: 0.9rem;
+  margin-bottom: 0.9rem;
+  background-color: @background-color-lighter;
+  border: @global-outline-border;
+  button {
+    border-top: @global-outline-border;
+    opacity: 0.6;
+    &:first-of-type {
+      border-right: @global-outline-border;
+      border-radius: 4px 4px 4px 0px;
+    }
+    &:last-of-type {
+      border-left: @global-outline-border;
+      border-radius: 4px 4px 0px 4px;
+    }
+  }
+}
+
+.github-CommitView-buttonWrapper > button, .github-CommitView-bar > button {
+  border: @global-outline-border !important;
+  border-radius: 4px;
+  // font-size: 1.2em;
+  // background-color: lighten(@tree-view-background-color, 5%) !important;
+}
+
+//---adds space below publish on Github --//
+.github-Blank-explanation {
+  margin-top: 0.8rem;
 }

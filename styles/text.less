@@ -85,7 +85,7 @@ select#core\.uriHandlerRegistration {
   color: lighten(@text-color, 20%);
 }
 
-.welcome-logo {
+.welcome-logo, .about-logo {
   margin-bottom: 0;
   color: @background-main;
   @col: desaturate(@Welcome-color, 50%);
@@ -111,7 +111,7 @@ select#core\.uriHandlerRegistration {
 }
 
 //--welcome logo animation --//
-.animations-enabled__active .welcome-logo g:nth-child(2) path:nth-child(1) { animation: e7bwtwskp4xm10_to__to 1100ms linear infinite normal forwards }
+.animations-enabled__active .welcome-logo g:nth-child(2) path:nth-child(1), .about-logo g:nth-child(2) path:nth-child(1) { animation: e7bwtwskp4xm10_to__to 1100ms linear infinite normal forwards }
 @keyframes e7bwtwskp4xm10_to__to {
   0% { transform: translate(0px, 0px); &:extend(.welcome-logo g:nth-child(2)); }
   9.090909%  { transform: translate(-1.818804px, -16.893591px);}
@@ -218,3 +218,26 @@ select#core\.uriHandlerRegistration {
   margin-bottom: 0.5rem;
 }
 /*----setting-page-headers-end--*/
+
+
+
+/*----search results--*/
+.preview-pane.pane-item .preview-header {
+  background-color: @background-color-lighter;
+  border-bottom: 1px solid darken( @app-background-color, 4%);
+  color: @text-hover;
+}
+
+.preview-pane .results-view {
+  & .match-row .preview {
+    color: @text-color;
+  }
+  & .selected .path-row {
+    color: @text-color-selected;
+    background-color: @accentColor;
+  }
+  & .path-row {
+    color: @text-hover;
+  }
+}
+/*----search results--*/

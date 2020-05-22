@@ -37,7 +37,6 @@
 .btn-group {
   border: none;
   border-radius: 0.25rem;
-  overflow: hidden;
   & .btn{
     border-radius: 0px;
     &:before {
@@ -54,6 +53,20 @@ atom-panel.tool-panel.panel-bottom.bottom button:first-child {
 
 .search-container.clearfix .btn-group .btn {
   margin-left: 5px;
+}
+
+//--applies to search result buttons--//
+.preview-pane.pane-item button {
+  height: auto;
+}
+
+.preview-controls .btn-group {
+  button {
+    height: auto;
+  }
+  button:first-of-type {
+    margin-right: 5px;
+  }
 }
 // button > svg > use[href="#find-and-replace-icon-regex"] {
 //   margin-right: 5px !important;
@@ -164,7 +177,7 @@ button.btn.btn-default.selected {
 
 
 /*--settings-input/select--*/
-select.form-control {
+select.form-control, .Select-control {
   color: @text-color;
   margin-top: 1rem;
   font-size: 1.2rem;

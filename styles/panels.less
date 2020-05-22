@@ -105,3 +105,36 @@
   }
 }
 /*----settings-menu-panel-end----*/
+
+
+
+/*----about-panel----*/
+.about-container {
+  margin-top: 18%;
+  .about-header {
+    color: @background-color-info;
+  }
+  .show-more-expand {
+    color: @text-hover;
+  }
+}
+
+.about-updates.group-start {
+  margin-top: 2rem;
+}
+
+.about-actions.group-item button:first-of-type {
+  margin-right: 5px;
+}
+
+.about-updates-box {
+  .animations-enabled__active & {
+    transition: border 0.25s;
+  }
+  border: 0.5px solid transparent;
+  &:hover {
+    border: 0.5px solid rgba(255,255,255,0.05);
+    box-shadow:  -1px 5px 9px -3px rgba(0,0,0,0.2);
+  }
+}
+/*----about-panel-end---*/
