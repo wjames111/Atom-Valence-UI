@@ -88,9 +88,9 @@ select#core\.uriHandlerRegistration {
 .welcome-logo, .about-logo {
   margin-bottom: 0;
   color: @background-main;
-  @col: desaturate(@Welcome-color, 50%);
+  @col: saturate(@text-color, 10%);
   g:nth-child(2){
-    color: darken(@col, 15%);
+    color: darken(@col, 10%);
     // color:rgba(195,197,158, 0.5);
   }
 }

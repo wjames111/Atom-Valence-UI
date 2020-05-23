@@ -22,16 +22,16 @@
 .bright-check() when (@ac-light < 31%) {
   @adjust-accent-brightness:  lighten(@color-setting, 30% - @ac-light);
   @adjust-welcome-brightness: lighten(@color-setting, 15% - @ac-light);
-  @adjust-text-brightness:    lighten(@adjust-accent-brightness, 10%);
+  @adjust-text-brightness:    lighten(@adjust-accent-brightness, 31% - @ac-light);
 }
 .bright-check() when (@ac-light > 30%) {
   @adjust-accent-brightness:  @color-setting;
   @adjust-welcome-brightness: darken(@color-setting, 10%);
-  @adjust-text-brightness:    @color-setting;
+  @adjust-text-brightness:   darken(@color-setting, @ac-light - 30% * 1.8);
 }
-.bright-check() when (@ac-light > 70%) {
-  @adjust-text-brightness:    darken(@color-setting, 20%);
-}
+// .bright-check() when (@ac-light > 70%) {
+//   @adjust-text-brightness:    darken(@color-setting, @ac-light - 70%);
+// }
 @accentBrightness: @adjust-accent-brightness;
 @Welcome-color:    @adjust-welcome-brightness;
 /*------adjusts-accent-color-end---*/
@@ -47,9 +47,9 @@
 .sat-check() when (@ac-saturation > 80%) {
   @adjust-accent-saturation: desaturate(@accentBrightness, @ac-saturation - 80%);
 }
-@textSaturation: desaturate(@accentBrightness, @ac-saturation - 10%);
+@textSaturation: desaturate(@adjust-text-brightness, @ac-saturation/1.1);
 @textBrightness: lightness(@textSaturation);
-@text-color:     darken(@textSaturation, @textBrightness - 46%);
+@text-color:     darken(@textSaturation, @textBrightness/5.5);
 @accentColor:    @adjust-accent-saturation;
 /*----check-saturation---*/
 

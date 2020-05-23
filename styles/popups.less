@@ -19,7 +19,7 @@ the current buffer or across the entire project.
   position: absolute;
   z-index: 100;
   padding: 0 0 1.7rem 0;
-  background-color: rgba(25, 28, 35, .55);
+  background-color: rgba(25, 28, 35, .1);
   backdrop-filter: blur(5px);
   .icon-x:hover {
     color: @text-edited;
@@ -102,7 +102,7 @@ atom-panel.modal {
   z-index: 100;
   padding: 0;
   background-color: rgba(25, 28, 35, .55);
-  backdrop-filter: blur(2px);
+  backdrop-filter: blur(5px);
 }
 /*------pop-up-finder-window-end----*/
 
@@ -117,12 +117,10 @@ atom-panel.modal {
   select, button {
     opacity: 1;
   }
-  // margin-bottom: 1rem !important;
   .github-BranchMenuView-selector {
-    // height: 100%;
-    // width: 100%;
     background-color: rgba(25, 28, 35, 0.55);
-    padding: 0.7rem;
+    padding: 1rem;
+    margin-bottom: -1rem;
   }
 }
 /*------git-branch-popup-end---*/
