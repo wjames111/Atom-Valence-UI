@@ -182,8 +182,14 @@ select#core\.uriHandlerRegistration {
 }
 
 //--adds padding at start+end of settings pages--//
-.settings-view .panels-item {
-    padding: 4.5rem 4rem 4rem 5.5rem;
+.settings-view .panels-item .section-container, .keybinding-panel {
+  width: 80%;
+  margin: 4.5rem auto 4rem auto !important;
+  // padding-left: 5.5rem;
+  // padding-right: 4rem;
+  // & .section:first-of-type .section-heading:first-of-type {
+  //   padding-top: 4.5rem;
+  // }
 }
 
 //--styles list of installed packages in settings--//

@@ -11,11 +11,11 @@
 /*------git-text-states------*/
 //--Used to color git status--//
 .status          { color: @text-color; }
-.status-added    { color: @text-color-success; }
-.status-ignored  { color: @text-color-subtle; }
+.status-added    { color: lighten(@text-color, 25%); }
+.status-ignored  { color: darken(@text-color, 10%); }
 .status-modified { color: @background-main; }
-.status-removed  { color: @text-color-error; }
-.status-renamed  { color: @background-color-info; }
+.status-removed  { color: darken(@text-edited, 20%); }
+.status-renamed  { color: @background-color-info; text-decoration: underline; }
 /*-----git-text-states-end-----*/
 
 
