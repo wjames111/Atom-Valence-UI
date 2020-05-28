@@ -23,6 +23,22 @@
           "type": "color",
           "default": "#c5c47c"
         },
+
+
+        "customCaret": {
+          "title": "Default Caret Color",
+          "description": "Keeps theme's default accent color. Uncheck to allow chosen accent color to take affect. Toggling will cause Atom to reload.",
+          "type": "boolean",
+          "default": false
+        },
+        "colorCaret": {
+          "title": "Custom Caret Color",
+          "description": "Customize theme's accent color. Toggling will cause Atom to reload.",
+          "type": "color",
+          "default": "#c5c47c"
+        },
+
+
         "toggleTabBar": {
           "title": "Toggle Tab-Bar",
           "description": "toggles tab-bar on hover ",
