@@ -21,7 +21,7 @@
           "title": "Accent Color",
           "description": "Customize theme's accent color. Toggling will cause Atom to reload.",
           "type": "color",
-          "default": "#c5c47c"
+          "default": "rgba(197, 196, 124, 1)"
         },
 
 
@@ -35,7 +35,7 @@
           "title": "Custom Caret Color",
           "description": "Customize theme's accent color. Toggling will cause Atom to reload.",
           "type": "color",
-          "default": "#c5c47c"
+          "default": "rgba(197, 196, 124, 1)"
         },
 
 
