@@ -17,7 +17,7 @@ Or to override certain Atom core styles--
 
 body {
   font-size: @font-size;
-  // color: @text-color;
+  color: @text-color;
 }
 //
 atom-pane {
@@ -28,7 +28,7 @@ atom-pane {
 }
 
 atom-pane-container atom-pane .item-views {
-  border: 1px solid darken( @app-background-color, 2%) !important; //--adds border around all panes--//
+  border: @main-border-color!important; //--adds border around all panes--//
 }
 
 

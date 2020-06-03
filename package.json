@@ -3,69 +3,83 @@
     "colors": {
       "order": 1,
       "type": "object",
-      "title": "Colors",
+      "title": "Settings",
       "properties": {
-        "abaseColor": {
-          "title": "Primary color",
-          "description": "Changes the main theme color.",
-          "type": "color",
-          "default": "#009688"
-        },
         "customAccent": {
           "title": "Default Accent Color",
-          "description": "Keeps theme's default accent color. Uncheck to allow chosen accent color to take affect. Toggling will cause Atom to reload.",
+          "description": "Keeps theme's default accent color. Uncheck to allow the chosen accent color to take affect.",
           "type": "boolean",
           "default": false
         },
         "accentColor": {
           "title": "Accent Color",
-          "description": "Customize theme's accent color. Toggling will cause Atom to reload.",
+          "description": "Customize theme's accent color.",
           "type": "color",
           "default": "rgba(197, 196, 124, 1)"
         },
-
-
-        "customCaret": {
-          "title": "Default Caret Color",
-          "description": "Keeps theme's default accent color. Uncheck to allow chosen accent color to take affect. Toggling will cause Atom to reload.",
-          "type": "boolean",
-          "default": false
-        },
-        "colorCaret": {
-          "title": "Custom Caret Color",
-          "description": "Customize theme's accent color. Toggling will cause Atom to reload.",
-          "type": "color",
-          "default": "rgba(197, 196, 124, 1)"
-        },
-
-
-        "toggleTabBar": {
-          "title": "Toggle Tab-Bar",
-          "description": "toggles tab-bar on hover ",
+        "customBadgeBorder": {
+          "title": "Default Badge Border Color",
+          "description": "Use the default badge border color of transparent. Uncheck to allow the chosen badge border color to take affect.",
           "type": "boolean",
           "default": true
         },
+        "badgeColor": {
+          "title": "Custom Badge Border Color",
+          "description": "Choose custom badge border color.",
+          "type": "color",
+          "default": "darkcyan"
+        },
+        "customBorder": {
+          "title": "Default Main Border Color",
+          "description": "Use the default border color in main worspace components. Uncheck to allow the chosen main border color to take affect.",
+          "type": "boolean",
+          "default": true
+        },
+        "colorBorder": {
+          "title": "Custom Main Border Color",
+          "description": "Choose custom border color in main workspace components.",
+          "type": "color",
+          "default": "#212630"
+        },
+        "customCaret": {
+          "title": "Default Caret Color",
+          "description": "Use the default blinking text cursor color of orange. Uncheck to allow the chosen caret color to take affect.",
+          "type": "boolean",
+          "default": true
+        },
+        "colorCaret": {
+          "title": "Custom Caret Color",
+          "description": "Choose custom blinking text cursor color.",
+          "type": "color",
+          "default": "rgba(197, 196, 124, 1)"
+        },
+        "toggleTabBar": {
+          "title": "Toggle Tab-Bar",
+          "description": "toggles tab-bar on hover.",
+          "type": "boolean",
+          "default": false
+        },
         "directoryIndicator": {
           "title": "Directory Indicator",
-          "description": "highlight directory hierarchy",
+          "description": "Lighten the background of open dictories.",
           "type": "boolean",
           "default": true
         },
         "matchSyntaxTheme": {
           "title": "Match Syntax Theme",
-          "description": "override syntax theme's background color to match current theme",
+          "description": "Override syntax theme's background color to match Valence-UI theme.",
           "type": "boolean",
           "default": true
         },
         "extColor": {
-          "title": "file-type color",
-          "description": "change file-type icon color to default colors",
+          "title": "File Type Color",
+          "description": "Disable file type colors for less distracting file and folder navigation.",
           "type": "boolean",
-          "default": true
+          "default": false
         },
         "fontSize": {
           "title": "Change Font-size",
-          "description": "adjust font-size for all UI components. For editor panel adjustments go to editor settings",
+          "description": "adjust font-size for all UI components. For editor font-size adjustments go to Editor Settings.",
           "type": "integer",
           "default": "12",
           "enum": [
@@ -84,19 +98,19 @@
         },
         "settingsPanel": {
           "title": "Settings Panel color",
-          "description": "changes background color of the settings panel to dark blue.",
+          "description": "Use the default setting's panel background color of dark blue. Uncheck to use colorful gradient.",
           "type": "boolean",
-          "default": false
+          "default": true
         },
         "animationEnabled": {
-          "title": "enable animations",
-          "description": "toggle theme animations, if you find them distracting or need the extra CPU",
+          "title": "Enable Animations",
+          "description": "Toggle theme animations if you find them distracting or need the extra CPU. Uncheck to disable the animations.",
           "type": "boolean",
           "default": true
         },
         "stickyEnabled": {
           "title": "Sticky Folder Tab",
-          "description": "Enable sticky project folder tab.",
+          "description": "Enable transparent sticky project folder tab.",
           "type": "boolean",
           "default": true
         }
