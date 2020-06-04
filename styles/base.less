@@ -3,39 +3,27 @@
 /* --Used for global styles
 Or to override certain Atom core styles--
 ---------contents----------
-1.) base-text-styles
-2.) misc-text
-3.) mixins
-4.) settings-pages
+1.) base
+2.) cursor-and-text-selection
 -------contents-end-------*/
 
 
 
-// html {
-//   background-color: white;
-// }
-
+/*---base---*/
 body {
   font-size: @font-size;
   color: @text-color;
-}
-//
-atom-pane {
-  // border-right: none;
-  &:last-child {
-    // border-right: none;
-  }
 }
 
 atom-pane-container atom-pane .item-views {
   border: @main-border-color!important; //--adds border around all panes--//
 }
+/*---base-end--*/
 
 
 
-/*----cursor and text selection---*/
+/*----cursor-and-text-selection---*/
 //--blinking caret--//
-//make setting
 .cursors, .cursor {
   div {
     height: 2rem !important;
@@ -47,17 +35,12 @@ atom-pane-container atom-pane .item-views {
   background-color: @background-color-info;
   border-radius: 2px;
   border: 0 @highlight-border;
-  // border-left: @highlight-border;
   opacity: 0.15;
   &:first-child {
     border: @highlight-border @highlight-border 0;
-    // border-right: @highlight-border;
-    // border-left: @highlight-border;
   }
   &:last-child {
     border: 0 @highlight-border @highlight-border;
-    // border-right: @highlight-border;
-    // border-left: @highlight-border;
   }
 }
-/*----cursor and text selection---*/
+/*----cursor-and-text-selection---*/
