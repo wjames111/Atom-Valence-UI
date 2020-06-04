@@ -6,38 +6,27 @@ includes overrides for general styles specific to
 project drawer.--
 ---------contents----------
 1.) general
+1.) project-drawer-partition
+1.) project-directory-structure
+1.) THEME_SETTING: highlight-directory-scope
+1.) folder/file-state-styles
 -------contents-end-------*/
 
 
 
 /*--------general----------*/
 //--expanded directory--//
-.expanded {
-  // color: @text-open-folders;  //open folder color
-  // border-radius: 4px;
-}
-
 li.directory.entry.list-nested-item {
   .selected {
     color: @text-find-replace-buttons;  // selected folder color
   }
 }
 
-.tree-view-resizer {
-  // border-right: 1px solid @base-border-color;
-}
-
 .tree-view {
   background-color: @tree-view-background-color;
-  //--options--//
-  // background-color: @text-hover ;
-  //background-color: @atom-text ;
   .list-item{
     &:hover {
       color: @text-hover;
-    }
-    &.selected {
-      // color: @text-color-selected;
     }
   }
 }
@@ -48,7 +37,6 @@ li.directory.entry.list-nested-item {
 /*------project-drawer-partition-----*/
 .atom-dock-resize-handle.right, .atom-dock-resize-handle.left { //allows resizing of drawer
   width: 3px;
-  // background-color: #1f232b;
 }
 /*------project-drawer-partition-end--*/
 
@@ -117,11 +105,6 @@ ol.entries.list-tree{
   li {
     padding: 0.65rem 0;
     .directory.entry.list-nested-item.expanded {
-      // padding-bottom: 0rem;
-    }
-    &.expanded{
-      // color: @text-open-folders;
-      // border-radius: 8px;
     }
   }
 }
@@ -211,7 +194,7 @@ li.directory.entry.list-nested-item.status-modified {
   }
 }
 
-//--files selected and hover--//
+//--files-selected-and-hover--//
 li.file.entry.list-item.selected {
   margin-right: 0.65rem;
   & span {
@@ -229,7 +212,6 @@ li.file.entry.list-item.selected {
     }
   }
   &:before {
-    // content: '';
     display: none;
   }
 }
@@ -239,7 +221,6 @@ li.directory.entry.list-nested-item.selected {
   margin-right: 0.65rem;
   & > div {
     padding-left: 0.5rem;
-    // width: 100%;
     font-size: 1.1rem;
     .animations-enabled__active & {
       transition: background-color 0.2s;
