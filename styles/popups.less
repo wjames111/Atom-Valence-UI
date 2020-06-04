@@ -6,6 +6,8 @@ the current buffer or across the entire project.
 1.) find+replace
 2.) pop-up-finder-window+command-pallete
 3.) git-branch-popup
+4.) git-dialog-popup
+5.) autocomplete-popup
 -------contents-end-------*/
 
 
@@ -15,13 +17,10 @@ the current buffer or across the entire project.
   width: 100%;
   border-top: 2px solid darken( @app-background-color, 2%);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  // border-left: 1px solid rgba(255, 255, 255, 0.1);
-  // box-shadow+: inset 4px -6px 25px -10px rgba(0,0,0,0.5);  // optional
   bottom: 0;
   position: absolute;
   z-index: 100;
   padding: 0 0 1.7rem 0;
-  // background-color: rgba(25, 28, 35, .65);
   box-shadow+: 0px -8px 20px 1px rgba(0,0,0,0.15);
   box-shadow+: inset 17px -40px 300px 140px rgba(255, 255, 255, 0.015);
   background-color: rgba(25, 28, 35, 0.8);
@@ -179,8 +178,6 @@ atom-panel.modal {
   button.btn.icon.icon-file-directory.github-Dialog-rightBumper {
     margin-left: 5px;
   }
-
-
   button {
     height: auto;
   }
