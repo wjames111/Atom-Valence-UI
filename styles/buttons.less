@@ -5,8 +5,10 @@
 ---------contents----------
 1.) general-buttons
 2.) colored-buttons
-3.) drawer-handle-button
-4.) settings-input/select
+3.) settings-panel-buttons
+4.) drawer-handle-button
+5.) displays-when-all-packages-updated
+6.) settings-input/select
 -------contents-end-------*/
 
 
@@ -68,11 +70,7 @@ atom-panel.tool-panel.panel-bottom.bottom button:first-child {
     margin-right: 5px;
   }
 }
-// button > svg > use[href="#find-and-replace-icon-regex"] {
-//   margin-right: 5px !important;
-//   color: green;
-// }
-/*----general-buttons---*/
+/*----general-buttons-end--*/
 
 
 
@@ -82,13 +80,16 @@ label ~ .btn.btn-primary {
   color: @text-color-selected !important;
   border: 1px solid @text-hover !important;
 }
+
 .btn.btn-primary {
   color: lighten(@text-color, 5%);
   background-color: darken(@button-background-color, 2%);
 }
+
 .btn.btn-success { .btn-color(@background-color-success); }
 .btn.btn-warning { .btn-color(@background-color-warning); }
 .btn.btn-error   { .btn-color(@background-color-error); }
+
 .btn-color(@bg) {
   color: lighten(@text-color, 5%);
   background-color: @bg;
@@ -148,7 +149,7 @@ label ~ .btn.btn-primary {
     border: 1px solid @text-hover-bright;
   }
 }
-/*---drawer-handle-button---*/
+/*---drawer-handle-button-end--*/
 
 
 
@@ -210,7 +211,6 @@ select.github-Project-path.input-select {
 
 atom-text-editor.editor.mini{
   padding: 1rem 1rem 1rem 1.5rem;
-  // color: @background-main; // option
   border: 1px solid darken( @app-background-color, 2%);
   overflow: visible;
   font-size: 1.2rem;
