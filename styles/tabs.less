@@ -5,11 +5,10 @@ Displays selectable tabs above the editor. includes
 overrides for general styles specific to selectable file
 tabs.--
 ---------contents----------
-1.) Project-tab-(opens project-drawer) :line 19
-2.) THEME_SETTING:Active-light-Bar-(default=ON) :line 32
-3.) Tab-contents :line 58
-4.) tab-bar :line 79
-5.) THEME_SETTING:Toggleable-tab-bar-(default=OFF) :line 131
+1.) Project-tab-(opens project-drawer)
+2.) THEME_SETTING:Active-light-Bar
+4.) tab-bar
+5.) THEME_SETTING:Toggleable-tab-bar
 -------contents-end-------*/
 
 
@@ -30,7 +29,6 @@ tabs.--
 
 /*------THEME_SETTING:Active-light-Bar-(default=ON)----*/
 .tab {
-  // display: block;
   &::after {
     content: "";
     transform: scaleX(0);
@@ -38,14 +36,11 @@ tabs.--
     height: 2px;
   }
   &.active::after {
-    // content: "";
-    // display: block;
     .animations-enabled__active & {
       transition: transform 0.25s;
     }
     background-color: @background-main;
     transform: scaleX(1);
-    // height: 2px;
   }
 }
 /*------light-Bar-end------*/
@@ -132,9 +127,6 @@ tabs.--
   &:after {
     content: "";
     position: absolute;
-    // display: block;
-    // z-index: 1000;
-    // top: 0%;
     height: 1rem;
     width: 100%;
   }
