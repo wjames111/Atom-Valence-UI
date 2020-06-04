@@ -6,11 +6,11 @@
       "title": "Settings",
       "properties": {
         "customAccent": {
-          "title": "Default Accent Color",
-          "description": "Keeps theme's default accent color. Uncheck to allow the chosen accent color to take affect.",
-          "type": "boolean",
-          "default": false
-        },
+            "title": "Default Accent Color",
+            "description": "Keeps theme's default accent color. Uncheck to allow the chosen accent color to take affect.",
+            "type": "boolean",
+            "default": false
+          },
         "accentColor": {
           "title": "Accent Color",
           "description": "Customize theme's accent color.",
@@ -35,7 +35,7 @@
           "type": "boolean",
           "default": true
         },
-        "colorBorder": {
+        "borderColor": {
           "title": "Custom Main Border Color",
           "description": "Choose custom border color in main workspace components.",
           "type": "color",
@@ -47,7 +47,7 @@
           "type": "boolean",
           "default": true
         },
-        "colorCaret": {
+        "caretColor": {
           "title": "Custom Caret Color",
           "description": "Choose custom blinking text cursor color.",
           "type": "color",
