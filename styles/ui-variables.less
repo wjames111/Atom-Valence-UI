@@ -4,14 +4,17 @@
 /*--These are the official UI variables that every UI theme should define.
 // It allows other packages to match your theme.--
 ---------contents----------
-1.) added-variables
-2.) Text-Colors
-3.) Background-colors
-4.) Base-colors
-4.) Component-colors
-4.) Site-colors
-4.) Sizes
-4.) Misc
+1.) adjusts-accent-color
+2.) check-saturation
+3.) settings-panel-gradient
+4.) fonts
+5.) Text-Colors
+6.) Background-colors
+7.) Base-colors
+8.) border-colors
+9.) Component-colors
+10.) Site-colors
+11.) Sizes
 -------contents-end-------*/
 
 
@@ -29,9 +32,6 @@
   @adjust-welcome-brightness: darken(@color-setting, 10%);
   @adjust-text-brightness:   darken(@color-setting, @ac-light - 30% * 1.8);
 }
-// .bright-check() when (@ac-light > 70%) {
-//   @adjust-text-brightness:    darken(@color-setting, @ac-light - 70%);
-// }
 @accentBrightness: @adjust-accent-brightness;
 @Welcome-color:    @adjust-welcome-brightness;
 /*------adjusts-accent-color-end---*/
