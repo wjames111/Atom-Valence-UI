@@ -2,7 +2,11 @@
 ////// icons /////
 /* --Styles all icons, badges, spinners --
 ---------contents----------
-1.) Settings/list-of-key-bindings
+1.) icons-in-welcome-guide
+1.) settings-icons
+1.) git-icons
+1.) Spinner
+1.) file-extention-color
 -------contents-end-------*/
 
 
@@ -11,10 +15,11 @@
 summary.welcome-summary.icon:before {
   color: @accentColor;
 }
-/*----icons-in-welcome-guide---*/
+/*----icons-in-welcome-guide-end--*/
 
 
 
+/*----settings-icons-----*/
 //--icon with clipboard + arrow, used throughout key bindings page--//
 .text .icon::before, .text.icon::before {
   margin: 0 4px;
@@ -24,9 +29,6 @@ summary.welcome-summary.icon:before {
 .badge {
   background-color: @atom-text;
   border: @badge-outline-color;
-  // .badge-border__active {
-  //   border: none;
-  // }
   color: black;
   padding: 0.35em 0.5em 0.25em !important;
 }
@@ -42,16 +44,21 @@ section.section.settings-panel & {
   display: inline;
   margin-right: 1rem !important;
 }
+/*----settings-icons-end----*/
 
+
+
+/*---git-icons---*/
 //--large Github icon located in left Github drawer--//
 .github-Blank-LargeIcon.icon.icon-mark-github:before, .github-Git-LargeIcon.icon.icon-repo:before {
   color: @background-project-drawer;
   font-size: 10rem;
 }
+/*---git-icons-end--*/
 
 
 
-/*-------Spinner --------*/
+/*-------Spinner--------*/
 // The `progress` element is unstyled and defined by the OS.
 // See https://css-tricks.com/html5-progress-element/ in case you want to customize it.
 .loading-spinner-large  { .loading-spinner(64px); }
@@ -70,7 +77,7 @@ section.section.settings-panel & {
     display: inline-block;
   }
 }
-/*-------Spinner---------*/
+/*-------Spinner-end--------*/
 
 
 
@@ -110,4 +117,4 @@ section.section.settings-panel & {
 .dark-blue:before {
   .file-extention-mixin(darken(@background-color-info, 40%))
 }
-/*------file-extention-color----*/
+/*------file-extention-color-end---*/
