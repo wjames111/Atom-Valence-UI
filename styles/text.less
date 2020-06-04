@@ -4,8 +4,10 @@
 ---------contents----------
 1.) base-text-styles
 2.) misc-text
-3.) mixins
-4.) settings-pages
+3.) Welcome-page
+4.) mixins
+5.) settings-pages
+6.) search-results
 -------contents-end-------*/
 
 
@@ -91,7 +93,6 @@ select#core\.uriHandlerRegistration {
   @col: saturate(@text-color, 10%);
   g:nth-child(2){
     color: darken(@col, 10%);
-    // color:rgba(195,197,158, 0.5);
   }
 }
 
@@ -101,10 +102,18 @@ select#core\.uriHandlerRegistration {
   & .welcome-title {
     font-size: 2.5rem;
     margin: 1rem 2rem 1rem;
-    // text-decoration: none !important;
   }
 }
 
+//---unsure where this goes--//
+.results-view .path-details.list-item {
+  color: darken(@text-color-highlight, 18%);
+}
+/*----misc-text-end---*/
+
+
+
+/*----Welcome-page----*/
 .welcome-panel .welcome-title {
   font-size: 2.5rem;
   margin-bottom: 1rem;
@@ -126,12 +135,7 @@ select#core\.uriHandlerRegistration {
   90.909091% { transform: translate(17.167967px, -17.126732px) }
   100%       { transform: translate(0px,0px);color: saturate(@accentColor, -35%);  }
 }
-
-//---unsure where this goes--//
-.results-view .path-details.list-item {
-  color: darken(@text-color-highlight, 18%);
-}
-/*----misc-text-end---*/
+/*----Welcome-page-end---*/
 
 
 
@@ -186,11 +190,6 @@ select#core\.uriHandlerRegistration {
 .settings-view .panels-item .section-container, .keybinding-panel {
   width: 80%;
   margin: 4.5rem auto 4rem auto !important;
-  // padding-left: 5.5rem;
-  // padding-right: 4rem;
-  // & .section:first-of-type .section-heading:first-of-type {
-  //   padding-top: 4.5rem;
-  // }
 }
 
 //--styles list of installed packages in settings--//
@@ -224,11 +223,11 @@ select#core\.uriHandlerRegistration {
 .section.packages.themes-panel .section-container > .section-heading {
   margin-bottom: 0.5rem;
 }
-/*----setting-page-headers-end--*/
+/*----setting-pages-end--*/
 
 
 
-/*----search results--*/
+/*----search-results--*/
 .preview-pane.pane-item .preview-header {
   background-color: @background-color-lighter;
   border-bottom: 1px solid darken( @app-background-color, 4%);
@@ -247,4 +246,4 @@ select#core\.uriHandlerRegistration {
     color: @text-hover;
   }
 }
-/*----search results--*/
+/*----search-results--*/
