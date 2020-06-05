@@ -129,7 +129,7 @@
   "name": "atom-valence-ui",
   "theme": "ui",
   "version": "0.1.0",
-  "description": "A short description of your UI theme",
+  "description": "A customizable theme for Atom editor that focuses on delivering a clean and stylish user interface",
   "keywords": [
     "ui",
     "theme"
