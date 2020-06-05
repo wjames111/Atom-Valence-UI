@@ -126,7 +126,7 @@
     "eslint-plugin-react": "^6.10.0"
   },
   "main": "./lib/main",
-  "name": "wills-theme-ui",
+  "name": "atom-valence-ui",
   "theme": "ui",
   "version": "0.0.0",
   "description": "A short description of your UI theme",
