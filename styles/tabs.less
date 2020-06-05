@@ -48,6 +48,12 @@ tabs.--
 
 
 /*--------tab-bar-------*/
+//--above tab bar (visible when title bar setting is on custom)---//
+.custom-title-bar .title-bar {
+  background-color: @tab-bar-background-color;
+  color: lighten(@text-color, 10%);
+}
+
 .tab-bar {
   background-color: @tab-bar-background-color;
   & .title { //individual tab name

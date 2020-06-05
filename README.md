@@ -45,7 +45,7 @@ While most settings should appear immediately, reloading the page will make sure
 
 # Contributing
 
-Have suggestion? Find a bug? Feel free to fork this theme or create a PR with desired suggestions. So far I'm @wjames111 the only contributor to Atom Valence UI theme, I would love to see what other do with it.
+Have suggestion? Find a bug? Feel free to fork this theme or create a PR with desired suggestions. So far I'm @wjames111 the only contributor to Atom Valence UI theme, I would love to see what others do with it.
 
 Feeling lazy but want something fixed? Message me or leave a comment so I can improve this theme.
 

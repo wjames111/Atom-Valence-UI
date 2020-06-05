@@ -15,7 +15,7 @@
           "title": "Accent Color",
           "description": "Customize theme's accent color.",
           "type": "color",
-          "default": "rgba(197, 196, 124, 1)"
+          "default": "rgba(85, 239, 211, 1)"
         },
         "customBadgeBorder": {
           "title": "Default Badge Border Color",
