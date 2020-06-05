@@ -6,11 +6,11 @@
       "title": "Settings",
       "properties": {
         "customAccent": {
-            "title": "Default Accent Color",
-            "description": "Keeps theme's default accent color. Uncheck to allow the chosen accent color to take affect.",
-            "type": "boolean",
-            "default": false
-          },
+          "title": "Default Accent Color",
+          "description": "Keeps theme's default accent color. Uncheck to allow the chosen accent color to take affect.",
+          "type": "boolean",
+          "default": false
+        },
         "accentColor": {
           "title": "Accent Color",
           "description": "Customize theme's accent color.",
@@ -128,7 +128,7 @@
   "main": "./lib/main",
   "name": "atom-valence-ui",
   "theme": "ui",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A short description of your UI theme",
   "keywords": [
     "ui",
