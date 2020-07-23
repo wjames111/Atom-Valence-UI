@@ -58,6 +58,33 @@ please check text.less--
 
 
 
+/*------text-inputs------*/
+.input-text, .input-search, .input-textarea {
+  background-color: #282f3a;
+  font-size: 1.2rem;
+  border: @main-border-color;
+  &::placeholder {
+    color: #45504e;
+  }
+}
+
+.select-list atom-text-editor[mini] {
+  height: auto !important;
+}
+
+ .modal{
+  overflow-x: scroll;
+}
+
+.modal .select-list {
+  .error-message, .loading {
+    padding: 1rem 2rem;
+  }
+}
+/*------text-inputs-end-----*/
+
+
+
 /*------text-events-------*/
 .text-info {
   &:hover {
@@ -84,6 +111,7 @@ please check text.less--
 code {
   background: @background-main;
   border-radius: @component-border-radius;
+  color: @text-hover-dark;
 }
 
 .markdown-preview code {

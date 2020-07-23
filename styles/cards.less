@@ -12,7 +12,7 @@ includes welcome/package/theme cards --
 /*--package/theme-cards--*/
 .package-card.col-lg-8 {
   .animations-enabled__active & {
-    transition: border 0.25s;
+    transition: all 0.25s;
   }
   margin: 0.5rem auto 2rem;
   padding: 2rem;
@@ -20,9 +20,9 @@ includes welcome/package/theme cards --
   color: lighten(@text-color, 5%);
   background-color: darken(@button-background-color, 7%);
   &:hover {
-    background-color: darken(@button-background-color, 7%) !important;
-    border: 0.5px solid rgba(255,255,255,0.05);
-    box-shadow:  -1px 5px 9px -3px rgba(0,0,0,0.2);
+    background-color: darken(@button-background-color, 7%);
+    box-shadow:  2px 2px 8px #161a21,
+                 -2px -2px 8px #2c323f;
   }
 }
 

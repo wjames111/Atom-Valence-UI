@@ -11,12 +11,51 @@
 
 /*------git-text-states------*/
 //--Used to color git status--//
-.status          { color: @text-color; }
-.status-added    { color: lighten(@text-color, 15%); }
-.status-ignored  { color: darken(@text-color, 10%); }
+.status        { color: @text-color; }
+
+.status-added  {
+  color: @text-color-success;
+}
+
+.status-ignored  { color: darken(@text-color, 20%); }
 .status-modified { color: @background-main; }
-.status-removed  { color: darken(@text-edited, 20%); }
-.status-renamed  { color: @background-color-info; text-decoration: underline; }
+.status-removed  {
+  color: darken(@text-edited, 20%);
+}
+
+.status-renamed  {
+  color: @background-color-info;
+  text-decoration: underline;
+}
+
+//---adds + and - icons to added and removed files in project drawer---//
+.directory {
+  .status-added  {
+    &:after {
+      font-family: "Octicons Regular";
+		  content: "\f05d";
+      padding-left: 1rem;
+      padding-right: 0.5rem;
+    }
+  }
+  .status-removed  {
+    &:after {
+      font-family: "Octicons Regular";
+	    content: "\f0ca";
+      padding-left: 1rem;
+      padding-right: 0.5rem;
+    }
+  }
+  .status-renamed  {
+    &:after {
+      font-family: "Octicons Regular";
+      content: "\f058";
+      padding-left: 1rem;
+      padding-right: 0.5rem;
+      text-decoration: none;
+    }
+  }
+}
 /*-----git-text-states-end-----*/
 
 
@@ -73,6 +112,11 @@ button.github-StagingView-headerButton.icon.icon-move-up {
 
 .github-CommitView {
   border-top: @global-outline-border;
+}
+
+//--------adds space after commit message----//
+.github-RecentCommit-message {
+  padding-left: 1rem;
 }
 /*-----git-popout-drawer-left-end----*/
 

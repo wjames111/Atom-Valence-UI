@@ -19,7 +19,7 @@
   color: lighten(@text-color, 5%);
   &:hover,
   &:focus {
-    color: @text-color-highlight;
+    color: @text-hover-dark;
     background-color: @background-main;
   }
   &:active {
@@ -34,6 +34,12 @@
   &:focus:active {
     outline: none;
   }
+  &.btn-lg, .btn-group-lg & {
+    font-size: 2rem;
+    padding: 1.5rem 2rem;
+    height: auto;
+    line-height: 0.7em;
+  }
 }
 
 .btn-group {
@@ -47,15 +53,19 @@
   }
 }
 
-//--only applies to setting pages--//
-.meta-controls .btn-group .btn:first-child, .btn-group .btn:nth-child(2), .btn-group .btn:nth-child(3),
-atom-panel.tool-panel.panel-bottom.bottom button:first-child {
-  margin-right: 5px !important;
+.btn-default:hover {
+  color: black !important;
 }
 
-.search-container.clearfix .btn-group .btn {
-  margin-left: 5px;
-}
+//--only applies to setting pages--//
+// .meta-controls .btn-group .btn:first-child, .btn-group .btn:nth-child(2), .btn-group .btn:nth-child(3),
+// atom-panel.tool-panel.panel-bottom.bottom button:first-child {
+//   margin-right: 5px !important;
+// }
+//
+// .search-container.clearfix .btn-group .btn {
+//   margin-left: 5px;
+// }
 
 //--applies to search result buttons--//
 .preview-pane.pane-item button {
@@ -66,9 +76,9 @@ atom-panel.tool-panel.panel-bottom.bottom button:first-child {
   button {
     height: auto;
   }
-  button:first-of-type {
-    margin-right: 5px;
-  }
+  // button:first-of-type {
+  //   margin-right: 5px;
+  // }
 }
 /*----general-buttons-end--*/
 
@@ -84,11 +94,20 @@ label ~ .btn.btn-primary {
 .btn.btn-primary {
   color: lighten(@text-color, 5%);
   background-color: darken(@button-background-color, 2%);
+  &:hover {
+    color: @text-hover-dark;
+    background-color: @background-main;
+  }
 }
 
-.btn.btn-success { .btn-color(@background-color-success); }
-.btn.btn-warning { .btn-color(@background-color-warning); }
-.btn.btn-error   { .btn-color(@background-color-error); }
+.btn + .btn {
+  margin-left: 0.5rem !important;
+}
+
+.btn.btn-success { .btn-color(@background-color-success); color: darken(@button-background-color, 2%);}
+.btn.btn-warning { .btn-color(@background-color-warning); color: darken(@button-background-color, 2%);}
+.btn.btn-error   { .btn-color(@background-color-error); color: darken(@button-background-color, 2%); }
+.btn.btn-info:hover    { color: darken(@button-background-color, 2%); }
 
 .btn-color(@bg) {
   color: lighten(@text-color, 5%);
@@ -119,7 +138,7 @@ label ~ .btn.btn-primary {
 .section.packages .btn {
   background-color: darken(@button-background-color, 2%);
   &:hover {
-    color: @text-color-highlight;
+    color: @text-hover-dark;
     background-color: @background-main;
   }
 }
@@ -127,6 +146,9 @@ label ~ .btn.btn-primary {
 //--settings button--//
 .select-container button.btn.icon.icon-gear {
    background-color: transparent;
+   &:hover {
+     color: @accentColor;
+   }
 }
 /*-----settings-panel-buttons---*/
 
@@ -162,15 +184,15 @@ label ~ .btn.btn-primary {
 button.btn.btn-default.selected {
   background-color: @background-main;
   color: @background-project-drawer;
+  &:hover {
+    color: black;
+  }
 }
 
 .select-container button.btn.icon.icon-gear{
   &:before {
     font-size: 2rem;
     padding-top: 1.5rem;
-  }
-  &:hover {
-    color: @background-main;
   }
 }
 /*--displays-when-all-packages-updated-end--*/
@@ -200,7 +222,7 @@ select.github-Project-path.input-select {
 .github-CommitView-button.btn, .github-StubItem-git.github-Git-root button.btn.btn-primary {
   color: lighten(@text-color, 15%);
   &:hover {
-    color: @text-color-highlight;
+    color: @text-hover-dark;
     background-color: @background-main;
   }
 }
@@ -212,7 +234,7 @@ select.github-Project-path.input-select {
 atom-text-editor.editor.mini{
   padding: 1rem 1rem 1rem 1.5rem;
   border: 1px solid darken( @app-background-color, 2%);
-  overflow: visible;
+  overflow-y: scroll;
   font-size: 1.2rem;
   &.is-focused {
     background-color: lighten(@background-project-drawer, 1%);

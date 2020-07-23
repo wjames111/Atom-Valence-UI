@@ -25,6 +25,17 @@ summary.welcome-summary.icon:before {
   margin: 0 4px;
 }
 
+//--icons in stylesheet--//
+.styleguide [data-name="icons"] .icon {
+  color: @text-color;
+  &:hover {
+    color: @text-hover;
+    &::before {
+      color: @text-hover;
+    }
+  }
+}
+
 //--installed themes, packages, updates badge--//
 .badge {
   background-color: @atom-text;

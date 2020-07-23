@@ -1,6 +1,6 @@
 @import "colorSetting";
-
 ////// UI Variables /////
+
 /*--These are the official UI variables that every UI theme should define.
 // It allows other packages to match your theme.--
 ---------contents----------
@@ -17,147 +17,147 @@
 11.) Sizes
 -------contents-end-------*/
 
-
-
 /*------adjusts-accent-color----*/
 @ac-light: lightness(@color-setting);
 .bright-check();
+
 .bright-check() when (@ac-light < 31%) {
-  @adjust-accent-brightness:  lighten(@color-setting, 30% - @ac-light);
-  @adjust-welcome-brightness: lighten(@color-setting, 15% - @ac-light);
-  @adjust-text-brightness:    lighten(@adjust-accent-brightness, 31% - @ac-light);
+	@adjust-accent-brightness: lighten(@color-setting, 30% - @ac-light);
+	@adjust-welcome-brightness: lighten(@color-setting, 15% - @ac-light);
+	@adjust-text-brightness: lighten(@adjust-accent-brightness, 31% - @ac-light);
 }
+
 .bright-check() when (@ac-light > 30%) {
-  @adjust-accent-brightness:  @color-setting;
-  @adjust-welcome-brightness: darken(@color-setting, 10%);
-  @adjust-text-brightness:   darken(@color-setting, @ac-light - 30% * 1.8);
+	@adjust-accent-brightness: @color-setting;
+	@adjust-welcome-brightness: darken(@color-setting, 10%);
+	@adjust-text-brightness: darken(@color-setting, @ac-light - 30% * 1.8);
 }
+
 @accentBrightness: @adjust-accent-brightness;
-@Welcome-color:    @adjust-welcome-brightness;
-/*------adjusts-accent-color-end---*/
-
-
+@Welcome-color: @adjust-welcome-brightness;/*------adjusts-accent-color-end---*/
 
 /*----check-saturation---*/
 @ac-saturation: saturation(@accentBrightness);
 .sat-check();
+
 .sat-check() when (@ac-saturation < 81%) {
-  @adjust-accent-saturation: @accentBrightness;
+	@adjust-accent-saturation: @accentBrightness;
 }
+
 .sat-check() when (@ac-saturation > 80%) {
-  @adjust-accent-saturation: desaturate(@accentBrightness, @ac-saturation - 80%);
+	@adjust-accent-saturation: desaturate(@accentBrightness, @ac-saturation - 80%);
 }
+
 @textSaturation: desaturate(@adjust-text-brightness, @ac-saturation/1.1);
 @textBrightness: lightness(@textSaturation);
-@text-color:     darken(@textSaturation, @textBrightness/5.5);
-@accentColor:    @adjust-accent-saturation;
-/*----check-saturation---*/
-
-
+@text-color: darken(@textSaturation, @textBrightness/5.5);
+@accentColor: @adjust-accent-saturation;/*----check-saturation---*/
 
 /*--settings-panel-gradient--*/
-@complimentary:             spin(@accentColor, -(360 / 3));
-@complimentary2:            spin(@complimentary, (360 / 3));
-/*--settings-panel-gradient-end-*/
-
-
+@complimentary: spin(@accentColor, -(360 / 3));
+@complimentary2:spin(@complimentary, (360 / 3));/*--settings-panel-gradient-end-*/
 
 /*--fonts--*/
 @font-family-default: '.SFNSText-Regular', 'SF UI Text', 'Lucida Grande', 'Segoe UI', Ubuntu, Cantarell, sans-serif;
-@font-family-light:   Gotham, Roboto, "Lucida Grande", "Segoe UI", Ubuntu, Cantarell, sans-serif;
-@font-family:         @font-family-light;
-@caret-color:         @caret-setting;
-/*--fonts-end-*/
-
-
+@font-family-light: Gotham, Roboto, "Lucida Grande", "Segoe UI", Ubuntu, Cantarell, sans-serif;
+@font-family: @font-family-light;
+@caret-color: @caret-setting;/*--fonts-end-*/
 
 /*---Text-Colors----*/
-@text-hover:                #ccdad1;  // seafoam green
-@text-hover-bright:         white;
-@text-edited:               #d56f3e;  // orange
-@text-open-folders:         darken(@background-color-info, 5%);
-@text-find-replace-buttons: #191c22;  // darker blue
-@text-color-subtle:         darken(@text-color, 10%);
-@atom-text:                 darkcyan;
-@text-color-highlight:      #13161b;  // black
-@text-color-selected:       #1e222b;  // darkest blue
-@text-open-folder:          #212630;  // @text-color-selected lighter
-@text-color-success:        hsl(140,  44%, 62%);  // teal-green
-@text-color-warning:        hsl( 36,  60%, 72%);  // tan
-@text-color-error:          hsl(  9, 100%, 64%);  // orange-red
+@text-hover: #ccdad1;
+// seafoam green
+@text-hover-bright: @text-hover;
+@text-edited: #d56f3e;
+// orange
+@text-color-info: @text-edited;
+@text-open-folders: darken(@background-color-info, 5%);
+@text-find-replace-buttons: #191c22;
+// darker blue
+@text-color-subtle: darken(@text-color, 10%);
+@atom-text: darkcyan;
+@text-color-highlight: @text-hover;
+@text-hover-dark: black;
+//#13161b;
+// black
+@text-color-selected: #1e222b;
+// darkest blue
+@text-open-folder: #212630;
+// @text-color-selected lighter
+@text-color-success: hsl(140, 44%, 62%);
+// teal-green
+@text-color-warning: hsl(36, 60%, 72%);
+// tan
+@text-color-error: hsl(9, 100%, 64%);
+// orange-red
+
 /*---Text-Colors-end---*/
 
-
-
-/*--Background-colors--*/
-@background-project-drawer: #191c22;  // darker blue
-@background-color-lighter:  #282f3a;  // dark blue lighter
-@background-color-info:     #98C1D9;  // baby blue
-@background-color-success:  darkcyan;
-@background-color-warning:  hsl(32, 60%, 50%);  // orange
-@background-color-error:    hsl(0,  70%, 50%);  // red
-@background-main:           @accentColor;
+/*--Main-Background-colors--*/
+@background-project-drawer: #191c22;
+// darker blue
+@background-color-lighter: #282f3a;
+// dark blue lighter
+@background-color-info: #98C1D9;
+// baby blue
+@background-color-success: darkcyan;
+@background-color-warning: hsl(32, 60%, 50%);
+// orange
+@background-color-error: hsl(0, 70%, 50%);
+// red
+@background-main: @accentColor;
 @background-color-selected: @accentColor;
-@app-background-color:      darken(@base-background-color, 2%);
-/*--Background-colors--*/
-
-
+@app-background-color: darken(@base-background-color, 2%);/*--Main-Background-colors--*/
 
 /*----Base-colors----*/
-@base-background-color: #212630;    // dark blue
-@base-border-color:     transparent;
-/*--Base-colors-end--*/
-
-
+@base-background-color: #212630;
+// dark blue
+@base-border-color: transparent;/*--Base-colors-end--*/
 
 /*---border-colors---*/
-@badge-outline-color:               1px solid @badge-border-color;
-@highlight-border:                  1px solid black;
-@tool-panel-border-color:           @base-border-color;
-@inset-panel-border-color:          @base-border-color;
-@panel-heading-border-color:        @base-border-color;
-@button-border-color:               @base-border-color;
-@tab-bar-border-color:              @base-border-color;
-@tab-border-color:                  @base-border-color;
-@tree-view-border-color:            @base-border-color;
-@global-outline-border:             1px solid darken( @app-background-color, 6%);
-@main-border-color:                 1px solid darken( @main-border-setting, 4%);
-/*---border-colors-end--*/
-
-
+@badge-outline-color: 1px solid @badge-border-color;
+@highlight-border: 1px solid black;
+@tool-panel-border-color: @base-border-color;
+@inset-panel-border-color: @base-border-color;
+@panel-heading-border-color: @base-border-color;
+@button-border-color: @base-border-color;
+@tab-bar-border-color: @base-border-color;
+@tab-border-color: @base-border-color;
+@tree-view-border-color: @base-border-color;
+@global-outline-border: 1px solid darken(@app-background-color, 6%);
+@main-border-color: 1px solid darken(@main-border-setting, 4%);
+@pane-item-border-color: @base-border-color;
+@input-border-color: transparent;
+@overlay-border-color: @base-border-color;/*---border-colors-end--*/
 
 /*---Component-colors---*/
-@panel-heading-background-color:    lighten(@base-background-color, 4%);
-@overlay-background-color:          lighten(@base-background-color, 5%);
-@button-background-color:           lighten(@base-background-color, 10%);
-@button-background-color-hover:     lighten(@button-background-color, 12%);
-@tab-background-color:              @tab-bar-background-color;
-@tab-background-color-active:       lighten(@tab-bar-background-color, 10%);
-@button-background-color-selected:  @button-background-color-hover;
-@tree-view-background-color:        @background-project-drawer;
-@tab-bar-background-color:          lighten(@background-project-drawer, 3%);
-@tool-panel-background-color:       transparent;
-/*---Component-colors-end--*/
-
-
+@panel-heading-background-color: lighten(@base-background-color, 4%);
+@overlay-background-color: lighten(@base-background-color, 5%);
+@button-background-color: lighten(@base-background-color, 10%);
+@button-background-color-hover: lighten(@button-background-color, 12%);
+@tab-background-color: @tab-bar-background-color;
+@tab-background-color-active: lighten(@tab-bar-background-color, 10%);
+@button-background-color-selected: @button-background-color-hover;
+@tree-view-background-color: @background-project-drawer;
+@tab-bar-background-color: lighten(@background-project-drawer, 3%);
+@tool-panel-background-color: transparent;
+@pane-item-background-color: @base-background-color;
+@input-background-color: @app-background-color;
+@inset-panel-background-color: lighten(@base-background-color, 4%);/*---Component-colors-end--*/
 
 /*----Site-colors---*/
-@ui-site-color-1: @background-color-info; // blue
-@ui-site-color-2: hsl(160,  70%, 42%); // green
-@ui-site-color-3: hsl(32,   60%, 50%); // orange
-@ui-site-color-4: #D831B0;             // pink
-@ui-site-color-5: #EBDD5B;             // yellow
-/*----Site-colors---*/
-
-
+@ui-site-color-1: @button-background-color-hover;
+@ui-site-color-2: @overlay-background-color;
+@ui-site-color-3: @base-background-color;
+@ui-site-color-4: @tab-background-color;
+@ui-site-color-5: @background-project-drawer;/*----Site-colors---*/
 
 /*--Sizes--*/
-@font-size:               1rem;
-@input-font-size:         1.1rem;
-@component-padding:       0.9rem;
-@component-icon-padding:  0.4rem;
-@component-icon-size:     1.2rem;
-@component-line-height:   2rem;
-@tab-height:              3.3rem;
-@component-border-radius: 0.25rem;
-/*--Sizes-end--*/
+@font-size: 1rem;
+@disclosure-arrow-size: @font-size;
+@input-font-size: 1.1rem;
+@component-padding: 0.9rem;
+@component-icon-padding: 0.4rem;
+@component-icon-size: 1.2rem;
+@component-line-height: 2rem;
+@tab-height: 3.3rem;
+@component-border-radius: 5px;/*--Sizes-end--*/

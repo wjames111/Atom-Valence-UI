@@ -15,16 +15,27 @@ the current buffer or across the entire project.
 /*---find+replace--adds foggy glass affect---*/
 .find-and-replace, .project-find.padded {
   width: 100%;
-  border-top: 2px solid darken( @app-background-color, 2%);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid darken( @app-background-color, 2%);
+  border-bottom: 1px solid darken( @app-background-color, 5%);
+  border-left: 1px solid darken( @app-background-color, 5%);
+  border-right: 1px solid darken( @app-background-color, 5%);
   bottom: 0;
   position: absolute;
   z-index: 100;
   padding: 0 0 1.7rem 0;
-  box-shadow+: 0px -8px 20px 1px rgba(0,0,0,0.15);
-  box-shadow+: inset 17px -40px 300px 140px rgba(255, 255, 255, 0.015);
-  background-color: rgba(25, 28, 35, 0.8);
-  backdrop-filter: blur(5px);
+  box-shadow+: 0px -2px 20px -0px rgba(0,0,0,0.15);
+  background-color: rgba(25, 28, 34, 0.7);
+  overflow: hidden !important;
+  &::before {
+    content: ' ';
+    z-index: -100;
+    width: 200%;
+    height: 200%;
+    display: block;
+    position: absolute;
+    backdrop-filter: blur(5px);
+  }
+  // backdrop-filter: blur(5px);
   .icon-x:hover {
     color: @text-edited;
   }
@@ -94,11 +105,11 @@ atom-panel.modal.overlay.from-top .select-list .editor.mini {
 }
 
 //--creates foggy glass affect--//
-atom-panel.modal {
-  border-radius: 8px;
+atom-panel.modal.overlay.from-top {
   color: lighten(@text-color, 7%);
   border: 1px solid darken( @app-background-color, 2%) !important;
   top: 0;
+    box-shadow+: 0px -2px 20px -0px rgba(0,0,0,0.15);
   margin-top: 3.9rem;
   .tab-bar__active & {  // changes placement of pallete if tab bar hidden
     margin-top: 1.2rem;
@@ -106,18 +117,17 @@ atom-panel.modal {
   position: absolute;
   z-index: 100;
   padding: 0;
-  box-shadow+: 8px 4px 12px 0px rgba(0,0,0,0.15);
-  box-shadow+: inset 17px -40px 300px 140px rgba(255, 255, 255, 0.02);
-  background-color: rgba(25, 28, 35, .5);
+  background-color: rgba(25, 28, 35, .7);
+  overflow: hidden;
   &:before {
-    content: " ";
+    content: ' ';
+    z-index: -100;
+    width: 200%;
+    height: 200%;
     display: block;
     position: absolute;
-    background-color: rgba(25, 28, 35, .4);
-    z-index: -10;
+    border-radius: 8px;
     backdrop-filter: blur(5px);
-    height: 100%;
-    width: 100%;
   }
   .select-list ol.list-group {
     margin-top: 0;
@@ -125,6 +135,7 @@ atom-panel.modal {
       margin-top: 0.9rem;
     }
   }
+
 }
 /*------pop-up-finder-window-end----*/
 
