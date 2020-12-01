@@ -148,7 +148,6 @@ button.github-StagingView-headerButton.icon.icon-move-up {
 .github-CommitView-editor {
   margin-top: 0.9rem;
   margin-bottom: 0.9rem;
-  background-color: @background-color-lighter;
   border: @global-outline-border;
   button {
     border-top: @global-outline-border;
@@ -174,3 +173,67 @@ button.github-StagingView-headerButton.icon.icon-move-up {
   margin-top: 0.8rem;
 }
 /*-------git-init-button-end----*/
+
+
+
+//--------recent-commits-----------//
+.github-RecentCommit {
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+//----------reviews---------//
+.github-ReviewsFooterView-reviewChangesButton {
+  display: flex;
+  align-items: center;
+}
+
+//-----github-tabs----//
+.github-tab.react-tabs__tab--selected {
+  box-shadow: 0 1px 0 @accentColor;
+}
+
+//-----weird-bar----//
+.github-ReviewsFooterView-progessBar {
+  z-index: 100;
+  color: green;
+  opacity: 1;
+  margin-top: 0.5rem;
+  background-color: @accentColor;
+  border-radius: 10px 0 0 10px;
+  border: 2px solid @text-color-success;
+}
+
+span.github-ReviewsFooterView-commentsResolved {
+  color: @text-color-warning; // resolved comments number
+}
+
+.github-EmojiReactions-add.btn.icon {
+  color: @text-color-success;
+}
+
+.github-tab.react-tabs__tab--selected {
+  color: @text-hover;
+}
+
+.commit-message-headline span {
+  padding-left: 0.5rem;
+}
+
+.github-ReviewsFooterView {
+  display: flex;
+  flex-direction: column;
+}
+
+.github-tab-count {
+  color: @text-hover;
+  .react-tabs__tab--selected & {
+      opacity: 1;
+  }
+  opacity: 0.5;
+  padding: 0 0.5rem;
+}
+
+.github-PrCommitView-moreButton {
+  padding: 0.2rem 0.6rem;
+}

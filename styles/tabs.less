@@ -124,7 +124,8 @@ tabs.--
   transition: height 0.25s;
   &:after {
     background-color: @background-project-drawer;
-    transition: height 0.25s;
+    background-color: transparent;
+    transition-delay: 0.2s; // keeps tab bar from glitching
   }
 }
 
@@ -133,15 +134,26 @@ tabs.--
   &:after {
     content: "";
     position: absolute;
-    height: 1rem;
+    background-color: transparent;
+    z-index: 100;
+    height: 3rem;
     width: 100%;
   }
   &:hover {
     height: 4rem;
     &:after {
       content: "";
-      height: 0.1rem;
+      z-index: -100;
     }
   }
 }
 /*------Toggleable-tab-bar-end----*/
+
+
+ul.list-inline.tab-bar.inset-panel li.tab {
+  border-right: 2px solid #1d212a;
+  border-left: 2px solid #1d212a;
+  border-top: 2px solid #1d212a;
+  border-radius: 8px 8px 0 0;
+  margin-top:1rem;
+}

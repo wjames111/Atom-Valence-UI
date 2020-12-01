@@ -7,6 +7,20 @@
 -------contents-end-------*/
 
 
+/*---Language list---------------*/
+scopename.badge.badge-info {
+  color: @background-color-lighter;
+  &:hover {
+    transition: none;
+    .animations-enabled__active & {
+      transition: all 0.1s;
+    }
+    transform: scale(1.2);
+  }
+}
+/*---Language list end---------------*/
+
+
 
 /*---Settings/list-of-key-bindings---------------*/
 .key-binding {
@@ -27,7 +41,7 @@
     .animations-enabled__active & {
       transition: all 0.1s;
     }
-    transform: scale(1.4);
+    transform: scale(1.2);
     opacity: 0.7;
     border: 1px solid @text-edited;
     box-shadow: 0px 0px 14px 0px rgba(213, 111, 62, 1);
